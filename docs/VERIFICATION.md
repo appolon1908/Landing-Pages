@@ -42,3 +42,73 @@ A fresh independent source review of the repair, regressions, and commerce hando
 ### Integration scope
 
 `COMMERCE_HANDOFF.md` defines the verified publication-to-merchant-to-WhatsApp binding, server-derived authorization, commerce-service data ownership, and policy API → Middleware → provider reply route. It also specifies revocation, transactional order/outbox work, duplicate recovery, and conversation takeover fencing. This change defines the contract; it does not provision that binding or implement the commerce service. Public submissions and runtime commerce/messaging effects remain disabled.
+
+## Shared HighLevel website requirements — 2026-10-29
+
+The new `atomic/landing-highlevel-requirements-20261029` branch starts from merged
+foundation commit `a33ae15bc1a313fa3c38161d6e5e0b2b527450cd`. All landing layouts now
+consume one strict public business profile for shared identity, direct localized
+policy documents and separate optional SMS choices. The implementation and business
+handoff are described in [HIGHLEVEL_REQUIREMENTS.md](HIGHLEVEL_REQUIREMENTS.md).
+
+### Regression and independent review evidence
+
+Before implementation, twelve focused new tests failed for missing profile,
+consent and direct-policy behavior; the direct policy request returned 404 instead
+of 200. The original eight unit/HTTP tests passed at the branch baseline.
+
+A fresh independent whole-source review found a string-enum coercion defect that
+could suppress a draft notice when a JSON array was accepted as a review status.
+A focused regression reproduced the missing rejection before the correction. The
+parser now compares actual literal values, and seven malformed enum variants are
+covered. Independent re-review verified all seven rejections and found no remaining
+material finding. A separate requirements audit found no material coverage omission
+within the documented preview and business-profile scope. These technical reviews
+are separate from eligible approval on the GitHub pull request.
+
+The browser run initially exposed an ambiguous test selector after description
+metadata was added. The regression now selects the textarea explicitly. A runner
+attempt without the configured Chrome executable was excluded from application
+evidence; the final run used installed Chrome and unchanged assertions/timeouts.
+
+### Final local validation
+
+Validation ran on dev-desktop with Node 22.23.4, private XDG/temp directories and
+`CHROME_BIN=/usr/bin/google-chrome`. The final source passed:
+
+| Check | Observed result |
+| --- | --- |
+| `npm run format:check` | Passed |
+| `npm run typecheck` | Passed |
+| `npm test` | 23 passed; none failed or skipped |
+| `python3 scripts/test_branch.py` | Passed |
+| `npm run build` | Passed |
+| `npm run test:browser` | 15 passed; includes all homepage history regressions, all 20 landing routes, optional SMS choices, policy Back/Forward, JavaScript-disabled policies and mobile accessibility |
+| `npm audit --audit-level=high` | 0 vulnerabilities reported |
+| `npm run compliance:check -- --json` | Report succeeded; both preview businesses have 20 explicit readiness blockers and no publication authority |
+| Strict readiness regression | Both bundled drafts correctly produce exit status 1 under `--strict` |
+
+The desktop Terms page, mobile consent form, mobile shared footer and Spanish
+Privacy Policy were visually inspected. Text, controls, draft labels and policy
+navigation were readable without clipping or horizontal overflow.
+
+Required hosted `landing-checks`, `branch-governance` and `container-smoke` must
+verify the published commit. Their exact commit/run links and final review gate
+state are recorded in the pull request, after this source snapshot is committed.
+No new local container result is claimed.
+
+### Business and integration limits
+
+Bundled data deliberately lacks real legal identities, working support contacts,
+public business domains, reviewed policy revisions and applicability decisions.
+Draft wording is illustrative; applicable HighLevel-prescribed wording still needs
+business/provider review. The CLI checks structure and supplied review state. It
+does not prove contact validity, policy accuracy, jurisdictional compliance,
+publisher authorization or carrier approval.
+
+Browser choices are immutable preview intent, not durable consent or tenant
+authority. The legacy adapter rejects the richer envelope, and the hosting server
+continues to reject submissions. The authoritative publisher, intake/consent owner,
+commerce service, policy API and Middleware/provider route retain their documented
+responsibilities. No production publication, customer message, CRM write, payment,
+tracking or live workflow was activated.

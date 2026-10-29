@@ -17,6 +17,7 @@
     "apps/**/*.vue",
     "packages/**/*.ts",
     "tests/**/*.ts",
+    "scripts/**/*.ts",
     "*.ts"
   ]
 }

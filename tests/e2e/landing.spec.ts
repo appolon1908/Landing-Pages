@@ -14,6 +14,25 @@ test("all twenty localized audience routes render with correct language and no e
         await expect(page.locator("h1")).toBeVisible();
         await expect(page.locator("html")).toHaveAttribute("lang", locale);
         await expect(page.locator("form")).toBeVisible();
+        await expect(page.getByTestId("business-footer")).toContainText(
+          "Breero Preview",
+        );
+        await expect(
+          page.locator(`form a[href='/${locale}/privacy-policy']`),
+        ).toBeVisible();
+        await expect(
+          page.locator(`form a[href='/${locale}/terms']`),
+        ).toBeVisible();
+        await expect(
+          page.locator(
+            `[data-testid=business-footer] a[href='/${locale}/about']`,
+          ),
+        ).toBeVisible();
+        await expect(
+          page.locator(
+            `[data-testid=business-footer] a[href='/${locale}/contact']`,
+          ),
+        ).toBeVisible();
         expect(await page.locator("input[type=checkbox]:checked").count()).toBe(
           0,
         );

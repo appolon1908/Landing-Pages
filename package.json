@@ -13,7 +13,8 @@
     "typecheck": "vue-tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs",
     "test:browser": "playwright test",
-    "format:check": "prettier --check apps packages server tests *.json *.ts",
+    "format:check": "prettier --check apps packages server tests scripts/*.ts config/*.json *.json *.ts",
+    "compliance:check": "node --experimental-strip-types scripts/check_compliance.ts",
     "verify": "npm run format:check && npm run typecheck && npm test && npm run build && npm run test:browser"
   },
   "dependencies": {

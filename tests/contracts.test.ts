@@ -181,7 +181,7 @@ test("intake payload matches Breero fields without inventing tenant authorizatio
   };
   const payload = submissions!.buildPayload(fields, context);
   assert.equal(payload.service_description, fields.description);
-  assert.equal(payload.policy_version, "2026-08-13-request-only");
+  assert.equal(payload.policy_version, "2026-10-29-request-contact-v2");
   assert.equal(payload.marketing_email_consent, false);
   assert.equal(payload.marketing_sms_consent, false);
   assert.equal(
