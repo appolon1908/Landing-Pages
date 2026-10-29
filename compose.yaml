@@ -1,0 +1,9 @@
+services:
+  landing-pages:
+    build: .
+    ports: ["127.0.0.1:${LANDING_PORT:-4173}:4173"]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+    restart: unless-stopped
