@@ -173,6 +173,14 @@ const words = computed(() =>
       },
 );
 
+function homepage(context: SiteContext): PageRoute {
+  return {
+    locale: "en",
+    audience: "landing",
+    offering: context.offerings[0],
+    thankYou: false,
+  };
+}
 function navigate(locale: Locale, audience: Audience, offering: Offering) {
   page.value = { locale, audience, offering, thankYou: false };
   state.value = "ready";
@@ -199,7 +207,10 @@ function updateMetadata() {
       (page.value.thankYou ? "/thank-you" : "");
 }
 function popstate() {
-  const route = resolvePage(location.pathname);
+  const route =
+    location.pathname === "/" && site.value
+      ? homepage(site.value)
+      : resolvePage(location.pathname);
   if (route) {
     page.value = route;
     updateMetadata();
@@ -242,13 +253,7 @@ onMounted(async () => {
     });
     if (!response.ok) throw Error("Site unavailable.");
     site.value = parseSiteContext(await response.json());
-    if (location.pathname === "/")
-      page.value = {
-        locale: "en",
-        audience: "landing",
-        offering: site.value.offerings[0],
-        thankYou: false,
-      };
+    if (location.pathname === "/") page.value = homepage(site.value);
     if (!site.value.offerings.includes(page.value.offering))
       throw Error("Page unavailable.");
     updateMetadata();

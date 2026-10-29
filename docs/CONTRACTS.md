@@ -70,3 +70,13 @@ publication pointer, per-site/host/locale cache keys, authorized preview/media,
 rollback to prior artifact and same-industry cross-company tests. Live business
 setup, cloning, reports, payment plans, CRM and scheduling remain owner dependencies.
 The frontend sends no analytics events or private form data to third parties.
+
+## Commerce connection
+
+[Landing page to commerce handoff](COMMERCE_HANDOFF.md) defines the server-owned
+published-site/merchant/verified-WhatsApp-channel binding, revocation and tenant
+authorization boundary. Breero keeps site/publication and existing intake
+authority; catalog, stock, quotes, orders and conversation state belong to the
+designated commerce service. Replies pass through the existing WhatsApp policy
+API, Middleware and provider adapter. This contract defines future integration;
+it adds no live binding, runtime endpoint or submission activation to this preview.
