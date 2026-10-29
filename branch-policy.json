@@ -1,0 +1,5 @@
+{
+  "subsection": "subsection/public--foundation",
+  "section": "section/public",
+  "requiredChecks": ["landing-checks", "branch-governance", "container-smoke"]
+}
