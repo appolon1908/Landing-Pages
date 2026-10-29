@@ -2,8 +2,9 @@
 
 Status: defined integration contract; runtime implementation and activation are
 separate release work. This document creates no merchant/channel binding or new
-runtime endpoint. The existing `SiteContext` v1 stays preview-only with submissions
-disabled.
+runtime endpoint. The versioned `SiteContext` stays preview-only with submissions
+disabled. Bundled profiles use v2 public compliance presentation data; legacy v1
+remains supported.
 
 Read alongside [frontend contracts](CONTRACTS.md), [readiness](READINESS.md) and the
 [Codestra WhatsApp Commerce Platform Architecture](https://chatgpt.com/space/page_4f1437fdb09c819187e5b2553d9ce390).
@@ -78,10 +79,12 @@ contract that authenticates the ingress and removes client-supplied forwarding
 headers. Otherwise use the validated configured host mapping. Conflicting business
 selectors are rejected rather than overriding the authenticated context.
 
-The preview projection retains its existing schema: `schemaVersion`, `siteId`,
-`workspaceId`, `brand`, `publicOrigin`, `offerings`, `mode`, `submissionsEnabled`.
-Its public `workspaceId` is a compatibility/presentation value. It is not a tenant
-grant, and the preview registry is not proof of domain ownership.
+The preview projection includes `schemaVersion`, `siteId`, `workspaceId`, `brand`,
+`publicOrigin`, `offerings`, `mode` and `submissionsEnabled`. Version 2 adds the
+strict public `compliance` profile for business identity, website policies and
+SMS presentation; version 1 remains a legacy preview. These fields, including the
+public `workspaceId`, are compatibility/presentation data. They are not tenant
+grants, and the preview registry is not proof of domain ownership.
 
 A future public commerce projection needs an explicit new version. It may contain
 approved public catalog/presentation fields and a server-generated customer

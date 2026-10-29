@@ -1,4 +1,6 @@
 import { offerings } from "../industry-templates/catalog.ts";
+import { parseComplianceProfile } from "./compliance.ts";
+import type { ComplianceProfile } from "./compliance.ts";
 import type {
   Audience,
   Locale,
@@ -6,7 +8,6 @@ import type {
 } from "../industry-templates/catalog.ts";
 
 export type SiteContext = {
-  schemaVersion: 1;
   siteId: string;
   workspaceId: string;
   brand: { name: string; accent: string };
@@ -14,7 +15,10 @@ export type SiteContext = {
   offerings: Offering[];
   mode: "preview";
   submissionsEnabled: false;
-};
+} & (
+  | { schemaVersion: 1; compliance?: never }
+  | { schemaVersion: 2; compliance: ComplianceProfile }
+);
 export const uuid =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 function record(value: unknown, allowed: string[]): Record<string, unknown> {
@@ -33,6 +37,7 @@ function text(value: unknown, max: number): value is string {
   );
 }
 export function parseSiteContext(value: unknown): SiteContext {
+  const version = (value as { schemaVersion?: unknown } | null)?.schemaVersion;
   const item = record(value, [
     "schemaVersion",
     "siteId",
@@ -42,10 +47,11 @@ export function parseSiteContext(value: unknown): SiteContext {
     "offerings",
     "mode",
     "submissionsEnabled",
+    ...(version === 2 ? ["compliance"] : []),
   ]);
   const brand = record(item.brand, ["name", "accent"]);
   if (
-    item.schemaVersion !== 1 ||
+    ![1, 2].includes(item.schemaVersion as number) ||
     !text(item.siteId, 64) ||
     !/^[a-z0-9-]+$/.test(item.siteId) ||
     typeof item.workspaceId !== "string" ||
@@ -84,16 +90,22 @@ export function parseSiteContext(value: unknown): SiteContext {
     throw Error("Invalid site offerings.");
   if (item.mode !== "preview" || item.submissionsEnabled !== false)
     throw Error("Live effects are disabled in this foundation.");
-  return {
-    schemaVersion: 1,
+  const common = {
     siteId: item.siteId,
     workspaceId: item.workspaceId,
     brand: { name: brand.name, accent: brand.accent },
     publicOrigin: url.origin,
     offerings: [...item.offerings] as Offering[],
-    mode: "preview",
-    submissionsEnabled: false,
+    mode: "preview" as const,
+    submissionsEnabled: false as const,
   };
+  return version === 2
+    ? {
+        ...common,
+        schemaVersion: 2,
+        compliance: parseComplianceProfile(item.compliance),
+      }
+    : { ...common, schemaVersion: 1 };
 }
 
 export type PageRoute = {

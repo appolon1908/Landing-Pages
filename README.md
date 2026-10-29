@@ -56,6 +56,30 @@ not persist form details to local storage. Page metadata is localized; preview h
 are noindex and have an empty sitemap. Published artifact/SEO activation remains a
 separate Breero-owned release boundary.
 
+## Shared website requirements
+
+Every landing layout uses the same business footer, About and Contact pages, direct
+Privacy Policy and Terms URLs, and optional separate service/marketing SMS choices.
+English and Spanish policies are also readable without JavaScript. A v2 public
+business profile supplies identity, reviewed wording, versions and applicability;
+applicable conditional policies appear from that profile.
+
+Complete and review the profile once per business, then use the readiness report:
+
+```sh
+npm run compliance:check
+npm run compliance:check -- --strict
+```
+
+The bundled profiles are explicit drafts, so strict mode intentionally fails until
+real business facts, applicability and reviewed policies are supplied. This is a
+structural website check; it does not authorize publication or certify HighLevel
+registration. See [shared website requirements and business handoff](docs/HIGHLEVEL_REQUIREMENTS.md).
+
+The form creates a versioned preview intent that preserves the wording and separate
+choices. The legacy submission adapter rejects that richer envelope pending a
+server-owned consent contract; no browser choice grants tenant or sending authority.
+
 ## Verify
 
 ```sh
@@ -77,8 +101,9 @@ not certify live Breero, Keycloak or the shared gateway.
 
 ## Review and release
 
-The initial empty `subsection/public--foundation` commit is the review base.
-Application code is proposed on `atomic/landing-pages-bootstrap-20261023`.
+Atomic implementation branches target `subsection/public--foundation`, followed by
+the configured section and environment promotion path. The shared website feature
+uses `atomic/landing-highlevel-requirements-20261029`.
 Follow branch-policy.json and require independent review and actual current-head
 checks. Source CODEOWNERS/CI do not alone prove GitHub settings are enforced.
 See [runbook](docs/RUNBOOK.md), [verification](docs/VERIFICATION.md) and the
