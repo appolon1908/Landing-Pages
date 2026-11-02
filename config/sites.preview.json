@@ -1,0 +1,20 @@
+[
+  {
+    "hosts": ["127.0.0.1"],
+    "site": {
+      "schemaVersion": 1, "siteId": "preview-breero", "workspaceId": "00000000-0000-4000-8000-000000000001",
+      "brand": { "name": "Breero Preview", "accent": "#176951" }, "publicOrigin": "http://127.0.0.1:4173",
+      "offerings": ["hvac-heating", "chimney-fireplace", "insulation-weatherproofing", "gutter-cleaning-repair", "plumbing-winterization"],
+      "mode": "preview", "submissionsEnabled": false
+    }
+  },
+  {
+    "hosts": ["localhost"],
+    "site": {
+      "schemaVersion": 1, "siteId": "preview-second-brand", "workspaceId": "00000000-0000-4000-8000-000000000002",
+      "brand": { "name": "Second Brand Preview", "accent": "#365c82" }, "publicOrigin": "http://localhost:4173",
+      "offerings": ["hvac-heating", "chimney-fireplace", "insulation-weatherproofing", "gutter-cleaning-repair", "plumbing-winterization"],
+      "mode": "preview", "submissionsEnabled": false
+    }
+  }
+]
