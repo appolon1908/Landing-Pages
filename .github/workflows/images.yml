@@ -1,0 +1,87 @@
+name: Release images
+on:
+  workflow_run:
+    workflows: [Landing checks]
+    types: [completed]
+    branches: [development, testing, staging, production]
+permissions:
+  contents: read
+concurrency:
+  group: release-images-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: false
+jobs:
+  authorize:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      sha: ${{ steps.gate.outputs.sha }}
+      stage: ${{ steps.gate.outputs.stage }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          # Gate code comes from the trusted workflow revision, not an incoming artifact.
+          ref: ${{ github.workflow_sha }}
+          persist-credentials: false
+      - id: gate
+        name: Require exact-head native CI and protected source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/image_gate.py
+  publish:
+    needs: authorize
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ needs.authorize.outputs.sha }}
+          persist-credentials: false
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
+      - uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: image
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/appolon1908/lp-renderer:sha-${{ needs.authorize.outputs.sha }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/appolon1908/Landing-Pages
+            org.opencontainers.image.revision=${{ needs.authorize.outputs.sha }}
+          provenance: mode=max
+          sbom: true
+      - name: Record immutable release identity
+        env:
+          IMAGE_DIGEST: ${{ steps.image.outputs.digest }}
+          SOURCE_SHA: ${{ needs.authorize.outputs.sha }}
+          RELEASE_STAGE: ${{ needs.authorize.outputs.stage }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, re
+          digest = os.environ['IMAGE_DIGEST']
+          assert re.fullmatch(r'sha256:[0-9a-f]{64}', digest)
+          receipt = {'image': 'ghcr.io/appolon1908/lp-renderer@' + digest,
+                     'source_sha': os.environ['SOURCE_SHA'],
+                     'source_branch': os.environ['RELEASE_STAGE'],
+                     'deployment_authorized': False,
+                     'run_id': os.environ['GITHUB_RUN_ID']}
+          pathlib.Path('release-receipt.json').write_text(json.dumps(receipt, indent=2) + '\n')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: release-${{ needs.authorize.outputs.sha }}
+          path: release-receipt.json
+          if-no-files-found: error
