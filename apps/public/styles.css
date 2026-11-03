@@ -603,3 +603,76 @@ footer p {
     scroll-behavior: auto;
   }
 }
+
+/* Shared business and policy surfaces. */
+.business-footer {
+  display: grid;
+  gap: 1rem;
+}
+.business-footer p {
+  max-width: 76ch;
+  margin: 0.4rem 0;
+}
+.business-footer address {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.5rem;
+  font-style: normal;
+}
+.business-footer a,
+.business-footer span {
+  overflow-wrap: anywhere;
+}
+.policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.4rem;
+}
+.policy-links a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.policy-page {
+  max-width: 82ch;
+  padding-block: 3rem;
+}
+.policy-page h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+.policy-section {
+  margin-top: 2rem;
+}
+.policy-section h2 {
+  font-size: 1.35rem;
+}
+.policy-section p,
+.consent-disclosure {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.policy-draft {
+  padding: 1rem;
+  border: 1px solid #9a7221;
+  background: #fff7e5;
+  color: #493510;
+  border-radius: 0.5rem;
+}
+.consent-choices {
+  min-width: 0;
+}
+.consent-choices .consent {
+  margin-block: 1rem;
+  align-items: flex-start;
+}
+.consent-disclosure {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+.form-policy-links {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}

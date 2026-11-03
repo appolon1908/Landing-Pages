@@ -33,3 +33,20 @@ prevents self-approval, disallows admin bypass, and accepts only the `production
 branch. No deployment workflow or production effect is enabled by this repair.
 Any future deployment job must explicitly use that protected environment before
 production activation can be approved.
+
+## Reviewed policy integration, 2026-11-03
+
+PR #8 merged the separately reviewed business-policy and optional SMS-consent
+source into the original subsection. This integration preserves its complete
+application, tests and requirements while retaining the signed foundation's
+branch policy and migration records. It starts at the signed subsection's
+current head, rather than importing the original unsigned ancestry.
+
+The current path remains atomic → subsection/public--foundation-signed →
+section/public → development → testing → staging → production. The reverse
+development → original-subsection proposal in #9 is not an allowed promotion.
+Every forward boundary still needs fresh native checks, verified signatures and
+eligible independent approval. Existing source branches are preserved.
+
+All public profiles remain drafts. This source integration does not enable
+publication, submissions, payments, tracking, messages or production deployment.
