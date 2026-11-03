@@ -1,0 +1,8 @@
+*
+!Dockerfile
+!publisher.py
+!enroll.py
+!config/
+!config/repositories.json
+!tests/
+!tests/test_*.py

@@ -1,0 +1,22 @@
+name: Agent publication checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  agent-publication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Verify image publication gates
+        run: python3 -m unittest discover -s scripts -p 'test_image_gate.py' -v
+      - name: Verify direct Git publisher
+        run: python3 -m unittest discover -s tools/agent-publisher/tests -v
+      - name: Build unprivileged publisher
+        run: docker build --target publisher -t codestra-agent-publisher:ci tools/agent-publisher
+      - name: Test inside Docker
+        run: |
+          docker build --target test -t codestra-agent-publisher-test:ci tools/agent-publisher
+          docker run --rm --read-only --cap-drop=ALL --security-opt=no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,size=64m codestra-agent-publisher-test:ci
