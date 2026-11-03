@@ -1,0 +1,57 @@
+{
+  "hosts": [
+    "www.example-brand.com",
+    "example-brand.com"
+  ],
+  "site": {
+    "schemaVersion": 3,
+    "siteId": "example-brand",
+    "workspaceId": "00000000-0000-4000-8000-000000000009",
+    "brand": {
+      "name": "Example Brand",
+      "accent": "#176951"
+    },
+    "publicOrigin": "https://www.example-brand.com",
+    "pages": [
+      {
+        "slug": "hvac-heating",
+        "origin": null,
+        "label": {
+          "en": "Heating & cooling",
+          "es": "Calefacción y aire"
+        }
+      },
+      {
+        "slug": "chimney-fireplace",
+        "origin": "https://chimney.example-brand.com",
+        "label": {
+          "en": "Chimneys & fireplaces",
+          "es": "Chimeneas y hogares"
+        }
+      }
+    ],
+    "mode": "live",
+    "compliance": "<reviewed ComplianceProfile goes here; see config/registry/preview-breero.json>"
+  },
+  "destination": {
+    "type": "webhook",
+    "url": "https://hooks.your-crm.example/intake",
+    "authEnv": "CRM_TOKEN",
+    "headers": {
+      "X-Source": "landing-pages"
+    }
+  },
+  "_alternatives": {
+    "breero": {
+      "type": "breero",
+      "origin": "https://api.breero.example",
+      "authEnv": "BREERO_TOKEN"
+    },
+    "log": {
+      "type": "log"
+    },
+    "disabled": {
+      "type": "disabled"
+    }
+  }
+}

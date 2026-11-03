@@ -1,0 +1,26 @@
+{
+  "status": "DRAFT_REVIEW_RULES",
+  "note": "Heuristic gate plus independent human review. Do not weaken patterns to permit unsupported claims. Precise negative disclosures remain allowed.",
+  "phrases": [
+    {
+      "id": "unfounded-ranking",
+      "pattern": "best in town|number one|#1|el mejor de|los mejores de|numéro un|meilleur de la ville"
+    },
+    {
+      "id": "guaranteed-outcome",
+      "pattern": "guaranteed (?:results|jobs|income|leads|arrival)|resultados garantizados|ingresos garantizados|trabajos garantizados|résultats garantis|revenus garantis|missions garanties"
+    },
+    {
+      "id": "unverified-badges",
+      "pattern": "verified (?:providers|professionals|experts)|proveedores verificados|prestataires vérifiés"
+    },
+    {
+      "id": "unstaffed-hours",
+      "pattern": "24/7|around.the.clock|a toda hora|à toute heure"
+    },
+    {
+      "id": "unsupported-arrival",
+      "pattern": "same.day (?:service|arrival)|llegamos hoy|servicio el mismo día|intervention le jour même"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@lp/backend",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.mjs",
+    "test": "node --test ../tests/backend/*.test.mjs"
+  },
+  "dependencies": {
+    "@lp/core": "*"
+  }
+}

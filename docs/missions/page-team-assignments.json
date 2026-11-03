@@ -1,0 +1,6314 @@
+{
+  "schemaVersion": 1,
+  "status": "assigned_roles_executed_in_waves",
+  "scope": "61 public pages; shared code and three-language content; responsibilities, not independently running agents",
+  "roleInterpretation": "Four roles per page = two writers and two coders. Each section uses one writer and one coder from that page team.",
+  "runtimeCapacity": {
+    "controller": 1,
+    "workers": 3
+  },
+  "definitions": "inputs/team-role-definitions.json",
+  "historicalInputNote": "The definitions file preserves the original five-page planning snapshot. It is historical, not the current implementation inventory.",
+  "actualWorkerEvidence": "TEAM.md",
+  "pageTeams": [
+    {
+      "pageId": "home",
+      "package": "pages/home",
+      "roles": [
+        {
+          "id": "home:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "home:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "home:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "home:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "H01",
+          "assignedRoles": ["home:COPY_A", "home:CODE_A"]
+        },
+        {
+          "id": "H02",
+          "assignedRoles": ["home:COPY_A", "home:CODE_A"]
+        },
+        {
+          "id": "H03",
+          "assignedRoles": ["home:COPY_A", "home:CODE_A"]
+        },
+        {
+          "id": "H04",
+          "assignedRoles": ["home:COPY_A", "home:CODE_A"]
+        },
+        {
+          "id": "H05",
+          "assignedRoles": ["home:COPY_A", "home:CODE_A"]
+        },
+        {
+          "id": "H06",
+          "assignedRoles": ["home:COPY_B", "home:CODE_B"]
+        },
+        {
+          "id": "H07",
+          "assignedRoles": ["home:COPY_B", "home:CODE_B"]
+        },
+        {
+          "id": "H08",
+          "assignedRoles": ["home:COPY_B", "home:CODE_B"]
+        },
+        {
+          "id": "H09",
+          "assignedRoles": ["home:COPY_B", "home:CODE_B"]
+        },
+        {
+          "id": "H10",
+          "assignedRoles": ["home:COPY_B", "home:CODE_B"]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/hvac",
+      "package": "pages/hvac",
+      "roles": [
+        {
+          "id": "customer/hvac:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/hvac:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/hvac:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/hvac:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": ["customer/hvac:COPY_A", "customer/hvac:CODE_A"]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": ["customer/hvac:COPY_A", "customer/hvac:CODE_A"]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": ["customer/hvac:COPY_A", "customer/hvac:CODE_A"]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": ["customer/hvac:COPY_A", "customer/hvac:CODE_A"]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": ["customer/hvac:COPY_A", "customer/hvac:CODE_A"]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": ["customer/hvac:COPY_A", "customer/hvac:CODE_A"]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": ["customer/hvac:COPY_B", "customer/hvac:CODE_B"]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": ["customer/hvac:COPY_B", "customer/hvac:CODE_B"]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": ["customer/hvac:COPY_B", "customer/hvac:CODE_B"]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": ["customer/hvac:COPY_B", "customer/hvac:CODE_B"]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": ["customer/hvac:COPY_B", "customer/hvac:CODE_B"]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": ["customer/hvac:COPY_B", "customer/hvac:CODE_B"]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/hvac",
+      "package": "pages/hvac",
+      "roles": [
+        {
+          "id": "provider/hvac:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/hvac:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/hvac:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/hvac:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": ["provider/hvac:COPY_A", "provider/hvac:CODE_A"]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": ["provider/hvac:COPY_A", "provider/hvac:CODE_A"]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": ["provider/hvac:COPY_A", "provider/hvac:CODE_A"]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": ["provider/hvac:COPY_A", "provider/hvac:CODE_A"]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": ["provider/hvac:COPY_A", "provider/hvac:CODE_A"]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": ["provider/hvac:COPY_A", "provider/hvac:CODE_A"]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": ["provider/hvac:COPY_B", "provider/hvac:CODE_B"]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": ["provider/hvac:COPY_B", "provider/hvac:CODE_B"]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": ["provider/hvac:COPY_B", "provider/hvac:CODE_B"]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": ["provider/hvac:COPY_B", "provider/hvac:CODE_B"]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": ["provider/hvac:COPY_B", "provider/hvac:CODE_B"]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": ["provider/hvac:COPY_B", "provider/hvac:CODE_B"]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/plumbing",
+      "package": "pages/plumbing",
+      "roles": [
+        {
+          "id": "customer/plumbing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/plumbing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/plumbing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/plumbing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/plumbing:COPY_A",
+            "customer/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/plumbing:COPY_A",
+            "customer/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/plumbing:COPY_A",
+            "customer/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/plumbing:COPY_A",
+            "customer/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/plumbing:COPY_A",
+            "customer/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/plumbing:COPY_A",
+            "customer/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/plumbing:COPY_B",
+            "customer/plumbing:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/plumbing:COPY_B",
+            "customer/plumbing:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/plumbing:COPY_B",
+            "customer/plumbing:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/plumbing:COPY_B",
+            "customer/plumbing:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/plumbing:COPY_B",
+            "customer/plumbing:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/plumbing:COPY_B",
+            "customer/plumbing:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/plumbing",
+      "package": "pages/plumbing",
+      "roles": [
+        {
+          "id": "provider/plumbing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/plumbing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/plumbing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/plumbing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/plumbing:COPY_A",
+            "provider/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/plumbing:COPY_A",
+            "provider/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/plumbing:COPY_A",
+            "provider/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/plumbing:COPY_A",
+            "provider/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/plumbing:COPY_A",
+            "provider/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/plumbing:COPY_A",
+            "provider/plumbing:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/plumbing:COPY_B",
+            "provider/plumbing:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/plumbing:COPY_B",
+            "provider/plumbing:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/plumbing:COPY_B",
+            "provider/plumbing:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/plumbing:COPY_B",
+            "provider/plumbing:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/plumbing:COPY_B",
+            "provider/plumbing:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/plumbing:COPY_B",
+            "provider/plumbing:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/electrical",
+      "package": "pages/electrical",
+      "roles": [
+        {
+          "id": "customer/electrical:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/electrical:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/electrical:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/electrical:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/electrical:COPY_A",
+            "customer/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/electrical:COPY_A",
+            "customer/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/electrical:COPY_A",
+            "customer/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/electrical:COPY_A",
+            "customer/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/electrical:COPY_A",
+            "customer/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/electrical:COPY_A",
+            "customer/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/electrical:COPY_B",
+            "customer/electrical:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/electrical:COPY_B",
+            "customer/electrical:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/electrical:COPY_B",
+            "customer/electrical:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/electrical:COPY_B",
+            "customer/electrical:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/electrical:COPY_B",
+            "customer/electrical:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/electrical:COPY_B",
+            "customer/electrical:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/electrical",
+      "package": "pages/electrical",
+      "roles": [
+        {
+          "id": "provider/electrical:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/electrical:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/electrical:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/electrical:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/electrical:COPY_A",
+            "provider/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/electrical:COPY_A",
+            "provider/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/electrical:COPY_A",
+            "provider/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/electrical:COPY_A",
+            "provider/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/electrical:COPY_A",
+            "provider/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/electrical:COPY_A",
+            "provider/electrical:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/electrical:COPY_B",
+            "provider/electrical:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/electrical:COPY_B",
+            "provider/electrical:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/electrical:COPY_B",
+            "provider/electrical:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/electrical:COPY_B",
+            "provider/electrical:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/electrical:COPY_B",
+            "provider/electrical:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/electrical:COPY_B",
+            "provider/electrical:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/roofing",
+      "package": "pages/roofing",
+      "roles": [
+        {
+          "id": "customer/roofing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/roofing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/roofing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/roofing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/roofing:COPY_A",
+            "customer/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/roofing:COPY_A",
+            "customer/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/roofing:COPY_A",
+            "customer/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/roofing:COPY_A",
+            "customer/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/roofing:COPY_A",
+            "customer/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/roofing:COPY_A",
+            "customer/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/roofing:COPY_B",
+            "customer/roofing:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/roofing:COPY_B",
+            "customer/roofing:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/roofing:COPY_B",
+            "customer/roofing:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/roofing:COPY_B",
+            "customer/roofing:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/roofing:COPY_B",
+            "customer/roofing:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/roofing:COPY_B",
+            "customer/roofing:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/roofing",
+      "package": "pages/roofing",
+      "roles": [
+        {
+          "id": "provider/roofing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/roofing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/roofing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/roofing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/roofing:COPY_A",
+            "provider/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/roofing:COPY_A",
+            "provider/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/roofing:COPY_A",
+            "provider/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/roofing:COPY_A",
+            "provider/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/roofing:COPY_A",
+            "provider/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/roofing:COPY_A",
+            "provider/roofing:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/roofing:COPY_B",
+            "provider/roofing:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/roofing:COPY_B",
+            "provider/roofing:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/roofing:COPY_B",
+            "provider/roofing:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/roofing:COPY_B",
+            "provider/roofing:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/roofing:COPY_B",
+            "provider/roofing:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/roofing:COPY_B",
+            "provider/roofing:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/home-cleaning",
+      "package": "pages/home-cleaning",
+      "roles": [
+        {
+          "id": "customer/home-cleaning:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/home-cleaning:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/home-cleaning:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/home-cleaning:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_A",
+            "customer/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_A",
+            "customer/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_A",
+            "customer/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_A",
+            "customer/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_A",
+            "customer/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_A",
+            "customer/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_B",
+            "customer/home-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_B",
+            "customer/home-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_B",
+            "customer/home-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_B",
+            "customer/home-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_B",
+            "customer/home-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/home-cleaning:COPY_B",
+            "customer/home-cleaning:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/home-cleaning",
+      "package": "pages/home-cleaning",
+      "roles": [
+        {
+          "id": "provider/home-cleaning:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/home-cleaning:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/home-cleaning:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/home-cleaning:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_A",
+            "provider/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_A",
+            "provider/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_A",
+            "provider/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_A",
+            "provider/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_A",
+            "provider/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_A",
+            "provider/home-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_B",
+            "provider/home-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_B",
+            "provider/home-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_B",
+            "provider/home-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_B",
+            "provider/home-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_B",
+            "provider/home-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/home-cleaning:COPY_B",
+            "provider/home-cleaning:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/commercial-cleaning",
+      "package": "pages/commercial-cleaning",
+      "roles": [
+        {
+          "id": "customer/commercial-cleaning:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/commercial-cleaning:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/commercial-cleaning:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/commercial-cleaning:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_A",
+            "customer/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_A",
+            "customer/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_A",
+            "customer/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_A",
+            "customer/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_A",
+            "customer/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_A",
+            "customer/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_B",
+            "customer/commercial-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_B",
+            "customer/commercial-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_B",
+            "customer/commercial-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_B",
+            "customer/commercial-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_B",
+            "customer/commercial-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/commercial-cleaning:COPY_B",
+            "customer/commercial-cleaning:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/commercial-cleaning",
+      "package": "pages/commercial-cleaning",
+      "roles": [
+        {
+          "id": "provider/commercial-cleaning:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/commercial-cleaning:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/commercial-cleaning:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/commercial-cleaning:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_A",
+            "provider/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_A",
+            "provider/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_A",
+            "provider/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_A",
+            "provider/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_A",
+            "provider/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_A",
+            "provider/commercial-cleaning:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_B",
+            "provider/commercial-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_B",
+            "provider/commercial-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_B",
+            "provider/commercial-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_B",
+            "provider/commercial-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_B",
+            "provider/commercial-cleaning:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/commercial-cleaning:COPY_B",
+            "provider/commercial-cleaning:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/pest-control",
+      "package": "pages/pest-control",
+      "roles": [
+        {
+          "id": "customer/pest-control:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/pest-control:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/pest-control:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/pest-control:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/pest-control:COPY_A",
+            "customer/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/pest-control:COPY_A",
+            "customer/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/pest-control:COPY_A",
+            "customer/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/pest-control:COPY_A",
+            "customer/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/pest-control:COPY_A",
+            "customer/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/pest-control:COPY_A",
+            "customer/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/pest-control:COPY_B",
+            "customer/pest-control:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/pest-control:COPY_B",
+            "customer/pest-control:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/pest-control:COPY_B",
+            "customer/pest-control:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/pest-control:COPY_B",
+            "customer/pest-control:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/pest-control:COPY_B",
+            "customer/pest-control:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/pest-control:COPY_B",
+            "customer/pest-control:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/pest-control",
+      "package": "pages/pest-control",
+      "roles": [
+        {
+          "id": "provider/pest-control:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/pest-control:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/pest-control:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/pest-control:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/pest-control:COPY_A",
+            "provider/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/pest-control:COPY_A",
+            "provider/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/pest-control:COPY_A",
+            "provider/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/pest-control:COPY_A",
+            "provider/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/pest-control:COPY_A",
+            "provider/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/pest-control:COPY_A",
+            "provider/pest-control:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/pest-control:COPY_B",
+            "provider/pest-control:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/pest-control:COPY_B",
+            "provider/pest-control:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/pest-control:COPY_B",
+            "provider/pest-control:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/pest-control:COPY_B",
+            "provider/pest-control:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/pest-control:COPY_B",
+            "provider/pest-control:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/pest-control:COPY_B",
+            "provider/pest-control:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/landscaping",
+      "package": "pages/landscaping",
+      "roles": [
+        {
+          "id": "customer/landscaping:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/landscaping:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/landscaping:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/landscaping:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/landscaping:COPY_A",
+            "customer/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/landscaping:COPY_A",
+            "customer/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/landscaping:COPY_A",
+            "customer/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/landscaping:COPY_A",
+            "customer/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/landscaping:COPY_A",
+            "customer/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/landscaping:COPY_A",
+            "customer/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/landscaping:COPY_B",
+            "customer/landscaping:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/landscaping:COPY_B",
+            "customer/landscaping:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/landscaping:COPY_B",
+            "customer/landscaping:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/landscaping:COPY_B",
+            "customer/landscaping:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/landscaping:COPY_B",
+            "customer/landscaping:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/landscaping:COPY_B",
+            "customer/landscaping:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/landscaping",
+      "package": "pages/landscaping",
+      "roles": [
+        {
+          "id": "provider/landscaping:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/landscaping:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/landscaping:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/landscaping:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/landscaping:COPY_A",
+            "provider/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/landscaping:COPY_A",
+            "provider/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/landscaping:COPY_A",
+            "provider/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/landscaping:COPY_A",
+            "provider/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/landscaping:COPY_A",
+            "provider/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/landscaping:COPY_A",
+            "provider/landscaping:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/landscaping:COPY_B",
+            "provider/landscaping:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/landscaping:COPY_B",
+            "provider/landscaping:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/landscaping:COPY_B",
+            "provider/landscaping:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/landscaping:COPY_B",
+            "provider/landscaping:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/landscaping:COPY_B",
+            "provider/landscaping:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/landscaping:COPY_B",
+            "provider/landscaping:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/tree-service",
+      "package": "pages/tree-service",
+      "roles": [
+        {
+          "id": "customer/tree-service:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/tree-service:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/tree-service:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/tree-service:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/tree-service:COPY_A",
+            "customer/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/tree-service:COPY_A",
+            "customer/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/tree-service:COPY_A",
+            "customer/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/tree-service:COPY_A",
+            "customer/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/tree-service:COPY_A",
+            "customer/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/tree-service:COPY_A",
+            "customer/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/tree-service:COPY_B",
+            "customer/tree-service:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/tree-service:COPY_B",
+            "customer/tree-service:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/tree-service:COPY_B",
+            "customer/tree-service:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/tree-service:COPY_B",
+            "customer/tree-service:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/tree-service:COPY_B",
+            "customer/tree-service:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/tree-service:COPY_B",
+            "customer/tree-service:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/tree-service",
+      "package": "pages/tree-service",
+      "roles": [
+        {
+          "id": "provider/tree-service:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/tree-service:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/tree-service:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/tree-service:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/tree-service:COPY_A",
+            "provider/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/tree-service:COPY_A",
+            "provider/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/tree-service:COPY_A",
+            "provider/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/tree-service:COPY_A",
+            "provider/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/tree-service:COPY_A",
+            "provider/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/tree-service:COPY_A",
+            "provider/tree-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/tree-service:COPY_B",
+            "provider/tree-service:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/tree-service:COPY_B",
+            "provider/tree-service:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/tree-service:COPY_B",
+            "provider/tree-service:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/tree-service:COPY_B",
+            "provider/tree-service:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/tree-service:COPY_B",
+            "provider/tree-service:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/tree-service:COPY_B",
+            "provider/tree-service:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/painting",
+      "package": "pages/painting",
+      "roles": [
+        {
+          "id": "customer/painting:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/painting:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/painting:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/painting:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/painting:COPY_A",
+            "customer/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/painting:COPY_A",
+            "customer/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/painting:COPY_A",
+            "customer/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/painting:COPY_A",
+            "customer/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/painting:COPY_A",
+            "customer/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/painting:COPY_A",
+            "customer/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/painting:COPY_B",
+            "customer/painting:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/painting:COPY_B",
+            "customer/painting:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/painting:COPY_B",
+            "customer/painting:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/painting:COPY_B",
+            "customer/painting:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/painting:COPY_B",
+            "customer/painting:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/painting:COPY_B",
+            "customer/painting:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/painting",
+      "package": "pages/painting",
+      "roles": [
+        {
+          "id": "provider/painting:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/painting:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/painting:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/painting:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/painting:COPY_A",
+            "provider/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/painting:COPY_A",
+            "provider/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/painting:COPY_A",
+            "provider/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/painting:COPY_A",
+            "provider/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/painting:COPY_A",
+            "provider/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/painting:COPY_A",
+            "provider/painting:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/painting:COPY_B",
+            "provider/painting:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/painting:COPY_B",
+            "provider/painting:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/painting:COPY_B",
+            "provider/painting:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/painting:COPY_B",
+            "provider/painting:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/painting:COPY_B",
+            "provider/painting:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/painting:COPY_B",
+            "provider/painting:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/remodeling",
+      "package": "pages/remodeling",
+      "roles": [
+        {
+          "id": "customer/remodeling:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/remodeling:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/remodeling:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/remodeling:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/remodeling:COPY_A",
+            "customer/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/remodeling:COPY_A",
+            "customer/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/remodeling:COPY_A",
+            "customer/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/remodeling:COPY_A",
+            "customer/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/remodeling:COPY_A",
+            "customer/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/remodeling:COPY_A",
+            "customer/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/remodeling:COPY_B",
+            "customer/remodeling:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/remodeling:COPY_B",
+            "customer/remodeling:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/remodeling:COPY_B",
+            "customer/remodeling:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/remodeling:COPY_B",
+            "customer/remodeling:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/remodeling:COPY_B",
+            "customer/remodeling:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/remodeling:COPY_B",
+            "customer/remodeling:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/remodeling",
+      "package": "pages/remodeling",
+      "roles": [
+        {
+          "id": "provider/remodeling:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/remodeling:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/remodeling:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/remodeling:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/remodeling:COPY_A",
+            "provider/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/remodeling:COPY_A",
+            "provider/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/remodeling:COPY_A",
+            "provider/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/remodeling:COPY_A",
+            "provider/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/remodeling:COPY_A",
+            "provider/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/remodeling:COPY_A",
+            "provider/remodeling:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/remodeling:COPY_B",
+            "provider/remodeling:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/remodeling:COPY_B",
+            "provider/remodeling:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/remodeling:COPY_B",
+            "provider/remodeling:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/remodeling:COPY_B",
+            "provider/remodeling:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/remodeling:COPY_B",
+            "provider/remodeling:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/remodeling:COPY_B",
+            "provider/remodeling:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/flooring",
+      "package": "pages/flooring",
+      "roles": [
+        {
+          "id": "customer/flooring:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/flooring:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/flooring:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/flooring:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/flooring:COPY_A",
+            "customer/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/flooring:COPY_A",
+            "customer/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/flooring:COPY_A",
+            "customer/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/flooring:COPY_A",
+            "customer/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/flooring:COPY_A",
+            "customer/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/flooring:COPY_A",
+            "customer/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/flooring:COPY_B",
+            "customer/flooring:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/flooring:COPY_B",
+            "customer/flooring:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/flooring:COPY_B",
+            "customer/flooring:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/flooring:COPY_B",
+            "customer/flooring:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/flooring:COPY_B",
+            "customer/flooring:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/flooring:COPY_B",
+            "customer/flooring:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/flooring",
+      "package": "pages/flooring",
+      "roles": [
+        {
+          "id": "provider/flooring:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/flooring:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/flooring:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/flooring:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/flooring:COPY_A",
+            "provider/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/flooring:COPY_A",
+            "provider/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/flooring:COPY_A",
+            "provider/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/flooring:COPY_A",
+            "provider/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/flooring:COPY_A",
+            "provider/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/flooring:COPY_A",
+            "provider/flooring:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/flooring:COPY_B",
+            "provider/flooring:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/flooring:COPY_B",
+            "provider/flooring:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/flooring:COPY_B",
+            "provider/flooring:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/flooring:COPY_B",
+            "provider/flooring:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/flooring:COPY_B",
+            "provider/flooring:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/flooring:COPY_B",
+            "provider/flooring:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/windows-doors",
+      "package": "pages/windows-doors",
+      "roles": [
+        {
+          "id": "customer/windows-doors:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/windows-doors:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/windows-doors:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/windows-doors:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_A",
+            "customer/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_A",
+            "customer/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_A",
+            "customer/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_A",
+            "customer/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_A",
+            "customer/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_A",
+            "customer/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_B",
+            "customer/windows-doors:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_B",
+            "customer/windows-doors:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_B",
+            "customer/windows-doors:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_B",
+            "customer/windows-doors:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_B",
+            "customer/windows-doors:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/windows-doors:COPY_B",
+            "customer/windows-doors:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/windows-doors",
+      "package": "pages/windows-doors",
+      "roles": [
+        {
+          "id": "provider/windows-doors:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/windows-doors:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/windows-doors:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/windows-doors:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_A",
+            "provider/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_A",
+            "provider/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_A",
+            "provider/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_A",
+            "provider/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_A",
+            "provider/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_A",
+            "provider/windows-doors:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_B",
+            "provider/windows-doors:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_B",
+            "provider/windows-doors:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_B",
+            "provider/windows-doors:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_B",
+            "provider/windows-doors:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_B",
+            "provider/windows-doors:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/windows-doors:COPY_B",
+            "provider/windows-doors:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/pool-service",
+      "package": "pages/pool-service",
+      "roles": [
+        {
+          "id": "customer/pool-service:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/pool-service:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/pool-service:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/pool-service:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/pool-service:COPY_A",
+            "customer/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/pool-service:COPY_A",
+            "customer/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/pool-service:COPY_A",
+            "customer/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/pool-service:COPY_A",
+            "customer/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/pool-service:COPY_A",
+            "customer/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/pool-service:COPY_A",
+            "customer/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/pool-service:COPY_B",
+            "customer/pool-service:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/pool-service:COPY_B",
+            "customer/pool-service:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/pool-service:COPY_B",
+            "customer/pool-service:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/pool-service:COPY_B",
+            "customer/pool-service:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/pool-service:COPY_B",
+            "customer/pool-service:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/pool-service:COPY_B",
+            "customer/pool-service:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/pool-service",
+      "package": "pages/pool-service",
+      "roles": [
+        {
+          "id": "provider/pool-service:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/pool-service:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/pool-service:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/pool-service:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/pool-service:COPY_A",
+            "provider/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/pool-service:COPY_A",
+            "provider/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/pool-service:COPY_A",
+            "provider/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/pool-service:COPY_A",
+            "provider/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/pool-service:COPY_A",
+            "provider/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/pool-service:COPY_A",
+            "provider/pool-service:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/pool-service:COPY_B",
+            "provider/pool-service:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/pool-service:COPY_B",
+            "provider/pool-service:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/pool-service:COPY_B",
+            "provider/pool-service:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/pool-service:COPY_B",
+            "provider/pool-service:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/pool-service:COPY_B",
+            "provider/pool-service:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/pool-service:COPY_B",
+            "provider/pool-service:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/solar",
+      "package": "pages/solar",
+      "roles": [
+        {
+          "id": "customer/solar:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/solar:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/solar:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/solar:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": ["customer/solar:COPY_A", "customer/solar:CODE_A"]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": ["customer/solar:COPY_A", "customer/solar:CODE_A"]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": ["customer/solar:COPY_A", "customer/solar:CODE_A"]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": ["customer/solar:COPY_A", "customer/solar:CODE_A"]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": ["customer/solar:COPY_A", "customer/solar:CODE_A"]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": ["customer/solar:COPY_A", "customer/solar:CODE_A"]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": ["customer/solar:COPY_B", "customer/solar:CODE_B"]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": ["customer/solar:COPY_B", "customer/solar:CODE_B"]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": ["customer/solar:COPY_B", "customer/solar:CODE_B"]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": ["customer/solar:COPY_B", "customer/solar:CODE_B"]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": ["customer/solar:COPY_B", "customer/solar:CODE_B"]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": ["customer/solar:COPY_B", "customer/solar:CODE_B"]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/solar",
+      "package": "pages/solar",
+      "roles": [
+        {
+          "id": "provider/solar:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/solar:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/solar:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/solar:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": ["provider/solar:COPY_A", "provider/solar:CODE_A"]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": ["provider/solar:COPY_A", "provider/solar:CODE_A"]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": ["provider/solar:COPY_A", "provider/solar:CODE_A"]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": ["provider/solar:COPY_A", "provider/solar:CODE_A"]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": ["provider/solar:COPY_A", "provider/solar:CODE_A"]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": ["provider/solar:COPY_A", "provider/solar:CODE_A"]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": ["provider/solar:COPY_B", "provider/solar:CODE_B"]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": ["provider/solar:COPY_B", "provider/solar:CODE_B"]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": ["provider/solar:COPY_B", "provider/solar:CODE_B"]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": ["provider/solar:COPY_B", "provider/solar:CODE_B"]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": ["provider/solar:COPY_B", "provider/solar:CODE_B"]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": ["provider/solar:COPY_B", "provider/solar:CODE_B"]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/backup-power",
+      "package": "pages/backup-power",
+      "roles": [
+        {
+          "id": "customer/backup-power:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/backup-power:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/backup-power:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/backup-power:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/backup-power:COPY_A",
+            "customer/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/backup-power:COPY_A",
+            "customer/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/backup-power:COPY_A",
+            "customer/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/backup-power:COPY_A",
+            "customer/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/backup-power:COPY_A",
+            "customer/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/backup-power:COPY_A",
+            "customer/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/backup-power:COPY_B",
+            "customer/backup-power:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/backup-power:COPY_B",
+            "customer/backup-power:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/backup-power:COPY_B",
+            "customer/backup-power:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/backup-power:COPY_B",
+            "customer/backup-power:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/backup-power:COPY_B",
+            "customer/backup-power:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/backup-power:COPY_B",
+            "customer/backup-power:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/backup-power",
+      "package": "pages/backup-power",
+      "roles": [
+        {
+          "id": "provider/backup-power:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/backup-power:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/backup-power:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/backup-power:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/backup-power:COPY_A",
+            "provider/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/backup-power:COPY_A",
+            "provider/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/backup-power:COPY_A",
+            "provider/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/backup-power:COPY_A",
+            "provider/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/backup-power:COPY_A",
+            "provider/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/backup-power:COPY_A",
+            "provider/backup-power:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/backup-power:COPY_B",
+            "provider/backup-power:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/backup-power:COPY_B",
+            "provider/backup-power:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/backup-power:COPY_B",
+            "provider/backup-power:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/backup-power:COPY_B",
+            "provider/backup-power:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/backup-power:COPY_B",
+            "provider/backup-power:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/backup-power:COPY_B",
+            "provider/backup-power:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/water-systems",
+      "package": "pages/water-systems",
+      "roles": [
+        {
+          "id": "customer/water-systems:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/water-systems:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/water-systems:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/water-systems:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/water-systems:COPY_A",
+            "customer/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/water-systems:COPY_A",
+            "customer/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/water-systems:COPY_A",
+            "customer/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/water-systems:COPY_A",
+            "customer/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/water-systems:COPY_A",
+            "customer/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/water-systems:COPY_A",
+            "customer/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/water-systems:COPY_B",
+            "customer/water-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/water-systems:COPY_B",
+            "customer/water-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/water-systems:COPY_B",
+            "customer/water-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/water-systems:COPY_B",
+            "customer/water-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/water-systems:COPY_B",
+            "customer/water-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/water-systems:COPY_B",
+            "customer/water-systems:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/water-systems",
+      "package": "pages/water-systems",
+      "roles": [
+        {
+          "id": "provider/water-systems:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/water-systems:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/water-systems:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/water-systems:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/water-systems:COPY_A",
+            "provider/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/water-systems:COPY_A",
+            "provider/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/water-systems:COPY_A",
+            "provider/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/water-systems:COPY_A",
+            "provider/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/water-systems:COPY_A",
+            "provider/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/water-systems:COPY_A",
+            "provider/water-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/water-systems:COPY_B",
+            "provider/water-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/water-systems:COPY_B",
+            "provider/water-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/water-systems:COPY_B",
+            "provider/water-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/water-systems:COPY_B",
+            "provider/water-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/water-systems:COPY_B",
+            "provider/water-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/water-systems:COPY_B",
+            "provider/water-systems:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/appliance-repair",
+      "package": "pages/appliance-repair",
+      "roles": [
+        {
+          "id": "customer/appliance-repair:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/appliance-repair:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/appliance-repair:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/appliance-repair:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_A",
+            "customer/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_A",
+            "customer/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_A",
+            "customer/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_A",
+            "customer/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_A",
+            "customer/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_A",
+            "customer/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_B",
+            "customer/appliance-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_B",
+            "customer/appliance-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_B",
+            "customer/appliance-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_B",
+            "customer/appliance-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_B",
+            "customer/appliance-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/appliance-repair:COPY_B",
+            "customer/appliance-repair:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/appliance-repair",
+      "package": "pages/appliance-repair",
+      "roles": [
+        {
+          "id": "provider/appliance-repair:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/appliance-repair:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/appliance-repair:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/appliance-repair:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_A",
+            "provider/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_A",
+            "provider/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_A",
+            "provider/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_A",
+            "provider/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_A",
+            "provider/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_A",
+            "provider/appliance-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_B",
+            "provider/appliance-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_B",
+            "provider/appliance-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_B",
+            "provider/appliance-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_B",
+            "provider/appliance-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_B",
+            "provider/appliance-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/appliance-repair:COPY_B",
+            "provider/appliance-repair:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/locksmith",
+      "package": "pages/locksmith",
+      "roles": [
+        {
+          "id": "customer/locksmith:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/locksmith:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/locksmith:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/locksmith:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/locksmith:COPY_A",
+            "customer/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/locksmith:COPY_A",
+            "customer/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/locksmith:COPY_A",
+            "customer/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/locksmith:COPY_A",
+            "customer/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/locksmith:COPY_A",
+            "customer/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/locksmith:COPY_A",
+            "customer/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/locksmith:COPY_B",
+            "customer/locksmith:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/locksmith:COPY_B",
+            "customer/locksmith:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/locksmith:COPY_B",
+            "customer/locksmith:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/locksmith:COPY_B",
+            "customer/locksmith:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/locksmith:COPY_B",
+            "customer/locksmith:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/locksmith:COPY_B",
+            "customer/locksmith:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/locksmith",
+      "package": "pages/locksmith",
+      "roles": [
+        {
+          "id": "provider/locksmith:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/locksmith:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/locksmith:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/locksmith:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/locksmith:COPY_A",
+            "provider/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/locksmith:COPY_A",
+            "provider/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/locksmith:COPY_A",
+            "provider/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/locksmith:COPY_A",
+            "provider/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/locksmith:COPY_A",
+            "provider/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/locksmith:COPY_A",
+            "provider/locksmith:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/locksmith:COPY_B",
+            "provider/locksmith:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/locksmith:COPY_B",
+            "provider/locksmith:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/locksmith:COPY_B",
+            "provider/locksmith:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/locksmith:COPY_B",
+            "provider/locksmith:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/locksmith:COPY_B",
+            "provider/locksmith:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/locksmith:COPY_B",
+            "provider/locksmith:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/security-systems",
+      "package": "pages/security-systems",
+      "roles": [
+        {
+          "id": "customer/security-systems:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/security-systems:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/security-systems:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/security-systems:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/security-systems:COPY_A",
+            "customer/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/security-systems:COPY_A",
+            "customer/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/security-systems:COPY_A",
+            "customer/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/security-systems:COPY_A",
+            "customer/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/security-systems:COPY_A",
+            "customer/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/security-systems:COPY_A",
+            "customer/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/security-systems:COPY_B",
+            "customer/security-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/security-systems:COPY_B",
+            "customer/security-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/security-systems:COPY_B",
+            "customer/security-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/security-systems:COPY_B",
+            "customer/security-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/security-systems:COPY_B",
+            "customer/security-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/security-systems:COPY_B",
+            "customer/security-systems:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/security-systems",
+      "package": "pages/security-systems",
+      "roles": [
+        {
+          "id": "provider/security-systems:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/security-systems:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/security-systems:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/security-systems:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/security-systems:COPY_A",
+            "provider/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/security-systems:COPY_A",
+            "provider/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/security-systems:COPY_A",
+            "provider/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/security-systems:COPY_A",
+            "provider/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/security-systems:COPY_A",
+            "provider/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/security-systems:COPY_A",
+            "provider/security-systems:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/security-systems:COPY_B",
+            "provider/security-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/security-systems:COPY_B",
+            "provider/security-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/security-systems:COPY_B",
+            "provider/security-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/security-systems:COPY_B",
+            "provider/security-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/security-systems:COPY_B",
+            "provider/security-systems:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/security-systems:COPY_B",
+            "provider/security-systems:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/moving",
+      "package": "pages/moving",
+      "roles": [
+        {
+          "id": "customer/moving:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/moving:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/moving:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/moving:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": ["customer/moving:COPY_A", "customer/moving:CODE_A"]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": ["customer/moving:COPY_A", "customer/moving:CODE_A"]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": ["customer/moving:COPY_A", "customer/moving:CODE_A"]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": ["customer/moving:COPY_A", "customer/moving:CODE_A"]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": ["customer/moving:COPY_A", "customer/moving:CODE_A"]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": ["customer/moving:COPY_A", "customer/moving:CODE_A"]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": ["customer/moving:COPY_B", "customer/moving:CODE_B"]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": ["customer/moving:COPY_B", "customer/moving:CODE_B"]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": ["customer/moving:COPY_B", "customer/moving:CODE_B"]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": ["customer/moving:COPY_B", "customer/moving:CODE_B"]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": ["customer/moving:COPY_B", "customer/moving:CODE_B"]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": ["customer/moving:COPY_B", "customer/moving:CODE_B"]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/moving",
+      "package": "pages/moving",
+      "roles": [
+        {
+          "id": "provider/moving:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/moving:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/moving:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/moving:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": ["provider/moving:COPY_A", "provider/moving:CODE_A"]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": ["provider/moving:COPY_A", "provider/moving:CODE_A"]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": ["provider/moving:COPY_A", "provider/moving:CODE_A"]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": ["provider/moving:COPY_A", "provider/moving:CODE_A"]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": ["provider/moving:COPY_A", "provider/moving:CODE_A"]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": ["provider/moving:COPY_A", "provider/moving:CODE_A"]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": ["provider/moving:COPY_B", "provider/moving:CODE_B"]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": ["provider/moving:COPY_B", "provider/moving:CODE_B"]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": ["provider/moving:COPY_B", "provider/moving:CODE_B"]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": ["provider/moving:COPY_B", "provider/moving:CODE_B"]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": ["provider/moving:COPY_B", "provider/moving:CODE_B"]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": ["provider/moving:COPY_B", "provider/moving:CODE_B"]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/junk-removal",
+      "package": "pages/junk-removal",
+      "roles": [
+        {
+          "id": "customer/junk-removal:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/junk-removal:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/junk-removal:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/junk-removal:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_A",
+            "customer/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_A",
+            "customer/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_A",
+            "customer/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_A",
+            "customer/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_A",
+            "customer/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_A",
+            "customer/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_B",
+            "customer/junk-removal:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_B",
+            "customer/junk-removal:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_B",
+            "customer/junk-removal:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_B",
+            "customer/junk-removal:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_B",
+            "customer/junk-removal:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/junk-removal:COPY_B",
+            "customer/junk-removal:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/junk-removal",
+      "package": "pages/junk-removal",
+      "roles": [
+        {
+          "id": "provider/junk-removal:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/junk-removal:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/junk-removal:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/junk-removal:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_A",
+            "provider/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_A",
+            "provider/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_A",
+            "provider/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_A",
+            "provider/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_A",
+            "provider/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_A",
+            "provider/junk-removal:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_B",
+            "provider/junk-removal:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_B",
+            "provider/junk-removal:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_B",
+            "provider/junk-removal:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_B",
+            "provider/junk-removal:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_B",
+            "provider/junk-removal:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/junk-removal:COPY_B",
+            "provider/junk-removal:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/pressure-washing",
+      "package": "pages/pressure-washing",
+      "roles": [
+        {
+          "id": "customer/pressure-washing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/pressure-washing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/pressure-washing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/pressure-washing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_A",
+            "customer/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_A",
+            "customer/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_A",
+            "customer/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_A",
+            "customer/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_A",
+            "customer/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_A",
+            "customer/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_B",
+            "customer/pressure-washing:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_B",
+            "customer/pressure-washing:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_B",
+            "customer/pressure-washing:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_B",
+            "customer/pressure-washing:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_B",
+            "customer/pressure-washing:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/pressure-washing:COPY_B",
+            "customer/pressure-washing:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/pressure-washing",
+      "package": "pages/pressure-washing",
+      "roles": [
+        {
+          "id": "provider/pressure-washing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/pressure-washing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/pressure-washing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/pressure-washing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_A",
+            "provider/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_A",
+            "provider/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_A",
+            "provider/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_A",
+            "provider/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_A",
+            "provider/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_A",
+            "provider/pressure-washing:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_B",
+            "provider/pressure-washing:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_B",
+            "provider/pressure-washing:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_B",
+            "provider/pressure-washing:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_B",
+            "provider/pressure-washing:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_B",
+            "provider/pressure-washing:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/pressure-washing:COPY_B",
+            "provider/pressure-washing:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/auto-repair",
+      "package": "pages/auto-repair",
+      "roles": [
+        {
+          "id": "customer/auto-repair:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/auto-repair:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/auto-repair:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/auto-repair:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_A",
+            "customer/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_A",
+            "customer/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_A",
+            "customer/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_A",
+            "customer/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_A",
+            "customer/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_A",
+            "customer/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_B",
+            "customer/auto-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_B",
+            "customer/auto-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_B",
+            "customer/auto-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_B",
+            "customer/auto-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_B",
+            "customer/auto-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/auto-repair:COPY_B",
+            "customer/auto-repair:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/auto-repair",
+      "package": "pages/auto-repair",
+      "roles": [
+        {
+          "id": "provider/auto-repair:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/auto-repair:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/auto-repair:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/auto-repair:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_A",
+            "provider/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_A",
+            "provider/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_A",
+            "provider/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_A",
+            "provider/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_A",
+            "provider/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_A",
+            "provider/auto-repair:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_B",
+            "provider/auto-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_B",
+            "provider/auto-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_B",
+            "provider/auto-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_B",
+            "provider/auto-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_B",
+            "provider/auto-repair:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/auto-repair:COPY_B",
+            "provider/auto-repair:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/auto-detailing",
+      "package": "pages/auto-detailing",
+      "roles": [
+        {
+          "id": "customer/auto-detailing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/auto-detailing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/auto-detailing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/auto-detailing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_A",
+            "customer/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_A",
+            "customer/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_A",
+            "customer/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_A",
+            "customer/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_A",
+            "customer/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_A",
+            "customer/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_B",
+            "customer/auto-detailing:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_B",
+            "customer/auto-detailing:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_B",
+            "customer/auto-detailing:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_B",
+            "customer/auto-detailing:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_B",
+            "customer/auto-detailing:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/auto-detailing:COPY_B",
+            "customer/auto-detailing:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/auto-detailing",
+      "package": "pages/auto-detailing",
+      "roles": [
+        {
+          "id": "provider/auto-detailing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/auto-detailing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/auto-detailing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/auto-detailing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_A",
+            "provider/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_A",
+            "provider/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_A",
+            "provider/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_A",
+            "provider/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_A",
+            "provider/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_A",
+            "provider/auto-detailing:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_B",
+            "provider/auto-detailing:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_B",
+            "provider/auto-detailing:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_B",
+            "provider/auto-detailing:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_B",
+            "provider/auto-detailing:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_B",
+            "provider/auto-detailing:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/auto-detailing:COPY_B",
+            "provider/auto-detailing:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/towing",
+      "package": "pages/towing",
+      "roles": [
+        {
+          "id": "customer/towing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/towing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/towing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/towing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": ["customer/towing:COPY_A", "customer/towing:CODE_A"]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": ["customer/towing:COPY_A", "customer/towing:CODE_A"]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": ["customer/towing:COPY_A", "customer/towing:CODE_A"]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": ["customer/towing:COPY_A", "customer/towing:CODE_A"]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": ["customer/towing:COPY_A", "customer/towing:CODE_A"]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": ["customer/towing:COPY_A", "customer/towing:CODE_A"]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": ["customer/towing:COPY_B", "customer/towing:CODE_B"]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": ["customer/towing:COPY_B", "customer/towing:CODE_B"]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": ["customer/towing:COPY_B", "customer/towing:CODE_B"]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": ["customer/towing:COPY_B", "customer/towing:CODE_B"]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": ["customer/towing:COPY_B", "customer/towing:CODE_B"]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": ["customer/towing:COPY_B", "customer/towing:CODE_B"]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/towing",
+      "package": "pages/towing",
+      "roles": [
+        {
+          "id": "provider/towing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/towing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/towing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/towing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": ["provider/towing:COPY_A", "provider/towing:CODE_A"]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": ["provider/towing:COPY_A", "provider/towing:CODE_A"]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": ["provider/towing:COPY_A", "provider/towing:CODE_A"]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": ["provider/towing:COPY_A", "provider/towing:CODE_A"]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": ["provider/towing:COPY_A", "provider/towing:CODE_A"]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": ["provider/towing:COPY_A", "provider/towing:CODE_A"]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": ["provider/towing:COPY_B", "provider/towing:CODE_B"]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": ["provider/towing:COPY_B", "provider/towing:CODE_B"]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": ["provider/towing:COPY_B", "provider/towing:CODE_B"]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": ["provider/towing:COPY_B", "provider/towing:CODE_B"]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": ["provider/towing:COPY_B", "provider/towing:CODE_B"]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": ["provider/towing:COPY_B", "provider/towing:CODE_B"]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/catering",
+      "package": "pages/catering",
+      "roles": [
+        {
+          "id": "customer/catering:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/catering:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/catering:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/catering:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/catering:COPY_A",
+            "customer/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/catering:COPY_A",
+            "customer/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/catering:COPY_A",
+            "customer/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/catering:COPY_A",
+            "customer/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/catering:COPY_A",
+            "customer/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/catering:COPY_A",
+            "customer/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/catering:COPY_B",
+            "customer/catering:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/catering:COPY_B",
+            "customer/catering:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/catering:COPY_B",
+            "customer/catering:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/catering:COPY_B",
+            "customer/catering:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/catering:COPY_B",
+            "customer/catering:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/catering:COPY_B",
+            "customer/catering:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/catering",
+      "package": "pages/catering",
+      "roles": [
+        {
+          "id": "provider/catering:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/catering:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/catering:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/catering:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/catering:COPY_A",
+            "provider/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/catering:COPY_A",
+            "provider/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/catering:COPY_A",
+            "provider/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/catering:COPY_A",
+            "provider/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/catering:COPY_A",
+            "provider/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/catering:COPY_A",
+            "provider/catering:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/catering:COPY_B",
+            "provider/catering:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/catering:COPY_B",
+            "provider/catering:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/catering:COPY_B",
+            "provider/catering:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/catering:COPY_B",
+            "provider/catering:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/catering:COPY_B",
+            "provider/catering:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/catering:COPY_B",
+            "provider/catering:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/photography-video",
+      "package": "pages/photography-video",
+      "roles": [
+        {
+          "id": "customer/photography-video:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/photography-video:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/photography-video:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/photography-video:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/photography-video:COPY_A",
+            "customer/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/photography-video:COPY_A",
+            "customer/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/photography-video:COPY_A",
+            "customer/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/photography-video:COPY_A",
+            "customer/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/photography-video:COPY_A",
+            "customer/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/photography-video:COPY_A",
+            "customer/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/photography-video:COPY_B",
+            "customer/photography-video:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/photography-video:COPY_B",
+            "customer/photography-video:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/photography-video:COPY_B",
+            "customer/photography-video:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/photography-video:COPY_B",
+            "customer/photography-video:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/photography-video:COPY_B",
+            "customer/photography-video:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/photography-video:COPY_B",
+            "customer/photography-video:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/photography-video",
+      "package": "pages/photography-video",
+      "roles": [
+        {
+          "id": "provider/photography-video:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/photography-video:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/photography-video:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/photography-video:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/photography-video:COPY_A",
+            "provider/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/photography-video:COPY_A",
+            "provider/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/photography-video:COPY_A",
+            "provider/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/photography-video:COPY_A",
+            "provider/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/photography-video:COPY_A",
+            "provider/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/photography-video:COPY_A",
+            "provider/photography-video:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/photography-video:COPY_B",
+            "provider/photography-video:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/photography-video:COPY_B",
+            "provider/photography-video:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/photography-video:COPY_B",
+            "provider/photography-video:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/photography-video:COPY_B",
+            "provider/photography-video:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/photography-video:COPY_B",
+            "provider/photography-video:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/photography-video:COPY_B",
+            "provider/photography-video:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/tutoring",
+      "package": "pages/tutoring",
+      "roles": [
+        {
+          "id": "customer/tutoring:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/tutoring:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/tutoring:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/tutoring:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/tutoring:COPY_A",
+            "customer/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/tutoring:COPY_A",
+            "customer/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/tutoring:COPY_A",
+            "customer/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/tutoring:COPY_A",
+            "customer/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/tutoring:COPY_A",
+            "customer/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/tutoring:COPY_A",
+            "customer/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/tutoring:COPY_B",
+            "customer/tutoring:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/tutoring:COPY_B",
+            "customer/tutoring:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/tutoring:COPY_B",
+            "customer/tutoring:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/tutoring:COPY_B",
+            "customer/tutoring:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/tutoring:COPY_B",
+            "customer/tutoring:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/tutoring:COPY_B",
+            "customer/tutoring:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/tutoring",
+      "package": "pages/tutoring",
+      "roles": [
+        {
+          "id": "provider/tutoring:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/tutoring:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/tutoring:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/tutoring:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/tutoring:COPY_A",
+            "provider/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/tutoring:COPY_A",
+            "provider/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/tutoring:COPY_A",
+            "provider/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/tutoring:COPY_A",
+            "provider/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/tutoring:COPY_A",
+            "provider/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/tutoring:COPY_A",
+            "provider/tutoring:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/tutoring:COPY_B",
+            "provider/tutoring:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/tutoring:COPY_B",
+            "provider/tutoring:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/tutoring:COPY_B",
+            "provider/tutoring:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/tutoring:COPY_B",
+            "provider/tutoring:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/tutoring:COPY_B",
+            "provider/tutoring:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/tutoring:COPY_B",
+            "provider/tutoring:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "customer/digital-marketing",
+      "package": "pages/digital-marketing",
+      "roles": [
+        {
+          "id": "customer/digital-marketing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/digital-marketing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "customer/digital-marketing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "customer/digital-marketing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "C01",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_A",
+            "customer/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "C02",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_A",
+            "customer/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "C03",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_A",
+            "customer/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "C04",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_A",
+            "customer/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "C05",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_A",
+            "customer/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "C06",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_A",
+            "customer/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "C07",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_B",
+            "customer/digital-marketing:CODE_B"
+          ]
+        },
+        {
+          "id": "C08",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_B",
+            "customer/digital-marketing:CODE_B"
+          ]
+        },
+        {
+          "id": "C09",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_B",
+            "customer/digital-marketing:CODE_B"
+          ]
+        },
+        {
+          "id": "C10",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_B",
+            "customer/digital-marketing:CODE_B"
+          ]
+        },
+        {
+          "id": "C11",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_B",
+            "customer/digital-marketing:CODE_B"
+          ]
+        },
+        {
+          "id": "C12",
+          "assignedRoles": [
+            "customer/digital-marketing:COPY_B",
+            "customer/digital-marketing:CODE_B"
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "provider/digital-marketing",
+      "package": "pages/digital-marketing",
+      "roles": [
+        {
+          "id": "provider/digital-marketing:COPY_A",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/digital-marketing:CODE_A",
+          "discipline": "code"
+        },
+        {
+          "id": "provider/digital-marketing:COPY_B",
+          "discipline": "copy"
+        },
+        {
+          "id": "provider/digital-marketing:CODE_B",
+          "discipline": "code"
+        }
+      ],
+      "sections": [
+        {
+          "id": "P01",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_A",
+            "provider/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "P02",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_A",
+            "provider/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "P03",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_A",
+            "provider/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "P04",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_A",
+            "provider/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "P05",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_A",
+            "provider/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "P06",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_A",
+            "provider/digital-marketing:CODE_A"
+          ]
+        },
+        {
+          "id": "P07",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_B",
+            "provider/digital-marketing:CODE_B"
+          ]
+        },
+        {
+          "id": "P08",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_B",
+            "provider/digital-marketing:CODE_B"
+          ]
+        },
+        {
+          "id": "P09",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_B",
+            "provider/digital-marketing:CODE_B"
+          ]
+        },
+        {
+          "id": "P10",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_B",
+            "provider/digital-marketing:CODE_B"
+          ]
+        },
+        {
+          "id": "P11",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_B",
+            "provider/digital-marketing:CODE_B"
+          ]
+        },
+        {
+          "id": "P12",
+          "assignedRoles": [
+            "provider/digital-marketing:COPY_B",
+            "provider/digital-marketing:CODE_B"
+          ]
+        }
+      ]
+    }
+  ],
+  "globalReviewers": [
+    {
+      "id": "R1_ARCHITECTURE_PRIVACY",
+      "scope": "Architecture, CRM ownership, backend boundaries, consent separation, tenant isolation, data minimization and configuration safety.",
+      "output": "Findings with blocker/should-fix/note severity, evidence and exact reviewed revision."
+    },
+    {
+      "id": "R2_CONTENT_LOCALIZATION",
+      "scope": "Blueprint completeness, customer/provider distinction, ES/EN/FR adaptation, claims, proof, pricing factors, CTA consistency and owner-input handling.",
+      "output": "Per-page, per-audience, per-locale content verdict; pilot pages reviewed first."
+    },
+    {
+      "id": "R3_UX_RELEASE",
+      "scope": "Section order, usable forms, accessibility evidence, mobile layout, honest request/application states and release readiness.",
+      "output": "UX findings and release recommendation based on test evidence; no protected-branch merge authority."
+    }
+  ],
+  "globalTesters": [
+    {
+      "id": "T1_CONTRACT_CRM",
+      "scope": "Unit and contract validation, locale/manifest completeness, form and consent rules, preview non-submission, CRM envelope, idempotency and failure behavior using fake transports.",
+      "output": "Test code, commands, results and explicit untested integration boundaries."
+    },
+    {
+      "id": "T2_BROWSER_ACCESSIBILITY",
+      "scope": "All 183 target localized routes and metadata; complete forms, locale switching, keyboard and screen-reader checks, no-JS policy readability, responsive overflow and accessibility checks for homepage plus pilots in every audience/locale.",
+      "output": "Browser/accessibility evidence by route, locale and viewport; missing pages fail coverage."
+    },
+    {
+      "id": "T3_CONTENT_BUILD_PERFORMANCE",
+      "scope": "Content and marketing validation where implemented, all 31 target package builds, format/type/registry checks, bundle budgets, CI matrix and container smoke where tooling is available.",
+      "output": "Quality/build/performance report with exact commands and counts; unavailable checks are not passed."
+    }
+  ],
+  "counts": {
+    "pageTeams": 61,
+    "pageRoleAssignments": 244,
+    "sections": 730,
+    "reviewRoles": 3,
+    "testRoles": 3,
+    "totalRoles": 250
+  },
+  "delivery": "Preview built; see VERIFICATION and checkpoint evidence for actual checks. Publication requires codestra-local SHA parity."
+}

@@ -3,7 +3,8 @@ on: [push, pull_request]
 permissions:
   contents: read
 jobs:
-  landing-checks:
+  core:
+    name: core, ui, backend
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,8 +15,72 @@ jobs:
       - run: npm ci
       - run: npm run format:check
       - run: npm run typecheck
+      - run: npm run registry:check
+      - run: npm run content:check
+      - run: npm run assets:check
+      - run: npm run marketing:validate
       - run: npm test
-      - run: npm run build
+      - run: npm run test:deploy
       - run: npm audit --audit-level=high
+  pages:
+    name: page ${{ matrix.page }}
+    needs: [core, list]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        page: ${{ fromJSON(needs.list.outputs.pages) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build --workspace=pages/${{ matrix.page }}
+      - run: npm run assets:check-built -- ${{ matrix.page }}
+      - run: npm run budget:check -- ${{ matrix.page }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: page-${{ matrix.page }}
+          path: pages/${{ matrix.page }}/dist
+  list:
+    name: list pages
+    runs-on: ubuntu-latest
+    outputs:
+      pages: ${{ steps.list.outputs.pages }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: list
+        run: echo "pages=$(ls -d pages/*/ | xargs -n1 basename | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
+  browser:
+    name: browser and accessibility
+    needs: core
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run test:browser
+  landing-checks:
+    name: landing-checks
+    if: ${{ always() }}
+    needs: [core, list, pages, browser]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require every landing check
+        env:
+          CORE: ${{ needs.core.result }}
+          LIST: ${{ needs.list.result }}
+          PAGES: ${{ needs.pages.result }}
+          BROWSER: ${{ needs.browser.result }}
+        run: |
+          test "$CORE" = success
+          test "$LIST" = success
+          test "$PAGES" = success
+          test "$BROWSER" = success

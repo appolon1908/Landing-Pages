@@ -1,0 +1,30 @@
+# Build one landing page from the repository root:
+#   docker build -f Dockerfile.page --build-arg PAGE=hvac -t lp-hvac .
+# The image contains only that page's build plus the shared runtime. It needs
+# BACKEND_URL at run time and nothing else.
+FROM node:22-bookworm-slim AS build
+WORKDIR /app
+COPY package.json package-lock.json tsconfig.base.json tsconfig.json ./
+COPY packages ./packages
+COPY backend/package.json ./backend/package.json
+COPY pages ./pages
+COPY config/markets ./config/markets
+RUN npm ci
+ARG PAGE
+RUN test -n "$PAGE" && npm run build --workspace=pages/$PAGE
+
+FROM node:22-bookworm-slim
+ARG PAGE
+WORKDIR /app
+ENV NODE_ENV=production HOST=0.0.0.0 PORT=4173 BACKEND_URL=http://backend:4000
+COPY --from=build --chown=node:node /app/package.json /app/package-lock.json ./
+COPY --from=build --chown=node:node /app/packages/core ./packages/core
+COPY --from=build --chown=node:node /app/packages/page-kit ./packages/page-kit
+COPY --from=build --chown=node:node /app/config/markets ./config/markets
+COPY --from=build --chown=node:node /app/pages/$PAGE/package.json /app/pages/$PAGE/page.config.ts /app/pages/$PAGE/serve.mjs ./page/
+COPY --from=build --chown=node:node /app/pages/$PAGE/dist ./page/dist
+RUN ln -s /app/packages/core /app/node_modules_core 2>/dev/null; mkdir -p node_modules/@lp && ln -s /app/packages/core node_modules/@lp/core && ln -s /app/packages/page-kit node_modules/@lp/page-kit
+USER node
+EXPOSE 4173
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s CMD node -e "fetch('http://127.0.0.1:4173/healthz').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
+CMD ["node", "page/serve.mjs"]

@@ -8,10 +8,12 @@ from pathlib import Path
 def allowed(base: str, head: str, policy: dict) -> bool:
     subsection = policy["subsection"]
     section = policy["section"]
+    atomic_subsections = policy.get("atomicSubsections", {})
     if head.startswith("atomic/") and len(head) > len("atomic/"):
-        return base == subsection
+        return base == atomic_subsections.get(head, subsection)
     return (head, base) in {
         (subsection, section),
+        *((target, section) for target in atomic_subsections.values()),
         (section, "development"),
         ("development", "testing"),
         ("testing", "staging"),

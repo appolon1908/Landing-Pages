@@ -1,113 +1,111 @@
 # Landing-Pages
 
-Independent Vue 3 / TypeScript frontend for company-scoped campaign and signup pages.
-Five initial offerings have client/provider layouts in English and Spanish (20 routes).
-The foundation is a runnable **preview**, with external effects disabled.
+Preview of a two-sided service marketplace: one corporate homepage, thirty customer
+pages and thirty provider pages, each in Spanish, English and French. The 61 pages
+produce 183 localized public routes, plus policy routes. Thirty-one independent
+page packages share Vue layouts, validated content, a page server and one intake backend.
 
-## Start from a clean clone
+All bundled sites are **preview-only with submissions disabled**. CRM is the intended
+business authority; its vendor and live integration are unconfirmed. Requests do not
+confirm appointments, applications do not activate providers, and marketing files are drafts.
 
-Use Node 22.18 or newer in the 22 release line and Python 3 for the governance check.
+## Local preview
+
+Use Node 22.18+ within the 22.x line and Python 3 for governance checks.
 
 ```sh
 npm ci
-npm run typecheck
-npm test
 npm run build
-npm start
 ```
 
-Open http://127.0.0.1:4173/en/landing/hvac-heating. The hostname `localhost` resolves
-to a separate synthetic brand on the same local listener. These are public test
-fixtures, not customer workspaces or tenant-authentication proof.
+Start a small preview with the homepage and two services:
 
-Alternatively run `docker compose up --build` and open the same URL. The image runs
-as a non-root user on a read-only filesystem. Only a loopback host port is published.
-`/healthz` reports application availability and disabled effects.
-
-Routes: `/{en|es}/{landing|business}/{offering}` and matching `/thank-you` routes.
-Supported offerings: hvac-heating, chimney-fireplace, insulation-weatherproofing,
-gutter-cleaning-repair, plumbing-winterization. Language changes preserve form input.
-A direct thank-you URL does not claim a request or appointment was accepted.
-
-## Ownership and integration
-
-- Landing-Pages: validated public site context, localized layouts, accessible forms,
-  same-origin client contracts and independent preview hosting.
-- Breero: authoritative company/site/domain bindings, business records, consent,
-  public submission receipts, publication, bookings, fees and billing.
-- Codestra-Grapes / Codestra-React-Flow: independent authoring applications.
-- Codestra-Marketing-Backend: tenant-scoped draft project persistence and authorization.
-- Existing Caddy/Kong, Keycloak, Middleware and adapters retain their boundaries.
-
-The public registry contains only approved public preview documents. Its host mapping
-is operator configuration; it does not prove domain ownership. The hosting server
-ignores forwarded-host/client workspace selectors and rejects unknown hosts.
-Private data must never be put into this registry or the static build.
-
-The current Breero request schema has no verified company/site authorization binding.
-The typed client preserves its existing required fields, receipt shape and retry keys;
-hosting returns 503 for submission routes. The UI validates preview forms and says
-that nothing was sent. A browser toggle cannot enable delivery. See
-[contracts and owner handoff](docs/CONTRACTS.md) before any activation.
-
-No payment, membership enrollment, publishing, analytics export, customer message,
-CRM write or appointment is activated. The preview uses no third-party tags and does
-not persist form details to local storage. Page metadata is localized; preview hosts
-are noindex and have an empty sitemap. Published artifact/SEO activation remains a
-separate Breero-owned release boundary.
-
-## Shared website requirements
-
-Every landing layout uses the same business footer, About and Contact pages, direct
-Privacy Policy and Terms URLs, and optional separate service/marketing SMS choices.
-English and Spanish policies are also readable without JavaScript. A v2 public
-business profile supplies identity, reviewed wording, versions and applicability;
-applicable conditional policies appear from that profile.
-
-Complete and review the profile once per business, then use the readiness report:
-
-```sh
-npm run compliance:check
-npm run compliance:check -- --strict
+```powershell
+$env:PAGES = 'home,hvac,plumbing'
+node scripts/dev-stack.mjs
 ```
 
-The bundled profiles are explicit drafts, so strict mode intentionally fails until
-real business facts, applicability and reviewed policies are supplied. This is a
-structural website check; it does not authorize publication or certify HighLevel
-registration. See [shared website requirements and business handoff](docs/HIGHLEVEL_REQUIREMENTS.md).
+On a POSIX shell: `PAGES=home,hvac,plumbing node scripts/dev-stack.mjs`.
+Open `http://127.0.0.1:4173/es/`; HVAC is on port 4174 and plumbing on 4175.
+Use `/es/landing/hvac` for customers and `/es/business/hvac` for providers on the
+HVAC server. Replace `es` with `en` or `fr` to change language.
 
-The form creates a versioned preview intent that preserves the wording and separate
-choices. The legacy submission adapter rejects that richer envelope pending a
-server-owned consent contract; no browser choice grants tenant or sending authority.
+Omit `PAGES` to start all 31 packages in alphabetical order. `BACKEND_PORT` and
+`FIRST_PAGE_PORT` override the default backend 4000 and first page 4173. The startup
+log identifies every port. The script creates a temporary registry for cross-page
+navigation; it does not modify checked-in files. Include at least one service with
+`home`; a standalone home server can use an existing catalog backend via
+`BACKEND_URL` and `npm start --workspace=pages/home`.
 
-## Verify
+## Repository map
+
+| Path                | Responsibility                                                                |
+| ------------------- | ----------------------------------------------------------------------------- |
+| `packages/core`     | Manifest, route, market, consent and submission contracts                     |
+| `packages/ui`       | Corporate homepage, distinct audience layouts, staged forms and policies      |
+| `packages/page-kit` | Per-package server, metadata, no-JavaScript policies and intake proxy         |
+| `backend`           | Host registry, validation, rate limits and disabled CRM transport boundary    |
+| `pages/<slug>`      | Independent service manifest/build/server; `home` is the corporate package    |
+| `config/registry`   | Preview sites, catalog origins, compliance drafts and disabled destinations   |
+| `config/markets`    | Proposed Dominican market, zones, phone rules and unconfirmed operating facts |
+| `marketing`         | Draft ad kits, review exports, WhatsApp wording and organic plans             |
+| `docs/missions`     | Source requirements, writer/coder assignments and review evidence             |
+
+See [architecture](docs/ARCHITECTURE.md), [page inventory](docs/PAGES.md),
+[CRM contract](backend/CRM_CONTRACT.md) and [team assignments](docs/missions/TEAM.md).
+
+## Verification
 
 ```sh
 npm run format:check
 npm run typecheck
+npm run registry:check
 npm test
-python3 scripts/test_branch.py
+npm run content:check
+npm run marketing:validate
 npm run build
-npx playwright install chromium
+npm run budget:check
 npm run test:browser
 npm audit --audit-level=high
-python3 scripts/container_smoke.py
+python scripts/test_branch.py
+git diff --check
 ```
 
-On dev-desktop use `CHROME_BIN=/usr/bin/google-chrome` for browser checks and
-`DOCKER='sudo -n docker'` for image checks. Browser tests exercise the real local
-server, twenty localized routes, three viewport widths and accessibility. They do
-not certify live Breero, Keycloak or the shared gateway.
+Install Chromium for Playwright before the browser run, or set `CHROME_BIN` to an
+installed Chromium executable. Browser tests cover every localized route,
+pilot forms, no-JavaScript policies, focus behavior and accessibility at three widths.
+Checkpoint evidence identifies actual counts and the checked revision.
 
-## Review and release
+`npm run compliance:check` reports draft business facts. Strict readiness is expected
+to fail until the owner supplies real identity, support, hours, legal terms and coverage.
+It is separate from structural preview validation.
 
-Atomic implementation branches target `subsection/public--foundation`, followed by
-the configured section and environment promotion path. The shared website feature
-uses `atomic/landing-highlevel-requirements-20261029`.
-Follow branch-policy.json and require independent review and actual current-head
-checks. Source CODEOWNERS/CI do not alone prove GitHub settings are enforced.
-See [runbook](docs/RUNBOOK.md), [verification](docs/VERIFICATION.md) and the
-[approved architecture](https://linear.app/passion-fruit/document/landing-pages-multi-industry-and-multi-brand-architecture-editor-a5d8ef195442).
+## Containers
 
+```sh
+docker build -f backend/Dockerfile .
+docker build -f Dockerfile.page --build-arg PAGE=home .
+docker build -f Dockerfile.page --build-arg PAGE=hvac .
+python scripts/container_stack_smoke.py
+```
 
-Standalone startup and rollback: [runbook](docs/RUNBOOK.md). Branch enforcement: [governance](docs/GOVERNANCE.md). [Repository responsibilities and release gates](docs/READINESS.md). See [verification](docs/VERIFICATION.md) for observed checks and remaining integration gates.
+The smoke script builds and runs disposable backend, home and HVAC images on a private
+Docker network, with non-root users, read-only filesystems and ephemeral loopback ports.
+It checks preview rejection, host boundaries, localized routes and assets, then removes
+only resources it created. It does not deploy or activate destinations.
+
+## Operational boundary and delivery
+
+The CRM must implement persistent site/key/payload deduplication and return a canonical
+record ID before the browser can display acceptance. Fake-CRM tests validate the adapter
+contract; they do not verify a live CRM, durable recovery or provider workflow.
+See [CRM contract](backend/CRM_CONTRACT.md) before configuring any endpoint.
+
+No real contact, booking, messaging, billing, provider access or advertising activation
+is supplied by this preview. Content marks missing business facts and fictional examples.
+Owner review and operational evidence are needed before launch.
+
+Work uses isolated atomic branches. Run required checks, obtain review, commit cleanly,
+and publish through the guarded `codestra-local` publisher with exact local/remote SHA
+parity. GitHub is a secondary mirror and review surface. A local bundle preserves work
+but does not satisfy publication. Never bypass protected branch rules.

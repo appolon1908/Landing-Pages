@@ -1,9 +1,37 @@
+# Local stack: one backend + any pages you list. Add a service per page.
 services:
-  landing-pages:
-    build: .
-    ports: ["127.0.0.1:${LANDING_PORT:-4173}:4173"]
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      HOST: 0.0.0.0
+    ports: ["127.0.0.1:4000:4000"]
     read_only: true
     cap_drop: [ALL]
     security_opt: [no-new-privileges:true]
     init: true
-    restart: unless-stopped
+  hvac:
+    build:
+      context: .
+      dockerfile: Dockerfile.page
+      args: { PAGE: hvac }
+    environment: { BACKEND_URL: http://backend:4000 }
+    depends_on: [backend]
+    ports: ["127.0.0.1:4173:4173"]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+  plumbing:
+    build:
+      context: .
+      dockerfile: Dockerfile.page
+      args: { PAGE: plumbing }
+    environment: { BACKEND_URL: http://backend:4000 }
+    depends_on: [backend]
+    ports: ["127.0.0.1:4174:4173"]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true

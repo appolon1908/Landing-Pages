@@ -1,14 +1,13 @@
-import { readFile } from "node:fs/promises";
-import { parseSiteContext } from "../packages/contracts/site.ts";
-import { assessWebsite } from "../packages/contracts/compliance.ts";
-import { documentLinks } from "../packages/compliance/pages.ts";
+import { assessWebsite, documentLinks } from "@lp/core";
+import { fileURLToPath } from "node:url";
+import { buildRegistry, loadRegistryDir } from "../backend/src/registry.mjs";
 
 const args = process.argv.slice(2);
 const strict = args.includes("--strict");
 const json = args.includes("--json");
 const registryIndex = args.indexOf("--registry");
 const registryPath =
-  registryIndex >= 0 ? args[registryIndex + 1] : process.env.SITE_REGISTRY_FILE;
+  registryIndex >= 0 ? args[registryIndex + 1] : process.env.REGISTRY_DIR;
 for (let i = 0; i < args.length; i++) {
   if (args[i] === "--registry") {
     if (!args[++i]) throw Error("--registry needs a path.");
@@ -16,16 +15,13 @@ for (let i = 0; i < args.length; i++) {
     throw Error(`Unknown option: ${args[i]}`);
 }
 try {
-  const registry: unknown = JSON.parse(
-    await readFile(
-      registryPath || new URL("../config/sites.preview.json", import.meta.url),
-      "utf8",
+  const registry = buildRegistry(
+    await loadRegistryDir(
+      registryPath ||
+        fileURLToPath(new URL("../config/registry", import.meta.url)),
     ),
   );
-  if (!Array.isArray(registry) || !registry.length)
-    throw Error("An explicit site registry is required.");
-  const results = registry.map((entry) => {
-    const site = parseSiteContext(entry.site);
+  const results = registry.sites().map((site) => {
     return {
       siteId: site.siteId,
       ...assessWebsite(site),

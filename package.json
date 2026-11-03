@@ -1,21 +1,38 @@
 {
-  "name": "codestra-landing-pages",
-  "version": "0.1.0",
+  "name": "landing-pages",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "engines": {
     "node": ">=22.18 <23"
   },
+  "workspaces": [
+    "packages/*",
+    "backend",
+    "pages/*"
+  ],
   "scripts": {
-    "dev": "npm run build && npm start",
-    "start": "node --experimental-strip-types server/index.mjs",
-    "build": "vite build",
-    "typecheck": "vue-tsc --noEmit",
-    "test": "node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs",
+    "backend": "node backend/src/index.mjs",
+    "build": "npm run build --workspaces --if-present",
+    "build:page": "npm run build --workspace=pages/$PAGE",
+    "start:page": "npm start --workspace=pages/$PAGE",
+    "new-page": "node scripts/new-page.mjs",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
+    "test": "node --test tests/unit/*.test.ts tests/backend/*.test.mjs tests/pagekit/*.test.mjs tests/content/*.test.mjs",
     "test:browser": "playwright test",
-    "format:check": "prettier --check apps packages server tests scripts/*.ts config/*.json *.json *.ts",
-    "compliance:check": "node --experimental-strip-types scripts/check_compliance.ts",
-    "verify": "npm run format:check && npm run typecheck && npm test && npm run build && npm run test:browser"
+    "format": "prettier --write packages backend pages scripts tests deploy \"config/**/*.json\" marketing *.json",
+    "format:check": "prettier --check packages backend pages scripts tests deploy \"config/**/*.json\" marketing *.json",
+    "compliance:check": "node scripts/check_compliance.ts",
+    "registry:check": "node scripts/check_registry.mjs",
+    "verify": "npm run format:check && npm run typecheck && npm run registry:check && npm run content:check && npm run assets:check && npm run marketing:validate && npm test && npm run test:deploy && npm run build && npm run budget:check && npm run assets:check-built && npm run test:browser",
+    "test:content": "node --test tests/content/*.test.mjs",
+    "content:check": "node scripts/check_content.mjs",
+    "marketing:validate": "node marketing/_tooling/validate.mjs",
+    "marketing:export": "node marketing/_tooling/export-meta.mjs",
+    "budget:check": "node scripts/check_budget.mjs",
+    "test:deploy": "node scripts/test_deploy.mjs",
+    "assets:check": "node scripts/check_assets.mjs",
+    "assets:check-built": "node scripts/check_assets.mjs --built"
   },
   "dependencies": {
     "vue": "3.5.44"

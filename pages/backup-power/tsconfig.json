@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "page.config.ts",
+    "../../packages/ui/src/**/*.ts",
+    "../../packages/ui/src/**/*.vue",
+    "../../packages/core/src/**/*.ts"
+  ]
+}
