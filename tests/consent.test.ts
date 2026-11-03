@@ -193,3 +193,70 @@ test("request contact does not grant SMS and successor drafts cannot use the leg
   );
   assert.equal(calls, 0);
 });
+
+test("submission drafts preserve the displayed source page", () => {
+  const ctx = context();
+  const fields = {
+    name: "Visitor",
+    email: "visitor@example.test",
+    phone: " 6175550100 ",
+    description: "Service request",
+    address: "12 Test Street",
+    city: "Boston",
+    state: "MA",
+    postalCode: "02110",
+    businessName: "",
+    consent: false,
+  };
+  for (const sourcePath of ["/", "/en/landing/hvac-heating/"]) {
+    const displayed = { ...ctx, sourcePath };
+    const snapshot = consent!.reconcileConsent(
+      null,
+      displayed,
+      undefined,
+      time,
+    );
+    const draft = submissions.buildSubmissionDraft(
+      fields,
+      { ...displayed, audience: "landing", offering: "hvac-heating" },
+      snapshot.intent,
+    );
+    assert.equal(
+      draft.request.source_url,
+      `https://merchant-one.org${sourcePath}`,
+    );
+    assert.equal(draft.request.phone, "6175550100");
+  }
+});
+
+test("submission drafts reject consent attached to a different request phone", () => {
+  const ctx = context();
+  const initial = consent!.reconcileConsent(null, ctx, undefined, time);
+  const selected = consent!.reconcileConsent(
+    initial,
+    ctx,
+    { transactionalSms: true, marketingSms: true },
+    time,
+  );
+  const fields = {
+    name: "Visitor",
+    email: "visitor@example.test",
+    phone: "6175550101",
+    description: "Service request",
+    address: "12 Test Street",
+    city: "Boston",
+    state: "MA",
+    postalCode: "02110",
+    businessName: "",
+    consent: false,
+  };
+  assert.throws(
+    () =>
+      submissions.buildSubmissionDraft(
+        fields,
+        { ...ctx, audience: "landing", offering: "hvac-heating" },
+        selected.intent,
+      ),
+    /context/i,
+  );
+});

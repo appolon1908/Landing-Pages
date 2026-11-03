@@ -5,6 +5,7 @@ import { mkdtemp, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { createLandingServer } from "../server/index.mjs";
+import { previewCompliance } from "../packages/compliance/preview.ts";
 
 test("direct policy URLs expose escaped host-specific content without JavaScript", async (t) => {
   const dist = await mkdtemp(join(tmpdir(), "landing-policies-"));
@@ -12,10 +13,12 @@ test("direct policy URLs expose escaped host-specific content without JavaScript
     join(dist, "index.html"),
     '<html lang="en"><head></head><body><div id="app"></div></body></html>',
   );
+  const compliance = previewCompliance("Merchant A");
+  compliance.sms.programName = "Merchant A updates <&> $&";
   const registry = ["a.localhost", "b.localhost"].map((host, i) => ({
     hosts: [host],
     site: {
-      schemaVersion: 1,
+      schemaVersion: i ? 1 : 2,
       siteId: `policy-${i}`,
       workspaceId: `00000000-0000-4000-8000-00000000000${i + 1}`,
       brand: {
@@ -26,6 +29,7 @@ test("direct policy URLs expose escaped host-specific content without JavaScript
       offerings: ["hvac-heating"],
       mode: "preview",
       submissionsEnabled: false,
+      ...(i ? {} : { compliance }),
     },
   }));
   const server = createLandingServer({ dist, registry });
@@ -64,6 +68,13 @@ test("direct policy URLs expose escaped host-specific content without JavaScript
       assert.doesNotMatch(result.body, /<script>alert\(1\)<\/script>/);
       assert.match(result.body, /\$&amp;/);
       assert.match(result.body, /<h1[ >]/);
+      const footer = result.body.slice(result.body.indexOf("<footer"));
+      assert.match(
+        footer,
+        new RegExp(
+          `${locale === "es" ? "Programa SMS" : "SMS program"}: Merchant A updates &lt;&amp;&gt; \\$&amp;`,
+        ),
+      );
       assert.match(result.body, new RegExp(`<html lang="${locale}"`));
       assert.match(
         result.body,

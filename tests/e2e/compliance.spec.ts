@@ -82,6 +82,9 @@ test("policy pages are readable without JavaScript and stay scoped to the actual
     await expect(page.locator("h1")).toHaveText("Terms and SMS Program");
     await expect(page.locator("body")).toContainText("Second Brand Preview");
     await expect(page.locator("body")).not.toContainText("Breero Preview");
+    await expect(page.locator("footer")).toContainText(
+      "SMS program: Second Brand Preview updates",
+    );
     await expect(
       page.getByRole("link", { name: "Privacy Policy", exact: true }).first(),
     ).toHaveAttribute("href", "/en/privacy-policy");

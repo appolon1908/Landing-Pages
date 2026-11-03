@@ -165,7 +165,7 @@ export function buildSubmissionDraft(
   context: ConsentContext & { audience: Audience; offering: string },
   consentIntent: ConsentIntent,
 ) {
-  const expected = consentPresentation(context);
+  const expected = consentPresentation({ ...context, phone: fields.phone });
   for (const key of [
     "collectionMode",
     "siteId",
@@ -182,13 +182,15 @@ export function buildSubmissionDraft(
       throw Error(
         "Consent intent does not match the displayed business and notice context.",
       );
+  const request = buildPayload(fields, {
+    ...context,
+    publicOrigin: context.site.publicOrigin,
+    businessName: context.site.brand.name,
+  });
+  request.source_url = expected.sourceUrl;
   return {
     schemaVersion: 2 as const,
-    request: buildPayload(fields, {
-      ...context,
-      publicOrigin: context.site.publicOrigin,
-      businessName: context.site.brand.name,
-    }),
+    request,
     consentIntent,
   };
 }
