@@ -29,6 +29,7 @@ const hostOf = (host) =>
   typeof host === "string" && /^[a-z0-9.-]+(?::[0-9]{1,5})?$/i.test(host)
     ? host.split(":")[0].toLowerCase()
     : null;
+const maxSiteCacheEntries = 256;
 
 /**
  * Serves one built landing page. The page is independent: it only knows its
@@ -84,6 +85,7 @@ export function createPageServer({
   async function siteFor(host) {
     const hit = cache.get(host);
     if (hit && hit.until > Date.now()) return hit.site;
+    if (hit) cache.delete(host);
     let site = null;
     try {
       const response = await backendRequest(host, "GET", "/api/site-context");
@@ -92,7 +94,18 @@ export function createPageServer({
     } catch {
       site = null;
     }
-    cache.set(host, { site, until: Date.now() + (site ? cacheMs : 2000) });
+    const now = Date.now();
+    // Untrusted Host churn must stay bounded. Reclaim expired entries before
+    // evicting the oldest live entry, preserving short negative-cache hits.
+    for (const [key, entry] of cache) if (entry.until <= now) cache.delete(key);
+    // A concurrent lookup may have populated this host while awaiting I/O.
+    cache.delete(host);
+    const ttl = site ? cacheMs : 2000;
+    if (ttl > 0) {
+      if (cache.size >= maxSiteCacheEntries)
+        cache.delete(cache.keys().next().value);
+      cache.set(host, { site, until: now + ttl });
+    }
     return site;
   }
   async function proxy(req, res, host) {
