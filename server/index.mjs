@@ -3,16 +3,12 @@ import { readFile, stat } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseSiteContext, resolvePage } from "../packages/contracts/site.ts";
-import { getTemplate } from "../packages/industry-templates/catalog.ts";
-
-const escapeHtml = (value) =>
-  String(value).replace(
-    /[&<>"']/g,
-    (c) =>
-      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-        c
-      ],
-  );
+import {
+  getPolicyDocument,
+  pageMetadata,
+  resolvePolicy,
+} from "../packages/compliance/pages.ts";
+import { escapeHtml, renderPolicyBody } from "./policies.mjs";
 const types = {
   ".js": "text/javascript",
   ".css": "text/css",
@@ -97,32 +93,41 @@ export function createLandingServer({ dist, registry }) {
         return res.end(req.method === "HEAD" ? undefined : bytes);
       }
       const route = resolvePage(raw);
-      if (raw !== "/" && (!route || !site.offerings.includes(route.offering)))
+      const policy = resolvePolicy(raw);
+      if (policy && !getPolicyDocument(site, policy))
+        return send(404, { error: "Document not available." });
+      if (
+        raw !== "/" &&
+        !policy &&
+        (!route || !site.offerings.includes(route.offering))
+      )
         return send(404, { error: "Page not found." });
-      const selected = route || {
-        locale: "en",
-        audience: "landing",
-        offering: site.offerings[0],
-      };
-      const template = getTemplate(
-        selected.offering,
-        selected.audience,
-        selected.locale,
-      );
+      const selected = policy ||
+        route || {
+          locale: "en",
+          audience: "landing",
+          offering: site.offerings[0],
+          thankYou: false,
+        };
+      const metadata = pageMetadata(site, selected);
       let html = await readFile(join(dist, "index.html"), "utf8");
-      const canonicalPath = `/${selected.locale}/${selected.audience}/${selected.offering}${route?.thankYou ? "/thank-you" : ""}`;
       const meta =
-        `<title>${escapeHtml(template.name)} | ${escapeHtml(site.brand.name)}</title><meta name="description" content="${escapeHtml(template.description)}"><meta name="robots" content="noindex,nofollow"><link rel="canonical" href="${escapeHtml(site.publicOrigin + canonicalPath)}">` +
+        `<title>${escapeHtml(metadata.title)}</title><meta name="description" content="${escapeHtml(metadata.description)}"><meta name="robots" content="noindex,nofollow"><link rel="canonical" href="${escapeHtml(metadata.canonical)}">` +
         ["en", "es"]
           .map(
             (locale) =>
-              `<link rel="alternate" hreflang="${locale}" href="${escapeHtml(site.publicOrigin + canonicalPath.replace(/^\/(en|es)/, "/" + locale))}">`,
+              `<link rel="alternate" hreflang="${locale}" href="${escapeHtml(metadata.alternates[locale])}">`,
           )
           .join("");
       html = html
         .replace(/<title>.*?<\/title>/s, "")
-        .replace("</head>", meta + "</head>")
+        .replace("</head>", () => meta + "</head>")
         .replace('<html lang="en">', `<html lang="${selected.locale}">`);
+      if (policy)
+        html = html.replace(
+          '<div id="app"></div>',
+          () => `<div id="app">${renderPolicyBody(site, policy)}</div>`,
+        );
       return send(200, html, "text/html");
     } catch {
       return send(404, { error: "Page unavailable." });

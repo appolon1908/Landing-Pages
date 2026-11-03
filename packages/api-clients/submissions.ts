@@ -1,5 +1,7 @@
 import { uuid } from "../contracts/site.ts";
 import type { Audience, Locale } from "../industry-templates/catalog.ts";
+import type { ConsentContext, ConsentIntent } from "../contracts/consent.ts";
+import { consentPresentation } from "../contracts/consent.ts";
 
 export type Attempt = {
   idempotencyKey: string;
@@ -47,6 +49,13 @@ export async function submitAttempt(
     throw Error(
       "Submissions are disabled. Your information remains in the form.",
     );
+  if (
+    (JSON.parse(attempt.serializedPayload) as { schemaVersion?: unknown })
+      .schemaVersion === 2
+  )
+    throw Error(
+      "Versioned consent drafts require the authorized successor submission adapter.",
+    );
   const response = await fetcher(`/api/public-submissions/${kind}`, {
     method: "POST",
     headers: {
@@ -93,10 +102,11 @@ export type IntakeFields = {
   businessName: string;
   consent: boolean;
 };
-export const consentText = {
-  en: "I agree that BREERO may contact me about this request. I understand this is not a confirmed appointment.",
-  es: "Acepto que BREERO me contacte sobre esta solicitud. Entiendo que esto no es una cita confirmada.",
-};
+export function requestContactText(business: string, locale: Locale): string {
+  return locale === "es"
+    ? `Deseo que ${business} me contacte por correo sobre esta solicitud. Esta opción no autoriza mensajes SMS ni confirma una cita.`
+    : `I would like ${business} to contact me by email about this request. This choice does not authorize SMS or confirm an appointment.`;
+}
 export function buildPayload(
   fields: IntakeFields,
   context: {
@@ -104,6 +114,7 @@ export function buildPayload(
     audience: Audience;
     offering: string;
     publicOrigin: string;
+    businessName?: string;
   },
 ): Record<string, unknown> {
   const common = {
@@ -119,10 +130,16 @@ export function buildPayload(
     transactional_sms_consent: false,
     marketing_email_consent: false,
     marketing_sms_consent: false,
-    policy_version: "2026-08-13-request-only",
+    policy_version: "2026-10-29-request-contact-v2",
     consent_source: "landing-pages-preview",
     consent_disclosures: fields.consent
-      ? { transactional_contact: consentText[context.locale] }
+      ? {
+          transactional_contact: requestContactText(
+            context.businessName ||
+              (context.locale === "es" ? "este negocio" : "this business"),
+            context.locale,
+          ),
+        }
       : {},
   };
   return context.audience === "landing"
@@ -141,4 +158,37 @@ export function buildPayload(
         service_categories: [context.offering],
         notes: fields.description.trim(),
       };
+}
+
+export function buildSubmissionDraft(
+  fields: IntakeFields,
+  context: ConsentContext & { audience: Audience; offering: string },
+  consentIntent: ConsentIntent,
+) {
+  const expected = consentPresentation(context);
+  for (const key of [
+    "collectionMode",
+    "siteId",
+    "businessName",
+    "profileRevision",
+    "programName",
+    "locale",
+    "phone",
+    "sourceUrl",
+    "disclosures",
+    "policies",
+  ] as const)
+    if (JSON.stringify(consentIntent[key]) !== JSON.stringify(expected[key]))
+      throw Error(
+        "Consent intent does not match the displayed business and notice context.",
+      );
+  return {
+    schemaVersion: 2 as const,
+    request: buildPayload(fields, {
+      ...context,
+      publicOrigin: context.site.publicOrigin,
+      businessName: context.site.brand.name,
+    }),
+    consentIntent,
+  };
 }
