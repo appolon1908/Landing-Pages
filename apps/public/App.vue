@@ -1,5 +1,24 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, reactive, ref } from "vue";
+import { computed, onMounted, onUnmounted, reactive, ref, watch } from "vue";
+import BusinessFooter from "./components/BusinessFooter.vue";
+import PolicyPage from "./components/PolicyPage.vue";
+import ConsentChoices from "./components/ConsentChoices.vue";
+import {
+  getPolicyDocument,
+  pageMetadata,
+  policyPath,
+  resolvePolicy,
+} from "../../packages/compliance/pages.ts";
+import type {
+  DocumentName,
+  PolicyRoute,
+} from "../../packages/compliance/pages.ts";
+import { reconcileConsent } from "../../packages/contracts/consent.ts";
+import type {
+  ConsentContext,
+  ConsentSnapshot,
+  SmsChoices,
+} from "../../packages/contracts/consent.ts";
 import {
   parseSiteContext,
   resolvePage,
@@ -12,8 +31,8 @@ import type {
   Offering,
 } from "../../packages/industry-templates/catalog.ts";
 import {
-  buildPayload,
-  consentText,
+  buildSubmissionDraft,
+  requestContactText,
   prepareAttempt,
   submitAttempt,
 } from "../../packages/api-clients/submissions.ts";
@@ -24,6 +43,10 @@ import type {
 
 const site = ref<SiteContext | null>(null);
 const failure = ref("");
+const policy = ref<PolicyRoute | null>(resolvePolicy(location.pathname));
+const landingPath = ref(
+  resolvePage(location.pathname) ? location.pathname : "/",
+);
 const page = ref<PageRoute>(
   resolvePage(location.pathname) || {
     locale: "en",
@@ -49,8 +72,43 @@ const state = ref<"ready" | "preview" | "pending" | "accepted" | "error">(
 );
 const receipt = ref<Receipt | null>(null);
 const attempt = ref<Attempt | null>(null);
-const privacyOpen = ref(false);
-const es = computed(() => page.value.locale === "es");
+const activeLocale = computed(() => policy.value?.locale || page.value.locale);
+const es = computed(() => activeLocale.value === "es");
+const policyDocument = computed(() =>
+  site.value && policy.value
+    ? getPolicyDocument(site.value, policy.value)
+    : null,
+);
+const consentSnapshot = ref<ConsentSnapshot | null>(null);
+const consentContext = computed<ConsentContext | null>(() =>
+  site.value
+    ? {
+        site: site.value,
+        locale: page.value.locale,
+        phone: fields.phone,
+        sourcePath: page.value.thankYou
+          ? `/${page.value.locale}/${page.value.audience}/${page.value.offering}`
+          : landingPath.value,
+      }
+    : null,
+);
+watch(
+  consentContext,
+  (context) => {
+    consentSnapshot.value = context
+      ? reconcileConsent(consentSnapshot.value, context)
+      : null;
+  },
+  { deep: true, immediate: true },
+);
+function chooseSms(choices: SmsChoices) {
+  if (consentContext.value)
+    consentSnapshot.value = reconcileConsent(
+      consentSnapshot.value,
+      consentContext.value,
+      choices,
+    );
+}
 const provider = computed(() => page.value.audience === "business");
 const content = computed(() =>
   getTemplate(page.value.offering, page.value.audience, page.value.locale),
@@ -182,46 +240,88 @@ function homepage(context: SiteContext): PageRoute {
   };
 }
 function navigate(locale: Locale, audience: Audience, offering: Offering) {
+  policy.value = null;
   page.value = { locale, audience, offering, thankYou: false };
+  landingPath.value = `/${locale}/${audience}/${offering}`;
   state.value = "ready";
   receipt.value = null;
-  history.pushState(null, "", `/${locale}/${audience}/${offering}`);
+  history.pushState(null, "", landingPath.value);
   updateMetadata();
 }
+function navigatePolicy(
+  document: DocumentName,
+  locale: Locale = activeLocale.value,
+) {
+  if (!site.value || !getPolicyDocument(site.value, { locale, document }))
+    return;
+  if (locale !== activeLocale.value)
+    chooseSms({ transactionalSms: false, marketingSms: false });
+  policy.value = { locale, document };
+  history.pushState(null, "", policyPath(locale, document));
+  updateMetadata();
+}
+function switchLanguage(locale: Locale) {
+  if (policy.value) navigatePolicy(policy.value.document, locale);
+  else navigate(locale, page.value.audience, page.value.offering);
+}
 function updateMetadata() {
-  document.documentElement.lang = page.value.locale;
-  if (site.value)
-    document.title = `${content.value.name} | ${site.value.brand.name}`;
+  if (!site.value) return;
+  const metadata = pageMetadata(site.value, policy.value || page.value);
+  document.documentElement.lang = metadata.locale;
+  document.title = metadata.title;
+  document
+    .querySelector<HTMLMetaElement>('meta[name="description"]')
+    ?.setAttribute("content", metadata.description);
   const canonical = document.querySelector<HTMLLinkElement>(
     'link[rel="canonical"]',
   );
-  if (canonical && site.value)
-    canonical.href =
-      site.value.publicOrigin +
-      "/" +
-      page.value.locale +
-      "/" +
-      page.value.audience +
-      "/" +
-      page.value.offering +
-      (page.value.thankYou ? "/thank-you" : "");
+  if (canonical) canonical.href = metadata.canonical;
+  for (const locale of ["en", "es"] as const)
+    document
+      .querySelector<HTMLLinkElement>(
+        `link[rel="alternate"][hreflang="${locale}"]`,
+      )
+      ?.setAttribute("href", metadata.alternates[locale]);
 }
 function popstate() {
+  const documentRoute = resolvePolicy(location.pathname);
+  if (
+    documentRoute &&
+    site.value &&
+    getPolicyDocument(site.value, documentRoute)
+  ) {
+    if (documentRoute.locale !== activeLocale.value)
+      chooseSms({ transactionalSms: false, marketingSms: false });
+    policy.value = documentRoute;
+    updateMetadata();
+    return;
+  }
   const route =
     location.pathname === "/" && site.value
       ? homepage(site.value)
       : resolvePage(location.pathname);
   if (route) {
+    policy.value = null;
     page.value = route;
+    landingPath.value = location.pathname;
     updateMetadata();
   }
 }
 async function submit() {
-  if (!site.value) return;
-  const payload = buildPayload(fields, {
-    ...page.value,
-    publicOrigin: site.value.publicOrigin,
-  });
+  if (!site.value || !consentContext.value) return;
+  consentSnapshot.value = reconcileConsent(
+    consentSnapshot.value,
+    consentContext.value,
+  );
+  const payload = buildSubmissionDraft(
+    fields,
+    {
+      ...consentContext.value,
+      audience: page.value.audience,
+      offering: page.value.offering,
+    },
+    consentSnapshot.value.intent,
+  );
   attempt.value = prepareAttempt(
     attempt.value,
     payload,
@@ -253,7 +353,10 @@ onMounted(async () => {
     });
     if (!response.ok) throw Error("Site unavailable.");
     site.value = parseSiteContext(await response.json());
-    if (location.pathname === "/") page.value = homepage(site.value);
+    if (location.pathname === "/" || policy.value)
+      page.value = homepage(site.value);
+    if (policy.value && !getPolicyDocument(site.value, policy.value))
+      throw Error("Document unavailable.");
     if (!site.value.offerings.includes(page.value.offering))
       throw Error("Page unavailable.");
     updateMetadata();
@@ -282,16 +385,16 @@ onUnmounted(() => window.removeEventListener("popstate", popstate));
       <a
         class="brand"
         href="/"
-        @click.prevent="navigate(page.locale, 'landing', page.offering)"
+        @click.prevent="navigate(activeLocale, 'landing', page.offering)"
         ><span class="brand-mark" aria-hidden="true">b.</span
         >{{ site.brand.name }}</a
       >
       <nav aria-label="Main">
         <a
-          :href="`/${page.locale}/${provider ? 'landing' : 'business'}/${page.offering}`"
+          :href="`/${activeLocale}/${provider ? 'landing' : 'business'}/${page.offering}`"
           @click.prevent="
             navigate(
-              page.locale,
+              activeLocale,
               provider ? 'landing' : 'business',
               page.offering,
             )
@@ -300,17 +403,24 @@ onUnmounted(() => window.removeEventListener("popstate", popstate));
         >
         <a
           class="language"
-          :href="`/${es ? 'en' : 'es'}/${page.audience}/${page.offering}`"
-          :lang="es ? 'en' : 'es'"
-          @click.prevent="
-            navigate(es ? 'en' : 'es', page.audience, page.offering)
+          :href="
+            policy
+              ? policyPath(es ? 'en' : 'es', policy.document)
+              : `/${es ? 'en' : 'es'}/${page.audience}/${page.offering}`
           "
+          :lang="es ? 'en' : 'es'"
+          @click.prevent="switchLanguage(es ? 'en' : 'es')"
           >{{ es ? "English" : "Español" }}</a
         >
       </nav>
     </header>
     <main id="main">
-      <section v-if="page.thankYou" class="shell receipt-page">
+      <PolicyPage
+        v-if="policyDocument"
+        :document="policyDocument"
+        :locale="activeLocale"
+      />
+      <section v-else-if="page.thankYou" class="shell receipt-page">
         <h1>{{ receipt ? words.accepted : words.noReceipt }}</h1>
         <a :href="`/${page.locale}/${page.audience}/${page.offering}`">{{
           words.back
@@ -526,18 +636,20 @@ onUnmounted(() => window.removeEventListener("popstate", popstate));
                     v-model="fields.consent"
                     name="consent"
                     type="checkbox"
-                    required
-                  /><span>{{ consentText[page.locale] }}</span></label
+                  /><span>{{
+                    requestContactText(site.brand.name, page.locale)
+                  }}</span></label
                 >
+                <ConsentChoices
+                  v-if="consentSnapshot"
+                  :site="site"
+                  :locale="page.locale"
+                  :intent="consentSnapshot.intent"
+                  @change="chooseSms"
+                  @navigate="(name) => navigatePolicy(name)"
+                />
                 <p class="small-print full">
                   {{ words.optional }}
-                  <button
-                    class="text-button"
-                    type="button"
-                    @click="privacyOpen = true"
-                  >
-                    {{ words.privacy }}
-                  </button>
                 </p>
                 <button class="button primary full" type="submit">
                   {{ state === "pending" ? words.pending : words.button }}
@@ -557,24 +669,11 @@ onUnmounted(() => window.removeEventListener("popstate", popstate));
         </section>
       </template>
     </main>
-    <footer class="shell">
-      <strong>{{ site.brand.name }}</strong>
-      <p>{{ words.independent }}</p>
-      <button class="text-button" @click="privacyOpen = !privacyOpen">
-        {{ words.privacy }}
-      </button>
-      <section
-        v-if="privacyOpen"
-        class="privacy-panel"
-        aria-label="Preview privacy"
-      >
-        <h2>{{ words.privacy }}</h2>
-        <p>{{ words.formDetail }}</p>
-        <p>{{ words.optional }}</p>
-        <button class="button" @click="privacyOpen = false">
-          {{ words.close }}
-        </button>
-      </section>
-    </footer>
+    <BusinessFooter
+      :site="site"
+      :locale="activeLocale"
+      @navigate="(name) => navigatePolicy(name)"
+      ><p>{{ words.independent }}</p></BusinessFooter
+    >
   </div>
 </template>

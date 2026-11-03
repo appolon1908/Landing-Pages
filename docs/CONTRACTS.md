@@ -1,5 +1,23 @@
 # Frontend contracts and owner handoff
 
+## Shared website requirements — SiteContext v2
+
+The current renderer supports an explicitly versioned `compliance` profile in
+SiteContext v2. It supplies per-business identity, direct policy documents,
+optional independent SMS choices, and website-readiness reporting on every
+landing route. Legacy v1 contexts remain preview-only and receive an explicit
+missing-profile readiness blocker. See `HIGHLEVEL_REQUIREMENTS.md` for the profile
+workflow, conditional policies and official source guidance.
+
+A new versioned submission draft carries the legacy request separately from an
+immutable browser preference intent. The legacy submission adapter rejects that
+successor envelope until an authorized backend contract is implemented. Client
+timestamps, site identifiers, public review flags and selected categories are
+claims to validate, not durable consent or business authority. All existing live
+effect restrictions continue to apply. The older request-only details below are
+historical foundation context; the new request-contact disclosure version is
+`2026-10-29-request-contact-v2`.
+
 ## Public site context v1
 
 `GET /api/site-context` is served by this preview host from its explicit registry.
