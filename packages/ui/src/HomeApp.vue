@@ -238,6 +238,10 @@ onMounted(async () => {
     <BusinessFooter :site="site" :locale="locale" @navigate="navigatePolicy"
       ><p>{{ t.responsibility }}</p></BusinessFooter
     >
-    <MetaPixelConsent :site="site" :locale="locale" :pathname="location.pathname" />
+    <MetaPixelConsent
+      :site="site"
+      :locale="locale"
+      :pathname="location.pathname"
+    />
   </div>
 </template>
