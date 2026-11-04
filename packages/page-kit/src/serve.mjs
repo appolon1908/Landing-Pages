@@ -42,6 +42,8 @@ export function createPageServer({
   dist,
   backendUrl,
   cacheMs = 30000,
+  // Explicit operator switch; preview tenants and other brands stay tag-free.
+  metaPixelEnabled = process.env.LP_BREERO_META_PIXEL_ENABLED === "true",
 }) {
   const isHome = manifest.kind === "home";
   const backend = new URL(backendUrl);
@@ -177,6 +179,15 @@ export function createPageServer({
         return send(405, { error: "Method not allowed." });
       const site = await siteFor(host);
       if (!site) return send(421, { error: "Unknown site." });
+      const breeroPixel =
+        metaPixelEnabled &&
+        site.mode === "live" &&
+        site.brand.name.trim().toLowerCase() === "breero";
+      if (breeroPixel)
+        res.setHeader(
+          "Content-Security-Policy",
+          "default-src 'self'; script-src 'self' https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.facebook.com; connect-src 'self' https://www.facebook.com https://connect.facebook.net; frame-ancestors 'none'; form-action 'none'; base-uri 'none'; object-src 'none'",
+        );
       if (!isHome && !siteSlugs(site).includes(manifest.slug))
         return send(404, { error: "Page not offered by this site." });
       if (
@@ -253,11 +264,17 @@ export function createPageServer({
               `<link rel="alternate" hreflang="${l}" href="${escapeHtml(metadata.alternates[l])}">`,
           )
           .join("");
+      // Inert public configuration; the browser injects executable code into
+      // <head> only after explicit advertising consent. Never send a noscript
+      // beacon: JavaScript-free visitors cannot grant the required consent.
+      const pixelMeta = breeroPixel
+        ? '<meta name="lp-meta-pixel-id" content="965185126235275">'
+        : "";
       html = html
         .replace(/<title>.*?<\/title>/s, "")
         .replace(
           "</head>",
-          () => meta + renderSiteBootstrap(host, site) + "</head>",
+          () => meta + pixelMeta + renderSiteBootstrap(host, site) + "</head>",
         )
         .replace(/<html lang="[^"]+">/, `<html lang="${selected.locale}">`);
       if (policy)
