@@ -1,4 +1,4 @@
-import logoUrl from "./assets/brand/BREERO-logo-transparent.png";
+import logoUrl from "./assets/brand/BREERO-logo-header.png";
 import faviconUrl from "./assets/brand/favicon.ico";
 
 export { logoUrl, faviconUrl };

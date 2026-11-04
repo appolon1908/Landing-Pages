@@ -43,8 +43,8 @@ const Layout = props.layout ?? DefaultLayout;
           class="brand-logo"
           :src="logoUrl"
           alt="BREERO"
-          width="2200"
-          height="726"
+          width="528"
+          height="176"
         /><span v-else>{{ c.site.value.brand.name }}</span></a
       >
       <nav aria-label="Main">

@@ -51,7 +51,11 @@ test("built asset checker catches eager unrelated service images", async () => {
   try {
     const assets = join(directory, "pages/hvac/dist/assets");
     await mkdir(assets, { recursive: true });
-    for (const item of [manifest.services[0], ...manifest.brand]) {
+    for (const item of [
+      manifest.services[0],
+      ...manifest.brand.filter((item) => item.key !== "logo"),
+      ...manifest.derived,
+    ]) {
       await writeFile(
         join(assets, item.file.split("/").at(-1)),
         await readFile(join(root, "packages/ui/src/assets", item.file)),

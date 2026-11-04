@@ -96,6 +96,11 @@ test("Caddy service matchers dispatch all audiences/locales without prefix confu
   ]) {
     assert.equal(matchers.filter((m) => m.pattern.test(path)).length, 0);
   }
+  assert.match(result.caddy, /encode zstd gzip/);
+  assert.match(
+    result.caddy,
+    /header Cache-Control "public, max-age=31536000, immutable" \{\n      match status 200 206 304/,
+  );
   assert.match(result.caddy, /header X-Robots-Tag "noindex, nofollow"/);
   assert.match(
     result.caddy,

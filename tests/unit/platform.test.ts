@@ -53,7 +53,7 @@ test("French draft policies and consent use French disclosures and retain draft 
   assert.match(consent.policies.privacyUrl, /\/fr\/privacy-policy$/);
 });
 
-test("metadata has three locale alternatives and Spanish x-default on each page origin", () => {
+test("metadata has three locale alternatives and English x-default on each page origin", () => {
   const manifest = core.definePage(manifestInput() as never);
   const site = siteDocument({
     pages: [{ slug: "hvac", origin: "https://ac.example.org", label: null }],
@@ -68,7 +68,7 @@ test("metadata has three locale alternatives and Spanish x-default on each page 
   assert.equal(meta.alternates.fr, "https://ac.example.org/fr/business/hvac");
   assert.equal(
     meta.alternates["x-default"],
-    "https://ac.example.org/es/business/hvac",
+    "https://ac.example.org/en/business/hvac",
   );
   const home = core.pageMetadata(
     site,

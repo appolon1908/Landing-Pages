@@ -14,6 +14,7 @@ import {
   resolvePolicy,
   siteSlugs,
 } from "@lp/core";
+import { renderSiteBootstrap } from "./site-bootstrap.mjs";
 import { escapeHtml, renderPolicyBody } from "./policy-html.mjs";
 
 const types = {
@@ -254,7 +255,10 @@ export function createPageServer({
           .join("");
       html = html
         .replace(/<title>.*?<\/title>/s, "")
-        .replace("</head>", () => meta + "</head>")
+        .replace(
+          "</head>",
+          () => meta + renderSiteBootstrap(host, site) + "</head>",
+        )
         .replace(/<html lang="[^"]+">/, `<html lang="${selected.locale}">`);
       if (policy)
         html = html.replace(

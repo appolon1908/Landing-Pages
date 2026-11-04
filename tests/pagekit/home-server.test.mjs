@@ -64,13 +64,15 @@ test("homepage serves localized routes and no-JS French policy, failing closed f
         if (path === "privacy-policy") assert.match(second.text, /<article/);
       }
     }
-    assert.equal((await call(base, "/")).status, 302);
+    const root = await call(base, "/");
+    assert.equal(root.status, 302);
+    assert.equal(root.headers.location, "/en/");
     const fr = await call(base, "/fr/");
     assert.equal(fr.status, 200);
     assert.match(fr.text, /<html lang="fr">/);
     assert.match(
       fr.text,
-      /hreflang="x-default" href="https:\/\/fixture.example.org\/es\/"/,
+      /hreflang="x-default" href="https:\/\/fixture.example.org\/en\/"/,
     );
     assert.match(
       (await call(base, "/fr/privacy-policy")).text,

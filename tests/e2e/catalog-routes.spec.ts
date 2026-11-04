@@ -55,6 +55,9 @@ for (const route of coreRoutes) {
       );
     }
     await expect(page.locator("html")).toHaveAttribute("lang", route.locale);
+    await expect(page.locator(".language")).toHaveText(
+      route.audience ? ["English", "Español", "Français"] : ["EN", "ES", "FR"],
+    );
     await expect(page.locator("link[rel=canonical]")).toHaveAttribute(
       "href",
       route.url,
@@ -73,7 +76,7 @@ for (const route of coreRoutes) {
     }
     await expect(
       page.locator("link[rel=alternate][hreflang=x-default]"),
-    ).toHaveAttribute("href", route.url.replace(`/${route.locale}/`, "/es/"));
+    ).toHaveAttribute("href", route.url.replace(`/${route.locale}/`, "/en/"));
     await expect(page.locator(".preview-notice")).toBeVisible();
     await expect(page.getByTestId("business-footer")).toBeVisible();
     if (route.audience) {

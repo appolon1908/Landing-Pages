@@ -117,7 +117,7 @@ export function createRelease({ revision, releaseDir, catalog, registry }) {
       },
     },
   };
-  const caddy = `# Generated for ${revision}; import only after local checks and DNS confirmation.\nwww.breero.com {\n  redir https://breero.com{uri} permanent\n}\n\nbreero.com {\n  header X-Robots-Tag "noindex, nofollow"\n  header X-Content-Type-Options nosniff\n  handle_path /assets/* {\n    root * ${base}/current/assets\n    file_server\n  }\n${pages
+  const caddy = `# Generated for ${revision}; import only after local checks and DNS confirmation.\nwww.breero.com {\n  redir https://breero.com{uri} permanent\n}\n\nbreero.com {\n  encode zstd gzip\n  header X-Robots-Tag "noindex, nofollow"\n  header X-Content-Type-Options nosniff\n  handle_path /assets/* {\n    root * ${base}/current/assets\n    header Cache-Control "public, max-age=31536000, immutable" {\n      match status 200 206 304\n    }\n    file_server\n  }\n${pages
     .slice(1)
     .map(
       ({ slug, port }, i) =>

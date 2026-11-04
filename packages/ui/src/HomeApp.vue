@@ -5,7 +5,7 @@ import {
   locales,
   pageHref,
   pageLabel,
-  parseSiteContext,
+  defaultLocale,
   policyPath,
   resolveHome,
   resolvePolicy,
@@ -22,13 +22,15 @@ import PolicyPage from "./components/PolicyPage.vue";
 import { homeCopy } from "./homeCopy.ts";
 import { words } from "./i18n/words.ts";
 import { logoUrl } from "@lp/ui/brandAssets.ts";
+import { loadSiteContext } from "./siteContext.ts";
 import { applyBrandContext } from "./brandContext.ts";
 const props = defineProps<{
   manifest: HomeManifest;
   catalog: Record<string, PageGroup>;
 }>();
 const policy = resolvePolicy(location.pathname);
-const locale = policy?.locale ?? resolveHome(location.pathname)?.locale ?? "es";
+const locale =
+  policy?.locale ?? resolveHome(location.pathname)?.locale ?? defaultLocale;
 const t = homeCopy[locale];
 const w = words(locale);
 const site = ref<SiteContext | null>(null);
@@ -52,13 +54,7 @@ const navigatePolicy = (name: DocumentName) =>
   location.assign(policyPath(locale, name));
 onMounted(async () => {
   try {
-    const response = await fetch("/api/site-context", {
-      credentials: "omit",
-      redirect: "error",
-      signal: AbortSignal.timeout(10000),
-    });
-    if (!response.ok) throw Error("Unavailable");
-    site.value = parseSiteContext(await response.json());
+    site.value = await loadSiteContext();
     applyBrandContext(site.value.brand.name);
     if (policy && !document.value) throw Error("Unavailable document");
   } catch {
@@ -87,8 +83,8 @@ onMounted(async () => {
           class="brand-logo"
           :src="logoUrl"
           alt="BREERO"
-          width="2200"
-          height="726"
+          width="528"
+          height="176"
         /><span v-else>{{ site.brand.name }}</span></a
       >
       <nav :aria-label="t.services">

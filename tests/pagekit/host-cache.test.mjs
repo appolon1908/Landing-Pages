@@ -94,7 +94,7 @@ test("positive and negative TTLs expire exactly and refreshed context stays host
   f.allowed.add("known.example.org");
   const first = await f.request("KNOWN.EXAMPLE.ORG:443");
   assert.equal(first.status, 302);
-  assert.equal(first.headers.location, "/es/");
+  assert.equal(first.headers.location, "/en/");
   assert.equal(first.headers["x-robots-tag"], "noindex, nofollow");
   assert.equal((await f.request("missing.example.org")).status, 421);
   f.allowed.delete("known.example.org");

@@ -1,3 +1,4 @@
+import { loadSiteContext } from "./siteContext.ts";
 import {
   computed,
   nextTick,
@@ -13,7 +14,6 @@ import {
   getTemplate,
   pageHref,
   pageMetadata,
-  parseSiteContext,
   policyPath,
   prepareAttempt,
   reconcileConsent,
@@ -314,13 +314,7 @@ export function usePage(manifest: PageManifest) {
   onMounted(async () => {
     window.addEventListener("popstate", popstate);
     try {
-      const response = await fetch("/api/site-context", {
-        credentials: "omit",
-        redirect: "error",
-        signal: AbortSignal.timeout(10000),
-      });
-      if (!response.ok) throw Error("Site unavailable.");
-      const context = parseSiteContext(await response.json());
+      const context = await loadSiteContext();
       if (!siteSlugs(context).includes(manifest.slug))
         throw Error("Page not offered by this site.");
       if (policy.value && !getPolicyDocument(context, policy.value))

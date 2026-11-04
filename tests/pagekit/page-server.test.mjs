@@ -88,6 +88,20 @@ test("page server renders only its own page for known hosts and injects metadata
       /rel="canonical" href="https:\/\/fixture.example.org\/en\/landing\/hvac-heating"/,
     );
     assert.match(home.text, /noindex/);
+    assert.equal(
+      (await call(base, "/")).headers.location,
+      "/en/landing/hvac-heating",
+    );
+    assert.equal(home.headers["cache-control"], "no-store");
+    const bootstrap = JSON.parse(
+      home.text.match(
+        /<script id="lp-site-context" type="application\/json">([^<]*)<\/script>/,
+      )[1],
+    );
+    assert.equal(bootstrap.hostname, "fixture.example.org");
+    assert.equal(bootstrap.site.siteId, "fixture");
+    assert.equal(bootstrap.site.submissionsEnabled, false);
+    assert.equal(bootstrap.site.destination, undefined);
     const es = await call(base, "/es/business/hvac-heating");
     assert.match(es.text, /<html lang="es">/);
     assert.match(

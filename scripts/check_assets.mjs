@@ -146,6 +146,28 @@ export async function validateAssets(root, suppliedManifest) {
     if (inspectImage(bytes, extname(path)) !== item.dimensions)
       throw Error(`Asset dimensions differ from handoff: ${item.file}`);
   }
+  const header = manifest.derived?.[0];
+  const original = manifest.brand.find((item) => item.key === "logo");
+  if (
+    manifest.derived?.length !== 1 ||
+    header.key !== "headerLogo" ||
+    header.file !== "brand/BREERO-logo-header.png" ||
+    header.derivedFrom !== original.file ||
+    header.sourceSha256 !== original.sha256 ||
+    header.dimensions !== "528x176" ||
+    header.bytes > 64 * 1024
+  )
+    throw Error("Invalid header logo provenance or budget.");
+  const headerPath = join(root, assetDir, header.file);
+  if (!(await lstat(headerPath)).isFile())
+    throw Error("Header logo must be a regular file.");
+  const headerBytes = await readFile(headerPath);
+  if (
+    headerBytes.length !== header.bytes ||
+    digest(headerBytes) !== header.sha256 ||
+    inspectImage(headerBytes, ".png") !== header.dimensions
+  )
+    throw Error("Header logo bytes/hash/dimensions differ from its manifest.");
   return {
     services: manifest.services.length,
     brandAssets: manifest.brand.length,
@@ -186,6 +208,12 @@ export async function validateBuiltImages(root, pages, suppliedManifest) {
       if (!hashes.has(icon.sha256))
         throw Error(`${slug}: missing supplied favicon bytes.`);
     }
+    if (!hashes.has(manifest.derived[0].sha256))
+      throw Error(`${slug}: missing optimized header logo.`);
+    if (hashes.has(manifest.brand.find((item) => item.key === "logo").sha256))
+      throw Error(
+        `${slug}: oversized original logo must not ship to the browser.`,
+      );
     const html = await readFile(join(dist, "index.html"), "utf8");
     const iconTags = [
       ...html.matchAll(/<link[^>]*rel="icon"[^>]*href="([^"]+)"[^>]*>/g),

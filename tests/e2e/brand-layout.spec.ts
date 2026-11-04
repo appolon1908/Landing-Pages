@@ -180,6 +180,18 @@ test("shared layouts preserve a different validated brand context", async ({
     serviceUrl("hvac", "en", "landing"),
     `${origin("home")}/en/`,
   ]) {
+    await page.route(url, async (route) => {
+      const response = await route.fetch();
+      const body = (await response.text()).replace(
+        /(<script id="lp-site-context" type="application\/json">)([^<]*)(<\/script>)/,
+        (_, opening, json, closing) => {
+          const data = JSON.parse(json);
+          data.site.brand.name = "Second Brand Preview";
+          return opening + JSON.stringify(data) + closing;
+        },
+      );
+      await route.fulfill({ response, body });
+    });
     await page.goto(url);
     await expect(page.locator("h1")).toBeVisible();
     await expect(page.locator(".site-header .brand")).toHaveText(

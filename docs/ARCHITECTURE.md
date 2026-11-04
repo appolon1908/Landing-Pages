@@ -4,7 +4,7 @@
 
 The corporate `home` package plus thirty service packages render 61 public pages in
 three languages. A service package renders separate customer and provider routes;
-it is one deployable unit with two audience layouts. Spanish is the default locale.
+it is one deployable unit with two audience layouts. English is the default locale; the language selector offers English, Spanish, then French.
 
 ```text
 browser → home or service page server → host-scoped intake backend → configured CRM
@@ -37,7 +37,9 @@ preview responses remain noindex.
 The backend selects a site from Host. Unknown hosts fail closed with 421 on site
 and page routes; the minimal health endpoint does not require a known host. The page
 server requests that context and forwards the public Host on API calls. Public context
-excludes destination credentials. Registry catalog entries may have separate origins;
+excludes destination credentials. The page server embeds that validated public context as
+inert, escaped JSON in uncached HTML. The browser validates its host and schema before
+using it, with the same-origin API as fallback; submission authority stays in the backend. Registry catalog entries may have separate origins;
 `pageHref()` uses them for navigation. The local stack generates temporary origins.
 
 Submission validation requires an HTTP Origin configured for the selected site and

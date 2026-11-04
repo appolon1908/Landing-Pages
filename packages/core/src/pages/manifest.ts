@@ -1,7 +1,7 @@
 /** Validated public presentation contracts. Manifests never grant CRM authority. */
-export const locales = ["es", "en", "fr"] as const;
+export const locales = ["en", "es", "fr"] as const;
 export type Locale = (typeof locales)[number];
-export const defaultLocale: Locale = "es";
+export const defaultLocale: Locale = "en";
 export const audiences = ["landing", "business"] as const;
 export type Audience = (typeof audiences)[number];
 export const groups = [

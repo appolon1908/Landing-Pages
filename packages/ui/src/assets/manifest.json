@@ -305,5 +305,16 @@
       "dimensions": "32x32",
       "sha256": "a450737b48b7583c268f56b12ab454e6706c2b187b3c8b7cc8f8b31e87786ac9"
     }
+  ],
+  "derived": [
+    {
+      "key": "headerLogo",
+      "file": "brand/BREERO-logo-header.png",
+      "derivedFrom": "brand/BREERO-logo-transparent.png",
+      "sourceSha256": "c403471b72573447fc35fa0836d53a584cd41ebf71b7008a2c111cee81dfc294",
+      "bytes": 56526,
+      "dimensions": "528x176",
+      "sha256": "44eb4183c7cf43e5f2606f49c5845e9a114bd1f79007176153bc63b0dc493b44"
+    }
   ]
 }
