@@ -19,6 +19,7 @@ import type {
 } from "@lp/core";
 import BusinessFooter from "./components/BusinessFooter.vue";
 import PolicyPage from "./components/PolicyPage.vue";
+import MetaPixelConsent from "./components/MetaPixelConsent.vue";
 import { homeCopy } from "./homeCopy.ts";
 import { words } from "./i18n/words.ts";
 import { logoUrl } from "@lp/ui/brandAssets.ts";
@@ -237,5 +238,6 @@ onMounted(async () => {
     <BusinessFooter :site="site" :locale="locale" @navigate="navigatePolicy"
       ><p>{{ t.responsibility }}</p></BusinessFooter
     >
+    <MetaPixelConsent :site="site" :locale="locale" :pathname="location.pathname" />
   </div>
 </template>
