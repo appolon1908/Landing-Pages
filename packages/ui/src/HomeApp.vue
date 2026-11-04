@@ -51,6 +51,7 @@ const pathFor = (slug: string) =>
     ? pageHref(site.value, { locale, audience: audience.value, slug })
     : "#";
 const homePath = `/${locale}/`;
+const currentPath = location.pathname;
 const navigatePolicy = (name: DocumentName) =>
   location.assign(policyPath(locale, name));
 onMounted(async () => {
@@ -241,7 +242,7 @@ onMounted(async () => {
     <MetaPixelConsent
       :site="site"
       :locale="locale"
-      :pathname="location.pathname"
+      :pathname="currentPath"
     />
   </div>
 </template>
