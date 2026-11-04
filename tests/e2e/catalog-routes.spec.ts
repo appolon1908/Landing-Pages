@@ -75,6 +75,7 @@ for (const route of coreRoutes) {
       page.locator("link[rel=alternate][hreflang=x-default]"),
     ).toHaveAttribute("href", route.url.replace(`/${route.locale}/`, "/es/"));
     await expect(page.locator(".preview-notice")).toBeVisible();
+    await expect(page.getByTestId("front-desk-entry")).toBeVisible();
     await expect(page.getByTestId("business-footer")).toBeVisible();
     if (route.audience) {
       await expect(page.locator("form")).toBeVisible();

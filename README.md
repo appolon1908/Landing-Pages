@@ -37,6 +37,48 @@ navigation; it does not modify checked-in files. Include at least one service wi
 `home`; a standalone home server can use an existing catalog backend via
 `BACKEND_URL` and `npm start --workspace=pages/home`.
 
+## Front Desk voice-booking demo
+
+The shared customer/provider layouts and corporate homepage include a localized
+BREERO panel with separate voice and booking-form choices, preserving the supplied
+company branding and service images. The links are unavailable by default.
+Start the separate Front Desk app, then
+set its printed localhost origin before starting this preview stack:
+
+```powershell
+$env:FRONT_DESK_DEMO_ORIGIN = 'http://127.0.0.1:54253'
+$env:PAGES = 'home,hvac,plumbing'
+$env:BACKEND_PORT = '56400'
+$env:FIRST_PAGE_PORT = '56410'
+node scripts/dev-stack.mjs
+```
+
+Open `http://127.0.0.1:56410/es/` and choose **Hablar con BREERO** or
+**Formulario de reserva**.
+Change the demo port to the one actually printed by Front Desk. All selected page
+servers use the same backend setting. Environment files are not loaded implicitly;
+remove the variable to disconnect the entry. No OpenAI key belongs in these pages.
+
+`GET /api/front-desk` reads only this server setting after existing site-host
+authorization. It accepts exact HTTP `localhost`/`127.0.0.1` origins without paths,
+credentials, queries or fragments and withholds the origin on public hosts. Unknown
+hosts still fail closed; browser query parameters cannot choose a destination.
+Configured availability is not a health check of the separately running app.
+
+The new tab uses an isolated preview calendar. It does not reserve these
+advertised services or create CRM/Breero appointments. Its bounded `source=breero`,
+`service`, `audience`, `locale` and `mode=voice|form` query fields are presentation context only; the
+homepage omits `service`. No customer data, credentials or tenant grants are passed.
+The separate demo interface is currently in English. Microphone permission is
+requested only after starting voice in Front Desk.
+
+Real integration requires an approved HTTPS voice-service deployment, server-held
+OpenAI credentials, verified company/site/domain authorization and the existing
+business system's authoritative availability/booking adapter. Revision, idempotency,
+explicit confirmation and release checks remain required; a request receipt or
+manual-dispatch state is not a confirmed appointment. This demo adds no business
+API calls and activates no scheduling, submissions, payments or messages.
+
 ## Repository map
 
 | Path                | Responsibility                                                                |

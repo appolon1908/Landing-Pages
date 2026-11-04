@@ -11,6 +11,7 @@ const dir =
 const registry = buildRegistry(await loadRegistryDir(resolve(dir)));
 const server = createBackend({
   registry,
+  frontDeskDemoOrigin: process.env.FRONT_DESK_DEMO_ORIGIN,
   manifests: await loadPageManifests(
     fileURLToPath(new URL("../../pages", import.meta.url)),
   ),

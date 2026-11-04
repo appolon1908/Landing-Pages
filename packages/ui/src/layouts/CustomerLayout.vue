@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import { policyPath } from "@lp/core";
 import IntakeForm from "../components/IntakeForm.vue";
+import FrontDeskEntry from "../components/FrontDeskEntry.vue";
 import ServiceSelector from "../components/ServiceSelector.vue";
 import ServiceHero from "../components/ServiceHero.vue";
 import type { PageController } from "../usePage.ts";
@@ -51,6 +52,11 @@ const t = computed(() => layoutCopy[c.activeLocale.value]);
       </ul>
     </aside>
   </section>
+  <FrontDeskEntry
+    :locale="c.activeLocale.value"
+    audience="landing"
+    :service="c.manifest.slug"
+  />
   <IntakeForm :c="c" />
   <section class="shell content-section evidence-note">
     <h2>{{ c.site.value?.brand.name }}</h2>

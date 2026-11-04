@@ -5,6 +5,7 @@ import { createIdempotencyStore } from "./idempotency.mjs";
 import { validateSubmission, ValidationError } from "./validate.mjs";
 import { createRateLimiter } from "./rate-limit.mjs";
 import { verifyTurnstile } from "./spam.mjs";
+import { parseFrontDeskOrigin, frontDeskConfig } from "@lp/core";
 
 const MAX_BODY = 64 * 1024;
 
@@ -23,7 +24,9 @@ export function createBackend({
   manifests = [],
   rateLimiter = createRateLimiter(),
   turnstileFetcher = fetch,
+  frontDeskDemoOrigin,
 }) {
+  const demoOrigin = parseFrontDeskOrigin(frontDeskDemoOrigin);
   const pages = new Map(
     manifests.map((manifest) => {
       const { audiences, ...input } = manifest;
@@ -55,6 +58,11 @@ export function createBackend({
 
       if (raw === "/api/site-context" && ["GET", "HEAD"].includes(req.method))
         return send(200, site);
+      if (raw === "/api/front-desk") {
+        if (!["GET", "HEAD"].includes(req.method))
+          return send(405, { error: "Method not allowed." });
+        return send(200, frontDeskConfig(demoOrigin, req.headers.host));
+      }
 
       const match = /^\/api\/submissions\/([a-z-]+)$/.exec(raw);
       if (match) {

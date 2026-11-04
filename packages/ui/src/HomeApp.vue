@@ -18,6 +18,7 @@ import type {
   SiteContext,
 } from "@lp/core";
 import BusinessFooter from "./components/BusinessFooter.vue";
+import FrontDeskEntry from "./components/FrontDeskEntry.vue";
 import PolicyPage from "./components/PolicyPage.vue";
 import { homeCopy } from "./homeCopy.ts";
 import { words } from "./i18n/words.ts";
@@ -143,6 +144,7 @@ onMounted(async () => {
             </ul>
           </aside>
         </section>
+        <FrontDeskEntry :locale="locale" audience="home" />
         <section id="services" class="shell content-section">
           <h2>{{ t.services }}</h2>
           <p>{{ t.coverage }}</p>

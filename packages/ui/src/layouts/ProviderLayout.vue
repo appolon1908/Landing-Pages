@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import IntakeForm from "../components/IntakeForm.vue";
+import FrontDeskEntry from "../components/FrontDeskEntry.vue";
 import ServiceSelector from "../components/ServiceSelector.vue";
 import ServiceHero from "../components/ServiceHero.vue";
 import type { PageController } from "../usePage.ts";
@@ -33,6 +34,11 @@ const commercialText = (value: string) =>
       <p>{{ copy.fit[0] }}</p>
     </aside>
   </section>
+  <FrontDeskEntry
+    :locale="c.activeLocale.value"
+    audience="business"
+    :service="c.manifest.slug"
+  />
   <section class="shell content-section">
     <h2>{{ t.fit }}</h2>
     <ul>
