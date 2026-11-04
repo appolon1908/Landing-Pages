@@ -1,4 +1,5 @@
 import { createApp, h } from "vue";
+import type { Locale } from "@lp/core";
 import { mountLandingPage } from "@lp/ui";
 import { loadSiteContext } from "@lp/ui/siteContext.ts";
 import { registerServiceHero } from "@lp/ui/brandAssets.ts";
@@ -34,7 +35,7 @@ async function boot(): Promise<void> {
       : import("../../../packages/ui/src/components/BreeroProGHL.vue"),
     import("../../../packages/ui/src/components/MetaPixelConsent.vue"),
   ]);
-  const locale = window.location.pathname.match(/^\/(en|es|fr)\//)?.[1] ?? "en";
+  const locale = (window.location.pathname.match(/^\/(en|es|fr)\//)?.[1] ?? "en") as Locale;
   const App = {
     render: () =>
       h("div", [
