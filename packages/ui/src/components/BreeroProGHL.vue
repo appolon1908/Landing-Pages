@@ -366,7 +366,9 @@ import { ref, computed, onMounted, onUnmounted } from "vue";
 const webhookUrl = (import.meta.env.VITE_GHL_PRO_WEBHOOK_URL || "").trim();
 const directIntakeEnabled =
   import.meta.env.VITE_BREERO_DIRECT_GHL_ENABLED === "true" &&
-  document.querySelector('meta[name="lp-ghl-intake-enabled"]')?.getAttribute("content") === "true";
+  document
+    .querySelector('meta[name="lp-ghl-intake-enabled"]')
+    ?.getAttribute("content") === "true";
 const siteId = import.meta.env.VITE_BREERO_SITE_ID || "breero";
 const pixelId = "965185126235275";
 
