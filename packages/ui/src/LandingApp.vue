@@ -5,6 +5,7 @@ import { policyPath, locales } from "@lp/core";
 import type { PageManifest } from "@lp/core";
 import BusinessFooter from "./components/BusinessFooter.vue";
 import PolicyPage from "./components/PolicyPage.vue";
+import MetaPixelConsent from "./components/MetaPixelConsent.vue";
 import DefaultLayout from "./layouts/DefaultLayout.vue";
 import { usePage } from "./usePage.ts";
 import { logoUrl } from "@lp/ui/brandAssets.ts";
@@ -115,5 +116,12 @@ const Layout = props.layout ?? DefaultLayout;
       @navigate="(name) => c.navigatePolicy(name)"
       ><p>{{ c.t.value.independent }}</p></BusinessFooter
     >
+    <MetaPixelConsent
+      :site="c.site.value"
+      :locale="c.activeLocale.value"
+      :pathname="c.policy.value
+        ? policyPath(c.activeLocale.value, c.policy.value.document)
+        : `/${c.page.value.locale}/${c.page.value.audience}/${c.manifest.slug}${c.page.value.thankYou ? '/thank-you' : ''}`"
+    />
   </div>
 </template>
