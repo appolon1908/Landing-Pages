@@ -66,6 +66,7 @@ async function stack(
     backendUrl: `http://127.0.0.1:${backend.address().port}`,
     cacheMs: 0,
     metaPixelEnabled: options.metaPixelEnabled ?? false,
+    ghlIntakeEnabled: options.ghlIntakeEnabled ?? false,
   });
   await new Promise((r) => page.listen(0, "127.0.0.1", r));
   return {
@@ -307,6 +308,35 @@ test("BREERO Meta Pixel is opt-in configured only for live BREERO hosts", async 
         );
       }
       assert.doesNotMatch(response.text, /fbevents\.js|facebook\.com\/tr\?/);
+    } finally {
+      close();
+    }
+  }
+});
+
+
+test("GHL browser destinations are enabled only for approved live BREERO site mode", async () => {
+  for (const variant of [
+    { mode: "preview", brandName: "BREERO", ghlIntakeEnabled: true, enabled: false },
+    { mode: "live", brandName: "Another Brand", ghlIntakeEnabled: true, enabled: false },
+    { mode: "live", brandName: "BREERO", ghlIntakeEnabled: false, enabled: false },
+    { mode: "live", brandName: "BREERO", ghlIntakeEnabled: true, enabled: true },
+  ]) {
+    const { base, close } = await stack(variant.mode, { type: "disabled" }, variant);
+    try {
+      for (const route of ["/en/landing/hvac-heating", "/es/business/hvac-heating"]) {
+        const page = await call(base, route);
+        assert.equal(page.status, 200);
+        if (variant.enabled) {
+          assert.match(page.text, /<meta name="lp-ghl-intake-enabled" content="true">/);
+          assert.match(page.headers["content-security-policy"], /connect-src 'self' https:\/\/services\.leadconnectorhq\.com/);
+          assert.doesNotMatch(page.headers["content-security-policy"], /https:\/\/connect\.facebook\.net/);
+        } else {
+          assert.doesNotMatch(page.text, /lp-ghl-intake-enabled/);
+          assert.doesNotMatch(page.headers["content-security-policy"], /leadconnectorhq/);
+        }
+        assert.doesNotMatch(page.text, /YOUR_HOMEOWNER_WEBHOOK_ID|YOUR_PRO_WEBHOOK_ID/);
+      }
     } finally {
       close();
     }
