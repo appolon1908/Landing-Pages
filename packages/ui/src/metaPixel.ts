@@ -44,7 +44,10 @@ export function readAdvertisingChoice(siteId: string): "allow" | "deny" | null {
   }
 }
 
-export function storeAdvertisingChoice(siteId: string, value: "allow" | "deny"): void {
+export function storeAdvertisingChoice(
+  siteId: string,
+  value: "allow" | "deny",
+): void {
   try {
     localStorage.setItem(PIXEL_CONSENT_PREFIX + siteId, value);
   } catch {
@@ -53,8 +56,10 @@ export function storeAdvertisingChoice(siteId: string, value: "allow" | "deny"):
 }
 
 export function browserDeclinesTracking(): boolean {
-  return (navigator as Navigator & { globalPrivacyControl?: boolean })
-    .globalPrivacyControl === true;
+  return (
+    (navigator as Navigator & { globalPrivacyControl?: boolean })
+      .globalPrivacyControl === true
+  );
 }
 
 function install(): void {
@@ -71,8 +76,12 @@ function install(): void {
     window._fbq = fn;
   }
 
-  if (!document.getElementById(PIXEL_SCRIPT_ID) &&
-      !document.querySelector('script[src="https://connect.facebook.net/en_US/fbevents.js"]')) {
+  if (
+    !document.getElementById(PIXEL_SCRIPT_ID) &&
+    !document.querySelector(
+      'script[src="https://connect.facebook.net/en_US/fbevents.js"]',
+    )
+  ) {
     const script = document.createElement("script");
     script.id = PIXEL_SCRIPT_ID;
     script.async = true;

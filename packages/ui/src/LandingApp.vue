@@ -119,9 +119,11 @@ const Layout = props.layout ?? DefaultLayout;
     <MetaPixelConsent
       :site="c.site.value"
       :locale="c.activeLocale.value"
-      :pathname="c.policy.value
-        ? policyPath(c.activeLocale.value, c.policy.value.document)
-        : `/${c.page.value.locale}/${c.page.value.audience}/${c.manifest.slug}${c.page.value.thankYou ? '/thank-you' : ''}`"
+      :pathname="
+        c.policy.value
+          ? policyPath(c.activeLocale.value, c.policy.value.document)
+          : `/${c.page.value.locale}/${c.page.value.audience}/${c.manifest.slug}${c.page.value.thankYou ? '/thank-you' : ''}`
+      "
     />
   </div>
 </template>

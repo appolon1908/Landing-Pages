@@ -26,7 +26,9 @@ const active = computed(
     pixelConfigured(),
 );
 const blocked = computed(() => browserDeclinesTracking());
-const display = computed(() => active.value && (consent.value === null || manage.value));
+const display = computed(
+  () => active.value && (consent.value === null || manage.value),
+);
 
 const labels = {
   en: {
@@ -46,7 +48,8 @@ const labels = {
     accept: "Permitir medición de anuncios",
     reject: "Rechazar",
     manage: "Preferencias de cookies publicitarias",
-    blocked: "La señal de privacidad de tu navegador desactiva el seguimiento publicitario.",
+    blocked:
+      "La señal de privacidad de tu navegador desactiva el seguimiento publicitario.",
     policy: "Política de privacidad",
   },
   fr: {
@@ -56,14 +59,18 @@ const labels = {
     accept: "Autoriser la mesure publicitaire",
     reject: "Refuser",
     manage: "Préférences des cookies publicitaires",
-    blocked: "Le signal de confidentialité de votre navigateur désactive le suivi publicitaire.",
+    blocked:
+      "Le signal de confidentialité de votre navigateur désactive le suivi publicitaire.",
     policy: "Politique de confidentialité",
   },
 };
 const t = computed(() => labels[props.locale]);
 
 function sync() {
-  syncMetaPixel(active.value && consent.value === "allow" && !blocked.value, props.pathname);
+  syncMetaPixel(
+    active.value && consent.value === "allow" && !blocked.value,
+    props.pathname,
+  );
 }
 function choose(value: "allow" | "deny") {
   consent.value = value;
@@ -76,7 +83,10 @@ function read() {
   sync();
 }
 function storageEvent(event: StorageEvent) {
-  if (event.key === PIXEL_CONSENT_PREFIX + props.site.siteId || event.key === null) {
+  if (
+    event.key === PIXEL_CONSENT_PREFIX + props.site.siteId ||
+    event.key === null
+  ) {
     read();
   }
 }
@@ -89,30 +99,39 @@ onUnmounted(() => {
   // Mounted page changes should not leave a granted state running on exit.
   syncMetaPixel(false, props.pathname);
 });
-watch(() => [props.pathname, props.site.siteId, props.site.mode], () => {
-  consent.value = readAdvertisingChoice(props.site.siteId);
-  sync();
-});
+watch(
+  () => [props.pathname, props.site.siteId, props.site.mode],
+  () => {
+    consent.value = readAdvertisingChoice(props.site.siteId);
+    sync();
+  },
+);
 </script>
 
 <template>
-  <div v-if="active" class="shell meta-ad-consent" data-testid="meta-ad-consent">
+  <div
+    v-if="active"
+    class="shell meta-ad-consent"
+    data-testid="meta-ad-consent"
+  >
     <button
       v-if="!display"
       type="button"
       class="text-button"
       @click="manage = true"
-    >{{ t.manage }}</button>
+    >
+      {{ t.manage }}
+    </button>
     <section v-else class="meta-ad-consent__panel" :aria-label="t.heading">
       <h2>{{ t.heading }}</h2>
       <p>{{ blocked ? t.blocked : t.description }}</p>
-      <p><a :href="`/${locale}/privacy-policy`">{{ t.policy }}</a></p>
+      <p>
+        <a :href="`/${locale}/privacy-policy`">{{ t.policy }}</a>
+      </p>
       <div class="meta-ad-consent__actions">
-        <button
-          type="button"
-          :disabled="blocked"
-          @click="choose('allow')"
-        >{{ t.accept }}</button>
+        <button type="button" :disabled="blocked" @click="choose('allow')">
+          {{ t.accept }}
+        </button>
         <button type="button" @click="choose('deny')">{{ t.reject }}</button>
       </div>
     </section>
@@ -120,11 +139,40 @@ watch(() => [props.pathname, props.site.siteId, props.site.mode], () => {
 </template>
 
 <style scoped>
-.meta-ad-consent { margin-block: 1rem 2rem; font-size: .91rem; }
-.meta-ad-consent__panel { max-width: 750px; padding: 1.25rem; border: 1px solid var(--line); border-radius: .75rem; background: var(--paper); }
-.meta-ad-consent__panel h2 { font-size: 1.2rem; margin: 0 0 .5rem; }
-.meta-ad-consent__panel p { margin: .5rem 0; }
-.meta-ad-consent__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
-.meta-ad-consent__actions button { border: 1px solid var(--line); border-radius: .4rem; min-height: 44px; padding: .5rem .9rem; background: var(--paper); color: var(--body); }
-.meta-ad-consent__actions button:disabled { opacity: .5; cursor: not-allowed; }
+.meta-ad-consent {
+  margin-block: 1rem 2rem;
+  font-size: 0.91rem;
+}
+.meta-ad-consent__panel {
+  max-width: 750px;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--paper);
+}
+.meta-ad-consent__panel h2 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+}
+.meta-ad-consent__panel p {
+  margin: 0.5rem 0;
+}
+.meta-ad-consent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.meta-ad-consent__actions button {
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  min-height: 44px;
+  padding: 0.5rem 0.9rem;
+  background: var(--paper);
+  color: var(--body);
+}
+.meta-ad-consent__actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 </style>

@@ -44,6 +44,7 @@ export function createPageServer({
   cacheMs = 30000,
   // Explicit operator switch; preview tenants and other brands stay tag-free.
   metaPixelEnabled = process.env.LP_BREERO_META_PIXEL_ENABLED === "true",
+  ghlIntakeEnabled = process.env.LP_BREERO_DIRECT_GHL_ENABLED === "true",
 }) {
   const isHome = manifest.kind === "home";
   const backend = new URL(backendUrl);
@@ -179,15 +180,30 @@ export function createPageServer({
         return send(405, { error: "Method not allowed." });
       const site = await siteFor(host);
       if (!site) return send(421, { error: "Unknown site." });
-      const breeroPixel =
-        metaPixelEnabled &&
+      const liveBreero =
         site.mode === "live" &&
         site.brand.name.trim().toLowerCase() === "breero";
-      if (breeroPixel)
+      const breeroPixel = liveBreero && metaPixelEnabled;
+      const breeroGhl = liveBreero && ghlIntakeEnabled;
+      if (breeroPixel || breeroGhl) {
+        const scriptSrc = breeroPixel
+          ? "'self' https://connect.facebook.net"
+          : "'self'";
+        const imageSrc = breeroPixel
+          ? "'self' data: https://www.facebook.com"
+          : "'self' data:";
+        const connectSrc = [
+          "'self'",
+          ...(breeroPixel
+            ? ["https://www.facebook.com", "https://connect.facebook.net"]
+            : []),
+          ...(breeroGhl ? ["https://services.leadconnectorhq.com"] : []),
+        ].join(" ");
         res.setHeader(
           "Content-Security-Policy",
-          "default-src 'self'; script-src 'self' https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.facebook.com; connect-src 'self' https://www.facebook.com https://connect.facebook.net; frame-ancestors 'none'; form-action 'none'; base-uri 'none'; object-src 'none'",
+          `default-src 'self'; script-src ${scriptSrc}; style-src 'self' 'unsafe-inline'; img-src ${imageSrc}; connect-src ${connectSrc}; frame-ancestors 'none'; form-action 'none'; base-uri 'none'; object-src 'none'`,
         );
+      }
       if (!isHome && !siteSlugs(site).includes(manifest.slug))
         return send(404, { error: "Page not offered by this site." });
       if (
@@ -270,11 +286,19 @@ export function createPageServer({
       const pixelMeta = breeroPixel
         ? '<meta name="lp-meta-pixel-id" content="965185126235275">'
         : "";
+      const ghlMeta = breeroGhl
+        ? '<meta name="lp-ghl-intake-enabled" content="true">'
+        : "";
       html = html
         .replace(/<title>.*?<\/title>/s, "")
         .replace(
           "</head>",
-          () => meta + pixelMeta + renderSiteBootstrap(host, site) + "</head>",
+          () =>
+            meta +
+            pixelMeta +
+            ghlMeta +
+            renderSiteBootstrap(host, site) +
+            "</head>",
         )
         .replace(/<html lang="[^"]+">/, `<html lang="${selected.locale}">`);
       if (policy)
