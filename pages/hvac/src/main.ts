@@ -35,7 +35,8 @@ async function boot(): Promise<void> {
       : import("../../../packages/ui/src/components/BreeroProGHL.vue"),
     import("../../../packages/ui/src/components/MetaPixelConsent.vue"),
   ]);
-  const locale = (window.location.pathname.match(/^\/(en|es|fr)\//)?.[1] ?? "en") as Locale;
+  const locale = (window.location.pathname.match(/^\/(en|es|fr)\//)?.[1] ??
+    "en") as Locale;
   const App = {
     render: () =>
       h("div", [
