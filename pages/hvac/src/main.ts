@@ -19,7 +19,8 @@ async function boot(): Promise<void> {
   try {
     site = await loadSiteContext();
   } catch {
-    document.getElementById("app")!.textContent = "Landing preview unavailable.";
+    document.getElementById("app")!.textContent =
+      "Landing preview unavailable.";
     return;
   }
   if (site.brand.name.trim().toLowerCase() !== "breero") {
