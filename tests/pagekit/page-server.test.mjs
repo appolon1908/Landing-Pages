@@ -245,10 +245,30 @@ test("live pages are indexable and submissions flow through the proxy to the bac
 
 test("BREERO Meta Pixel is opt-in configured only for live BREERO hosts", async () => {
   const variants = [
-    { mode: "preview", brandName: "BREERO", metaPixelEnabled: true, expected: false },
-    { mode: "live", brandName: "Another Brand", metaPixelEnabled: true, expected: false },
-    { mode: "live", brandName: "BREERO", metaPixelEnabled: false, expected: false },
-    { mode: "live", brandName: "BREERO", metaPixelEnabled: true, expected: true },
+    {
+      mode: "preview",
+      brandName: "BREERO",
+      metaPixelEnabled: true,
+      expected: false,
+    },
+    {
+      mode: "live",
+      brandName: "Another Brand",
+      metaPixelEnabled: true,
+      expected: false,
+    },
+    {
+      mode: "live",
+      brandName: "BREERO",
+      metaPixelEnabled: false,
+      expected: false,
+    },
+    {
+      mode: "live",
+      brandName: "BREERO",
+      metaPixelEnabled: true,
+      expected: true,
+    },
   ];
   for (const variant of variants) {
     const { base, close } = await stack(
@@ -262,14 +282,29 @@ test("BREERO Meta Pixel is opt-in configured only for live BREERO hosts", async 
       const policy = await call(base, "/es/privacy-policy");
       assert.equal(policy.status, 200);
       if (variant.expected) {
-        assert.match(response.text, /<meta name="lp-meta-pixel-id" content="965185126235275">/);
-        assert.match(policy.text, /<meta name="lp-meta-pixel-id" content="965185126235275">/);
-        assert.match(response.headers["content-security-policy"], /script-src 'self' https:\/\/connect\.facebook\.net/);
-        assert.match(response.headers["content-security-policy"], /img-src 'self' data: https:\/\/www\.facebook\.com/);
+        assert.match(
+          response.text,
+          /<meta name="lp-meta-pixel-id" content="965185126235275">/,
+        );
+        assert.match(
+          policy.text,
+          /<meta name="lp-meta-pixel-id" content="965185126235275">/,
+        );
+        assert.match(
+          response.headers["content-security-policy"],
+          /script-src 'self' https:\/\/connect\.facebook\.net/,
+        );
+        assert.match(
+          response.headers["content-security-policy"],
+          /img-src 'self' data: https:\/\/www\.facebook\.com/,
+        );
       } else {
         assert.doesNotMatch(response.text, /lp-meta-pixel-id/);
         assert.doesNotMatch(policy.text, /lp-meta-pixel-id/);
-        assert.doesNotMatch(response.headers["content-security-policy"], /facebook/);
+        assert.doesNotMatch(
+          response.headers["content-security-policy"],
+          /facebook/,
+        );
       }
       assert.doesNotMatch(response.text, /fbevents\.js|facebook\.com\/tr\?/);
     } finally {
