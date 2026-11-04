@@ -45,7 +45,9 @@ test("local demo links preserve the brand and bounded context on home and both s
         await expect(link).toHaveAttribute("rel", "noopener noreferrer");
       }
       await expect(page.locator(".brand-logo")).toBeVisible();
-      if (audience !== "home") await expect(page.locator("form")).toBeVisible();
+      if (audience === "business")
+        await expect(page.locator("form")).toBeVisible();
+      else await expect(page.locator("form")).toHaveCount(0);
     }
   }
   const results = await new AxeBuilder({ page })
@@ -69,7 +71,8 @@ test("an unavailable or unsafe demo target shows no broken launch control", asyn
     const panel = page.getByTestId("front-desk-entry");
     await expect(panel).toContainText("Booking is not connected yet.");
     await expect(panel.locator("a")).toHaveCount(0);
-    await expect(page.locator("form")).toBeVisible();
+    await expect(page.locator("form")).toHaveCount(0);
+    await expect(page.locator("#request")).toBeVisible();
     await page.unroute("**/api/front-desk");
   }
 });

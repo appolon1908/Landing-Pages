@@ -48,7 +48,15 @@ real client-IP enforcement requires an explicit trusted-proxy design.
 
 ## Intake and CRM authority
 
-1. Separate staged forms collect audience/service fields. The proposed market uses
+Customer pages use the shared BREERO booking entry. When a validated local target
+is available, customer hero/final/mobile CTAs open its booking form with only
+bounded service, audience and locale context. Otherwise they focus the on-page
+booking panel. Provider pages retain the inline application. The standalone
+preview calendar confers no CRM or production booking authority.
+
+The retained intake contracts and provider application work as follows:
+
+1. Staged intake forms collect audience/service fields. The proposed market uses
    Dominican phone rules and configured zones.
 2. Service-contact permission is separate from optional promotion/SMS choices. Locale
    changes retain fields and clear permissions whose wording changed.

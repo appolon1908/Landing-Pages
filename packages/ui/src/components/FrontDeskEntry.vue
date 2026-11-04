@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from "vue";
+import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import { frontDeskDemoLink, parseFrontDeskConfig } from "@lp/core";
 import type { FrontDeskConfig, FrontDeskContext } from "@lp/core";
 
 const props = defineProps<FrontDeskContext>();
+const emit = defineEmits<{ "form-link": [href: string | null] }>();
 const config = ref<FrontDeskConfig | null>(null);
 const loading = ref(true);
 const abort = new AbortController();
@@ -51,6 +52,7 @@ const voiceLink = computed(() =>
 const formLink = computed(() =>
   config.value ? frontDeskDemoLink(config.value, props, "form") : null,
 );
+watch(formLink, (href) => emit("form-link", href), { immediate: true });
 onMounted(async () => {
   try {
     const response = await fetch("/api/front-desk", {

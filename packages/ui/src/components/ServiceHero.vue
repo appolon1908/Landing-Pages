@@ -8,6 +8,8 @@ const props = defineProps<{
   headline: string;
   subhead: string;
   cta: string;
+  ctaHref?: string;
+  ctaExternal?: boolean;
 }>();
 const heroUrl = computed(() =>
   props.brand.trim().toLowerCase() === "breero"
@@ -27,7 +29,12 @@ const heroUrl = computed(() =>
         <h1>{{ headline }}</h1>
         <p class="lede">{{ subhead }}</p>
         <div class="hero-actions">
-          <a class="button primary" href="#request"
+          <a
+            class="button primary"
+            :href="ctaHref ?? '#request'"
+            :target="ctaExternal ? '_blank' : undefined"
+            :rel="ctaExternal ? 'noopener noreferrer' : undefined"
+            :aria-describedby="ctaExternal ? 'front-desk-link-note' : undefined"
             >{{ cta }} <span aria-hidden="true">↗</span></a
           >
           <slot name="secondary" />

@@ -14,42 +14,47 @@ import {
 
 for (const locale of locales) {
   for (const audience of audiences) {
-    test(`two-step ${locale}/${audience}: errors, consent and zero-write preview`, async ({
-      page,
-    }) => {
-      await page.goto(serviceUrl("hvac", locale, audience));
-      await expect(page.locator("[data-intake-next]")).toBeVisible();
-      await expect(page.locator("[data-intake-submit]")).toHaveCount(0);
-      await page.locator("[data-intake-next]").click();
-      await assertAnnouncedError(page);
-      await firstStep(page, audience);
-      await hvacDetails(page, audience);
-      await expect(page.locator('input[name="consent"]')).not.toBeChecked();
-      await expect(page.locator('input[name="promotions"]')).not.toBeChecked();
-      await expect(
-        page.locator('input[name="promotions"]'),
-      ).not.toHaveAttribute("required");
-      await expect(
-        page.locator(
-          "input[name=address], input[name=postalCode], select[name=state]",
-        ),
-      ).toHaveCount(0);
-      // The preview must validate service consent even though no write is allowed.
-      await page.locator("[data-intake-submit]").click();
-      await assertAnnouncedError(page);
-      await expect(page.locator("[data-intake-status]")).not.toContainText(
-        previewMessage[locale],
-      );
-      await page.locator('input[name="consent"]').check();
-      await page.locator("[data-intake-submit]").click();
-      await expect(page.locator("[data-intake-status]")).toContainText(
-        previewMessage[locale],
-      );
-      await expect(page).toHaveURL(serviceUrl("hvac", locale, audience));
-      await expect(page.locator(".receipt-page")).toHaveCount(0);
-      // Leaving promotions unchecked must not block an otherwise valid request.
-      await expect(page.locator('input[name="promotions"]')).not.toBeChecked();
-    });
+    if (audience === "business")
+      test(`two-step ${locale}/${audience}: errors, consent and zero-write preview`, async ({
+        page,
+      }) => {
+        await page.goto(serviceUrl("hvac", locale, audience));
+        await expect(page.locator("[data-intake-next]")).toBeVisible();
+        await expect(page.locator("[data-intake-submit]")).toHaveCount(0);
+        await page.locator("[data-intake-next]").click();
+        await assertAnnouncedError(page);
+        await firstStep(page, audience);
+        await hvacDetails(page, audience);
+        await expect(page.locator('input[name="consent"]')).not.toBeChecked();
+        await expect(
+          page.locator('input[name="promotions"]'),
+        ).not.toBeChecked();
+        await expect(
+          page.locator('input[name="promotions"]'),
+        ).not.toHaveAttribute("required");
+        await expect(
+          page.locator(
+            "input[name=address], input[name=postalCode], select[name=state]",
+          ),
+        ).toHaveCount(0);
+        // The preview must validate service consent even though no write is allowed.
+        await page.locator("[data-intake-submit]").click();
+        await assertAnnouncedError(page);
+        await expect(page.locator("[data-intake-status]")).not.toContainText(
+          previewMessage[locale],
+        );
+        await page.locator('input[name="consent"]').check();
+        await page.locator("[data-intake-submit]").click();
+        await expect(page.locator("[data-intake-status]")).toContainText(
+          previewMessage[locale],
+        );
+        await expect(page).toHaveURL(serviceUrl("hvac", locale, audience));
+        await expect(page.locator(".receipt-page")).toHaveCount(0);
+        // Leaving promotions unchecked must not block an otherwise valid request.
+        await expect(
+          page.locator('input[name="promotions"]'),
+        ).not.toBeChecked();
+      });
 
     test(`direct thank-you ${locale}/${audience} has no fabricated receipt`, async ({
       page,
@@ -65,6 +70,7 @@ for (const locale of locales) {
 }
 
 for (const audience of audiences) {
+  if (audience !== "business") continue;
   test(`locale changes preserve ${audience} details and clear every consent choice`, async ({
     page,
   }) => {
@@ -88,22 +94,13 @@ for (const audience of audiences) {
         "marketingSms",
       ])
         await expect(page.locator(`input[name="${name}"]`)).not.toBeChecked();
-      if (audience === "landing") {
-        await expect(page.locator('input[name="name"]')).toHaveValue(
-          "Contacto de prueba",
-        );
-        await expect(page.locator('input[name="phone"]')).toHaveValue(
-          "+1 809 555 0100",
-        );
-      } else {
-        await expect(page.locator('input[name="capacity"]')).toHaveValue("2");
-        await expect(
-          page.locator('input[name="supportedSubtypes"][value="repair"]'),
-        ).toBeChecked();
-        await expect(
-          page.locator('input[name="languages"][value="es"]'),
-        ).toBeChecked();
-      }
+      await expect(page.locator('input[name="capacity"]')).toHaveValue("2");
+      await expect(
+        page.locator('input[name="supportedSubtypes"][value="repair"]'),
+      ).toBeChecked();
+      await expect(
+        page.locator('input[name="languages"][value="es"]'),
+      ).toBeChecked();
       await expect(
         page.locator("link[rel=alternate][hreflang=fr]"),
       ).toHaveAttribute("href", serviceUrl("hvac", "fr", audience));
@@ -113,47 +110,17 @@ for (const audience of audiences) {
       );
     }
     await page.locator("[data-intake-back]").click();
-    if (audience === "landing") {
-      await expect(page.locator('select[name="subtype"]')).toHaveValue(
-        "repair",
-      );
-      await expect(page.locator('select[name="zone"]')).toHaveValue(
-        "distrito-nacional",
-      );
-      await expect(page.locator('[name="extra:equipment-type"]')).toHaveValue(
-        "split",
-      );
-    } else {
-      await expect(page.locator('input[name="businessName"]')).toHaveValue(
-        "Servicios de prueba",
-      );
-      await expect(page.locator('input[name="email"]')).toHaveValue(
-        "preview@example.org",
-      );
-      await expect(
-        page.locator('input[name="zones"][value="distrito-nacional"]'),
-      ).toBeChecked();
-    }
+    await expect(page.locator('input[name="businessName"]')).toHaveValue(
+      "Servicios de prueba",
+    );
+    await expect(page.locator('input[name="email"]')).toHaveValue(
+      "preview@example.org",
+    );
+    await expect(
+      page.locator('input[name="zones"][value="distrito-nacional"]'),
+    ).toBeChecked();
   });
 }
-
-test("an invalid email contact preference blocks preview; a valid address allows it", async ({
-  page,
-}) => {
-  await page.goto(serviceUrl("hvac", "en", "landing"));
-  await firstStep(page, "landing");
-  await hvacDetails(page, "landing");
-  await page.locator('select[name="contactPreference"]').selectOption("email");
-  await page.locator('input[name="consent"]').check();
-  await page.locator('input[name="email"]').fill("not-an-email");
-  await page.locator("[data-intake-submit]").click();
-  await assertAnnouncedError(page);
-  await page.locator('input[name="email"]').fill("preview@example.org");
-  await page.locator("[data-intake-submit]").click();
-  await expect(page.locator("[data-intake-status]")).toContainText(
-    previewMessage.en,
-  );
-});
 
 test("optional provider scope details survive locale changes and radius limits are enforced", async ({
   page,

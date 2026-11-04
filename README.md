@@ -42,6 +42,12 @@ navigation; it does not modify checked-in files. Include at least one service wi
 The shared customer/provider layouts and corporate homepage include a localized
 BREERO panel with separate voice and booking-form choices, preserving the supplied
 company branding and service images. The links are unavailable by default.
+The thirty customer pages use this booking entry instead of the previous inline
+customer intake form. Their hero, final and mobile booking CTAs open the BREERO
+form with the current service and language when configured; otherwise they stay
+on the page and focus the unavailable booking panel. Provider pages retain their
+existing inline application and application CTAs. The corporate homepage and all
+provider pages also retain the separate voice/form choices.
 Start the separate Front Desk app, then
 set its printed localhost origin before starting this preview stack:
 

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { policyPath } from "@lp/core";
-import IntakeForm from "../components/IntakeForm.vue";
 import FrontDeskEntry from "../components/FrontDeskEntry.vue";
 import ServiceSelector from "../components/ServiceSelector.vue";
 import ServiceHero from "../components/ServiceHero.vue";
@@ -10,6 +9,7 @@ import { layoutCopy } from "./layoutCopy.ts";
 const { c } = defineProps<{ c: PageController }>();
 const copy = computed(() => c.manifest.customer[c.activeLocale.value]);
 const t = computed(() => layoutCopy[c.activeLocale.value]);
+const bookingHref = ref<string | null>(null);
 </script>
 
 <template>
@@ -20,6 +20,8 @@ const t = computed(() => layoutCopy[c.activeLocale.value]);
     :headline="copy.headline"
     :subhead="copy.subhead"
     :cta="copy.cta"
+    :cta-href="bookingHref ?? '#request'"
+    :cta-external="Boolean(bookingHref)"
   >
     <template #secondary>
       <a
@@ -53,11 +55,13 @@ const t = computed(() => layoutCopy[c.activeLocale.value]);
     </aside>
   </section>
   <FrontDeskEntry
+    id="request"
+    tabindex="-1"
     :locale="c.activeLocale.value"
     audience="landing"
     :service="c.manifest.slug"
+    @form-link="bookingHref = $event"
   />
-  <IntakeForm :c="c" />
   <section class="shell content-section evidence-note">
     <h2>{{ c.site.value?.brand.name }}</h2>
     <p>{{ t.context }}</p>
@@ -106,13 +110,25 @@ const t = computed(() => layoutCopy[c.activeLocale.value]);
   </section>
   <section class="shell content-section final-request">
     <h2>{{ t.final }}</h2>
-    <a class="button primary" href="#request"
+    <a
+      class="button primary"
+      :href="bookingHref ?? '#request'"
+      :target="bookingHref ? '_blank' : undefined"
+      :rel="bookingHref ? 'noopener noreferrer' : undefined"
+      :aria-describedby="bookingHref ? 'front-desk-link-note' : undefined"
       >{{ copy.cta }} <span aria-hidden="true">↗</span></a
     >
     <p class="small-print">{{ t.privacy }}</p>
   </section>
   <ServiceSelector v-if="c.manifest.features.serviceSelector" :c="c" />
   <div class="mobile-action">
-    <a class="button primary" href="#request">{{ copy.cta }}</a>
+    <a
+      class="button primary"
+      :href="bookingHref ?? '#request'"
+      :target="bookingHref ? '_blank' : undefined"
+      :rel="bookingHref ? 'noopener noreferrer' : undefined"
+      :aria-describedby="bookingHref ? 'front-desk-link-note' : undefined"
+      >{{ copy.cta }}</a
+    >
   </div>
 </template>

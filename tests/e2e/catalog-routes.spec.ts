@@ -78,7 +78,12 @@ for (const route of coreRoutes) {
     await expect(page.getByTestId("front-desk-entry")).toBeVisible();
     await expect(page.getByTestId("business-footer")).toBeVisible();
     if (route.audience) {
-      await expect(page.locator("form")).toBeVisible();
+      if (route.audience === "business")
+        await expect(page.locator("form")).toBeVisible();
+      else {
+        await expect(page.locator("form")).toHaveCount(0);
+        await expect(page.locator("#request")).toBeVisible();
+      }
       await expect(
         page.locator(
           route.audience === "landing" ? "#service-scope" : "#example-lead",
@@ -121,7 +126,8 @@ test("page origins reject other service routes and the selector navigates to the
   await page.goto(serviceUrl("hvac", "fr", "landing"));
   await page.locator("#service-choice").selectOption("plumbing");
   await expect(page).toHaveURL(serviceUrl("plumbing", "fr", "landing"));
-  await expect(page.locator("form")).toBeVisible();
+  await expect(page.locator("form")).toHaveCount(0);
+  await expect(page.locator("#request")).toBeVisible();
   await expect(page.locator("link[rel=canonical]")).toHaveAttribute(
     "href",
     serviceUrl("plumbing", "fr", "landing"),

@@ -4,6 +4,7 @@ import { firstStep, hvacDetails } from "./intake-helpers.ts";
 
 for (const locale of locales) {
   for (const audience of audiences) {
+    if (audience !== "business") continue;
     test(`mobile CTA leaves ${locale}/${audience} focused fields usable`, async ({
       page,
     }) => {
@@ -16,11 +17,7 @@ for (const locale of locales) {
       await expect(page.locator("#request")).toBeInViewport();
       await firstStep(page, audience);
       await hvacDetails(page, audience);
-      const field = page.locator(
-        audience === "landing"
-          ? 'textarea[name="description"]'
-          : 'input[name="capacity"]',
-      );
+      const field = page.locator('input[name="capacity"]');
       await field.focus();
       await expect(field).toBeFocused();
       // Reduced height approximates the space left above a mobile keyboard.
