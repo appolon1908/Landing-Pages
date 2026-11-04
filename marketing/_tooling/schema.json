@@ -1,0 +1,562 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Breero inactive marketing draft",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "slug",
+    "status",
+    "enabled",
+    "campaigns",
+    "instantForm",
+    "whatsapp",
+    "creativeBriefs"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "status": {
+      "const": "DRAFT"
+    },
+    "enabled": {
+      "const": false
+    },
+    "campaigns": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "audience",
+          "objective",
+          "destination",
+          "locale",
+          "name",
+          "pageHeadline",
+          "pageCta",
+          "primaryText",
+          "headline",
+          "description",
+          "cta",
+          "ctaLabel",
+          "landingPath",
+          "utm"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "audience": {
+            "type": "string",
+            "enum": ["customer", "provider"]
+          },
+          "objective": {
+            "const": "LEADS"
+          },
+          "destination": {
+            "type": "string",
+            "enum": ["website", "instant_form", "whatsapp"]
+          },
+          "locale": {
+            "type": "string",
+            "enum": ["es", "en", "fr"]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 180
+          },
+          "pageHeadline": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "pageCta": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "primaryText": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 125
+            }
+          },
+          "headline": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            }
+          },
+          "description": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            }
+          },
+          "cta": {
+            "type": "string",
+            "enum": ["GET_QUOTE", "APPLY_NOW", "WHATSAPP_MESSAGE"]
+          },
+          "ctaLabel": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "landingPath": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "utm": {
+            "type": "object",
+            "required": [
+              "utm_source",
+              "utm_medium",
+              "utm_campaign",
+              "utm_content"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "utm_source": {
+                "const": "meta"
+              },
+              "utm_medium": {
+                "const": "paid_social"
+              },
+              "utm_campaign": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 180
+              },
+              "utm_content": {
+                "const": "{{ad.name}}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "instantForm": {
+      "type": "object",
+      "required": ["es", "en", "fr"],
+      "additionalProperties": false,
+      "properties": {
+        "es": {
+          "type": "object",
+          "required": [
+            "status",
+            "intro",
+            "questions",
+            "privacyPolicyPath",
+            "thankYou"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "DRAFT"
+            },
+            "intro": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 600
+            },
+            "questions": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "object",
+                "required": ["kind", "label", "options"],
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "multiple_choice",
+                      "full_name",
+                      "phone",
+                      "short_text"
+                    ]
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120
+                  },
+                  "options": {
+                    "type": "array",
+                    "minItems": 0,
+                    "maxItems": 8,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 160
+                    }
+                  }
+                }
+              }
+            },
+            "privacyPolicyPath": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 60
+            },
+            "thankYou": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 600
+            }
+          }
+        },
+        "en": {
+          "type": "object",
+          "required": [
+            "status",
+            "intro",
+            "questions",
+            "privacyPolicyPath",
+            "thankYou"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "DRAFT"
+            },
+            "intro": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 600
+            },
+            "questions": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "object",
+                "required": ["kind", "label", "options"],
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "multiple_choice",
+                      "full_name",
+                      "phone",
+                      "short_text"
+                    ]
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120
+                  },
+                  "options": {
+                    "type": "array",
+                    "minItems": 0,
+                    "maxItems": 8,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 160
+                    }
+                  }
+                }
+              }
+            },
+            "privacyPolicyPath": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 60
+            },
+            "thankYou": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 600
+            }
+          }
+        },
+        "fr": {
+          "type": "object",
+          "required": [
+            "status",
+            "intro",
+            "questions",
+            "privacyPolicyPath",
+            "thankYou"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "DRAFT"
+            },
+            "intro": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 600
+            },
+            "questions": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "object",
+                "required": ["kind", "label", "options"],
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "multiple_choice",
+                      "full_name",
+                      "phone",
+                      "short_text"
+                    ]
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120
+                  },
+                  "options": {
+                    "type": "array",
+                    "minItems": 0,
+                    "maxItems": 8,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 160
+                    }
+                  }
+                }
+              }
+            },
+            "privacyPolicyPath": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 60
+            },
+            "thankYou": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 600
+            }
+          }
+        }
+      }
+    },
+    "whatsapp": {
+      "type": "object",
+      "required": ["es", "en", "fr"],
+      "additionalProperties": false,
+      "properties": {
+        "es": {
+          "type": "object",
+          "required": ["prefill", "iceBreakers"],
+          "additionalProperties": false,
+          "properties": {
+            "prefill": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 400
+            },
+            "iceBreakers": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              }
+            }
+          }
+        },
+        "en": {
+          "type": "object",
+          "required": ["prefill", "iceBreakers"],
+          "additionalProperties": false,
+          "properties": {
+            "prefill": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 400
+            },
+            "iceBreakers": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              }
+            }
+          }
+        },
+        "fr": {
+          "type": "object",
+          "required": ["prefill", "iceBreakers"],
+          "additionalProperties": false,
+          "properties": {
+            "prefill": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 400
+            },
+            "iceBreakers": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              }
+            }
+          }
+        }
+      }
+    },
+    "creativeBriefs": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "audience",
+          "concept",
+          "durationSec",
+          "copyOverlay",
+          "notes",
+          "shots"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["image", "vertical-video-9x16"]
+          },
+          "audience": {
+            "type": "string",
+            "enum": ["customer", "provider"]
+          },
+          "concept": {
+            "type": "string",
+            "enum": [
+              "problem-scope",
+              "service-explainer",
+              "partnership",
+              "seasonal-planning"
+            ]
+          },
+          "durationSec": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 15
+          },
+          "copyOverlay": {
+            "type": "object",
+            "required": ["es", "en", "fr"],
+            "additionalProperties": false,
+            "properties": {
+              "es": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "fr": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              }
+            }
+          },
+          "notes": {
+            "type": "object",
+            "required": ["es", "en", "fr"],
+            "additionalProperties": false,
+            "properties": {
+              "es": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 600
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 600
+              },
+              "fr": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 600
+              }
+            }
+          },
+          "shots": {
+            "type": "object",
+            "required": ["es", "en", "fr"],
+            "additionalProperties": false,
+            "properties": {
+              "es": {
+                "type": "array",
+                "minItems": 0,
+                "maxItems": 3,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 300
+                }
+              },
+              "en": {
+                "type": "array",
+                "minItems": 0,
+                "maxItems": 3,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 300
+                }
+              },
+              "fr": {
+                "type": "array",
+                "minItems": 0,
+                "maxItems": 3,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 300
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

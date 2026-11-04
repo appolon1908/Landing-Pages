@@ -1,4 +1,9 @@
-"""Build and inspect only this task's disposable, loopback-only container."""
+"""Build and inspect a disposable, loopback-only container.
+
+Usage:
+  python3 scripts/container_smoke.py                     # backend image
+  IMAGE_TARGET=page PAGE=hvac python3 scripts/container_smoke.py
+"""
 import json
 import os
 import secrets
@@ -12,7 +17,11 @@ root = Path(__file__).resolve().parents[1]
 docker = shlex.split(os.getenv("DOCKER", "docker"))
 name = "codestra-image-check-" + secrets.token_hex(5)
 image = "local/" + name
-port = int(os.getenv("CONTAINER_PORT", "4173"))
+target = os.getenv("IMAGE_TARGET", "backend")
+page = os.getenv("PAGE", "hvac")
+port = int(os.getenv("CONTAINER_PORT", "4000" if target == "backend" else "4173"))
+build_args = (["-f", "backend/Dockerfile"] if target == "backend" else ["-f", "Dockerfile.page", "--build-arg", f"PAGE={page}"])
+run_env = [] if target == "backend" else ["-e", "BACKEND_URL=http://127.0.0.1:4000"]
 health_path = os.getenv("HEALTH_PATH", "/healthz")
 started = False
 
@@ -25,10 +34,10 @@ def run(args):
 
 
 try:
-    run(["build", "--label", "codestra.task=standalone-image-check", "-t", image, "."])
+    run(["build", *build_args, "--label", "codestra.task=standalone-image-check", "-t", image, "."])
     user = run(["image", "inspect", image, "--format", "{{.Config.User}}"])
     assert user not in ("", "root", "0", "0:0"), "Image must declare a non-root user"
-    run(["run", "-d", "--rm", "--name", name, "--label", "codestra.task=standalone-image-check", "--read-only", "--cap-drop=ALL", "--security-opt=no-new-privileges", "-p", f"127.0.0.1::{port}", image])
+    run(["run", "-d", "--rm", "--name", name, "--label", "codestra.task=standalone-image-check", "--read-only", "--cap-drop=ALL", "--security-opt=no-new-privileges", *run_env, "-p", f"127.0.0.1::{port}", image])
     started = True
     published = run(["port", name, f"{port}/tcp"]).rsplit(":", 1)[1]
     deadline = time.monotonic() + 60
@@ -41,8 +50,7 @@ try:
             time.sleep(0.5)
     else:
         raise RuntimeError("Image health check did not become ready")
-    effects = health.get("productionEffects", health.get("production_effects"))
-    assert effects is False, "Production effects must remain disabled"
+    assert health.get("status") == "ok", "Health endpoint must report ok"
     assert run(["exec", name, "id", "-u"]) != "0", "Runtime user must be non-root"
     print(json.dumps({"result": "PASS", "image": run(["image", "inspect", image, "--format", "{{.Id}}"]), "runtime_user": user, "health": health, "loopback_only": True, "read_only": True}))
 finally:

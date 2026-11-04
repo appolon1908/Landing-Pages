@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "status": "staffing_proposal_not_implementation",
+  "contentMap": "service-content-map.json",
+  "authority": { "staffing": "Latest user instruction: four writer/coder roles per landing page, paired section ownership, three global reviewers and three global testers.", "backend": "CRM", "vendor": "unconfirmed", "historicalMissionStaffingSuperseded": true },
+  "implementationBoundary": { "targetPages": 61, "targetLocales": ["es", "en", "fr"], "targetLocalizedPages": 183, "reportedRecoveredSnapshotPages": 5, "fullTargetImplemented": false, "statement": "The current recovered snapshot has five pages; the complete 61-page target is not implemented. This file assigns planned responsibilities only.", "snapshotEvidenceSource": "coordinator_report_not_a_source_audit_by_this_reviewer" },
+  "teamExpansion": {
+    "servicePages": "For each of the 30 slugs in service-content-map.json, create one customer page team and one provider page team.",
+    "homepage": "Create one additional corporate homepage team with the same four role types.",
+    "pageIdFormats": { "customer": "customer/{slug}", "provider": "provider/{slug}", "homepage": "home" },
+    "roleInstanceFormat": "{pageId}:{roleId}",
+    "pageTeams": 61,
+    "rolesPerPage": 4,
+    "pageRoleAssignments": 244,
+    "globalReviewerAssignments": 3,
+    "globalTesterAssignments": 3,
+    "totalAssignmentsExcludingController": 250,
+    "meaning": "Assignments are responsibilities, not simultaneously running agents. One worker can fulfill different eligible assignments sequentially."
+  },
+  "pageRoles": [
+    { "id": "COPY_A", "discipline": "copy", "responsibility": "Draft the assigned introduction and conversion sections in ES/EN/FR; trace service offers and CTA meaning to the blueprint; record unknown facts as owner inputs.", "deliverable": "Page-specific copy artifact for assigned sections, with source references and unresolved inputs." },
+    { "id": "CODE_A", "discipline": "code", "responsibility": "Implement COPY_A sections, semantic structure, responsive presentation and necessary form UI using the agreed shared contracts; preserve CRM authority.", "deliverable": "Implementation of assigned sections and local validation evidence." },
+    { "id": "COPY_B", "discipline": "copy", "responsibility": "Draft the assigned details, terms, proof and FAQ sections in ES/EN/FR; distinguish proposed process from verified operations and maintain honest confirmation language.", "deliverable": "Page-specific copy artifact for assigned sections, with owner-input and proof inventory." },
+    { "id": "CODE_B", "discipline": "code", "responsibility": "Implement COPY_B sections, localized metadata, confirmation presentation and accessible navigation using approved shared components and backend contracts.", "deliverable": "Implementation of assigned sections and local validation evidence." }
+  ],
+  "sectionPairs": {
+    "rule": "Each section has exactly two assigned roles from its own page team: one copy role and one code role. Pairing does not permit concurrent edits to the same file or Git index.",
+    "customer": [
+      { "sectionId": "C01", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "C02", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "C03", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "C04", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "C05", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "C06", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "C07", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "C08", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "C09", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "C10", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "C11", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "C12", "roles": ["COPY_B", "CODE_B"] }
+    ],
+    "provider": [
+      { "sectionId": "P01", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "P02", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "P03", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "P04", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "P05", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "P06", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "P07", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "P08", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "P09", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "P10", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "P11", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "P12", "roles": ["COPY_B", "CODE_B"] }
+    ],
+    "home": [
+      { "sectionId": "H01", "key": "header", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "H02", "key": "two_audience_hero", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "H03", "key": "service_groups", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "H04", "key": "customer_journey", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "H05", "key": "provider_journey", "roles": ["COPY_A", "CODE_A"] },
+      { "sectionId": "H06", "key": "trust", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "H07", "key": "seasonal_feature", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "H08", "key": "business_accounts", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "H09", "key": "provider_recruitment", "roles": ["COPY_B", "CODE_B"] },
+      { "sectionId": "H10", "key": "faq_and_footer", "roles": ["COPY_B", "CODE_B"] }
+    ]
+  },
+  "globalReviewers": [
+    { "id": "R1_ARCHITECTURE_PRIVACY", "scope": "Architecture, CRM ownership, backend boundaries, consent separation, tenant isolation, data minimization and configuration safety.", "output": "Findings with blocker/should-fix/note severity, evidence and exact reviewed revision." },
+    { "id": "R2_CONTENT_LOCALIZATION", "scope": "Blueprint completeness, customer/provider distinction, ES/EN/FR adaptation, claims, proof, pricing factors, CTA consistency and owner-input handling.", "output": "Per-page, per-audience, per-locale content verdict; pilot pages reviewed first." },
+    { "id": "R3_UX_RELEASE", "scope": "Section order, usable forms, accessibility evidence, mobile layout, honest request/application states and release readiness.", "output": "UX findings and release recommendation based on test evidence; no protected-branch merge authority." }
+  ],
+  "globalTesters": [
+    { "id": "T1_CONTRACT_CRM", "scope": "Unit and contract validation, locale/manifest completeness, form and consent rules, preview non-submission, CRM envelope, idempotency and failure behavior using fake transports.", "output": "Test code, commands, results and explicit untested integration boundaries." },
+    { "id": "T2_BROWSER_ACCESSIBILITY", "scope": "All 183 target localized routes and metadata; complete forms, locale switching, keyboard and screen-reader checks, no-JS policy readability, responsive overflow and accessibility checks for homepage plus pilots in every audience/locale.", "output": "Browser/accessibility evidence by route, locale and viewport; missing pages fail coverage." },
+    { "id": "T3_CONTENT_BUILD_PERFORMANCE", "scope": "Content and marketing validation where implemented, all 31 target package builds, format/type/registry checks, bundle budgets, CI matrix and container smoke where tooling is available.", "output": "Quality/build/performance report with exact commands and counts; unavailable checks are not passed." }
+  ],
+  "controller": { "id": "CONTROLLER", "scope": "Maintain the queue, assign role instances to eligible workers, resolve file ownership before dispatch, integrate reviewed changes, record evidence and use the guarded publication path when authorized.", "capacitySlots": 1, "cannotSubstituteForIndependentReview": true },
+  "executionPolicy": {
+    "maxConcurrentWorkers": 3,
+    "maxControllerInstances": 1,
+    "maxTotalConcurrentAgents": 4,
+    "reviewersAndTestersConsumeWorkerSlots": true,
+    "logicalRolesDoNotReserveProcesses": true,
+    "priority": ["shared contracts and page schema", "pilot service page teams and homepage", "remaining service page teams", "complete route and acceptance evidence"],
+    "queueStates": ["planned", "copy_in_progress", "copy_ready", "code_in_progress", "ready_for_test", "ready_for_review", "changes_requested", "accepted"],
+    "pairHandoff": "COPY role writes a separate content artifact first. Its CODE partner consumes that handoff and owns implementation of those sections. Shared manifest/layout changes are serialized through the controller or a named existing platform owner.",
+    "isolation": "Every active source mutation uses its assigned isolated worktree and atomic branch. No shared index and no concurrent writes to the same file. This planning task does not create those branches.",
+    "reviewIndependence": "A worker cannot review or provide the independent test verdict for a change it authored. Store worker identity and reviewed revision with every verdict; role switching alone does not create independence.",
+    "scopeOfIndependentTesting": "Testers may write test/evidence files for their assignment, but do not edit the product implementation they independently test.",
+    "releaseBoundary": "Preview only. No provider calls, ads, messages, spending, production activation, protected-branch merge or credentials provisioning follows from role assignment."
+  },
+  "contentMapReview": {
+    "reviewMethod": "Fresh comparison of the planning map with the two supplied documents; this is a self-review of the map, not an independent review of authored source code.",
+    "checked": ["30 blueprint service rows", "30 mission slugs and order", "60 exact source English audience CTAs", "180 nonempty localized CTA strings", "five pilot flags", "12 ordered sections for each audience", "CRM authority and vendor uncertainty", "truthfulness and owner-input constraints"],
+    "blockingMapFindings": [],
+    "fixesApplied": ["Marked page counts as target scope, not delivered pages.", "Added the five-page recovered-snapshot boundary and full61PageTargetImplemented=false."],
+    "remainingReviewNeeds": ["Independent language review of drafted ES/FR CTA wording.", "Owner confirmation of actual operating, commercial and proof facts before public use."],
+    "sourceImplementationReviewed": false
+  }
+}

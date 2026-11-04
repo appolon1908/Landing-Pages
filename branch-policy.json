@@ -1,5 +1,8 @@
 {
   "subsection": "subsection/public--foundation",
   "section": "section/public",
+  "atomicSubsections": {
+    "atomic/breero-image-assets-20261103": "subsection/public--images"
+  },
   "requiredChecks": ["landing-checks", "branch-governance", "container-smoke"]
 }

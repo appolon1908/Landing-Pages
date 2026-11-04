@@ -1,0 +1,475 @@
+{
+  "schemaVersion": 1,
+  "slug": "roofing",
+  "status": "DRAFT",
+  "enabled": false,
+  "campaigns": [
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "es",
+      "name": "DO|santo-domingo|roofing|customer|base|evergreen|website-v1-es",
+      "pageHeadline": "¿Tiene filtraciones en el techo en Santo Domingo?",
+      "pageCta": "Solicitar una inspección del techo",
+      "primaryText": [
+        "Techos e impermeabilización. Vista previa; disponibilidad por confirmar.",
+        "Solicitar una inspección del techo. Explore el proceso propuesto en Santo Domingo.",
+        "Solicitar una inspección del techo. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Solicitar una inspección del techo",
+        "Techos e impermeabilización"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Solicitar cotización",
+      "landingPath": "/es/landing/roofing",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|roofing|customer|base|evergreen|website-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "instant_form",
+      "locale": "es",
+      "name": "DO|santo-domingo|roofing|customer|base|evergreen|instant_form-v1-es",
+      "pageHeadline": "¿Tiene filtraciones en el techo en Santo Domingo?",
+      "pageCta": "Solicitar una inspección del techo",
+      "primaryText": [
+        "Techos e impermeabilización. Vista previa; disponibilidad por confirmar.",
+        "Solicitar una inspección del techo. Explore el proceso propuesto en Santo Domingo.",
+        "Solicitar una inspección del techo. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Solicitar una inspección del techo",
+        "Techos e impermeabilización"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Solicitar cotización",
+      "landingPath": "/es/landing/roofing",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|roofing|customer|base|evergreen|instant_form-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "whatsapp",
+      "locale": "es",
+      "name": "DO|santo-domingo|roofing|customer|base|evergreen|whatsapp-v1-es",
+      "pageHeadline": "¿Tiene filtraciones en el techo en Santo Domingo?",
+      "pageCta": "Solicitar una inspección del techo",
+      "primaryText": [
+        "Techos e impermeabilización. Vista previa; disponibilidad por confirmar.",
+        "Solicitar una inspección del techo. Explore el proceso propuesto en Santo Domingo.",
+        "Solicitar una inspección del techo. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Solicitar una inspección del techo",
+        "Techos e impermeabilización"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "WHATSAPP_MESSAGE",
+      "ctaLabel": "Enviar mensaje por WhatsApp",
+      "landingPath": "/es/landing/roofing",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|roofing|customer|base|evergreen|whatsapp-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "en",
+      "name": "DO|santo-domingo|roofing|customer|base|evergreen|website-v1-en",
+      "pageHeadline": "A leaking roof in Santo Domingo?",
+      "pageCta": "Request a roof inspection",
+      "primaryText": [
+        "Roofing and waterproofing. Preview; availability needs confirmation.",
+        "Request a roof inspection. Explore the proposed process in Santo Domingo.",
+        "Request a roof inspection. Review scope and terms before deciding."
+      ],
+      "headline": ["Request a roof inspection", "Roofing and waterproofing"],
+      "description": ["Planned Santo Domingo pilot"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Get a quote",
+      "landingPath": "/en/landing/roofing",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|roofing|customer|base|evergreen|website-v1-en",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "fr",
+      "name": "DO|santo-domingo|roofing|customer|base|evergreen|website-v1-fr",
+      "pageHeadline": "Une infiltration par la toiture à Santo Domingo ?",
+      "pageCta": "Demander une inspection de toiture",
+      "primaryText": [
+        "Toiture et étanchéité. Aperçu ; disponibilité à confirmer.",
+        "Demander une inspection de toiture. Découvrez le fonctionnement envisagé à Santo Domingo.",
+        "Demander une inspection de toiture. Examinez le périmètre et les conditions avant de décider."
+      ],
+      "headline": [
+        "Demander une inspection de toiture",
+        "Toiture et étanchéité"
+      ],
+      "description": ["Pilote prévu à Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Demander un devis",
+      "landingPath": "/fr/landing/roofing",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|roofing|customer|base|evergreen|website-v1-fr",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "es",
+      "name": "DO|santo-domingo|roofing|provider|base|evergreen|website-v1-es",
+      "pageHeadline": "Encuentre solicitudes de techado e impermeabilización",
+      "pageCta": "Postularme como proveedor de techos",
+      "primaryText": [
+        "Techos e impermeabilización. Vista previa; disponibilidad por confirmar.",
+        "Postularme como proveedor de techos. Explore el proceso propuesto en Santo Domingo.",
+        "Postularme como proveedor de techos. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Postularme como proveedor de techos",
+        "Techos e impermeabilización"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Presentar solicitud",
+      "landingPath": "/es/business/roofing",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|roofing|provider|base|evergreen|website-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "en",
+      "name": "DO|santo-domingo|roofing|provider|base|evergreen|website-v1-en",
+      "pageHeadline": "Find roof repair and waterproofing inquiries",
+      "pageCta": "Apply for roofing leads",
+      "primaryText": [
+        "Roofing and waterproofing. Preview; availability needs confirmation.",
+        "Apply for roofing leads. Explore the proposed process in Santo Domingo.",
+        "Apply for roofing leads. Review scope and terms before deciding."
+      ],
+      "headline": ["Apply for roofing leads", "Roofing and waterproofing"],
+      "description": ["Planned Santo Domingo pilot"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Apply now",
+      "landingPath": "/en/business/roofing",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|roofing|provider|base|evergreen|website-v1-en",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "fr",
+      "name": "DO|santo-domingo|roofing|provider|base|evergreen|website-v1-fr",
+      "pageHeadline": "Recevez des demandes de toiture et d’étanchéité",
+      "pageCta": "Proposer mes services de toiture",
+      "primaryText": [
+        "Toiture et étanchéité. Aperçu ; disponibilité à confirmer.",
+        "Proposer mes services de toiture. Découvrez le fonctionnement envisagé à Santo Domingo.",
+        "Proposer mes services de toiture. Examinez le périmètre et les conditions avant de décider."
+      ],
+      "headline": ["Proposer mes services de toiture", "Toiture et étanchéité"],
+      "description": ["Pilote prévu à Santo Domingo"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Candidater",
+      "landingPath": "/fr/business/roofing",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|roofing|provider|base|evergreen|website-v1-fr",
+        "utm_content": "{{ad.name}}"
+      }
+    }
+  ],
+  "instantForm": {
+    "es": {
+      "status": "DRAFT",
+      "intro": "Techos e impermeabilización. Borrador de formulario; todavía no recibe datos. Revise el alcance del servicio antes de enviar una solicitud.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "¿Qué servicio necesita?",
+          "options": [
+            "Inspección de filtraciones",
+            "Reparación de techo",
+            "Impermeabilización",
+            "Mantenimiento de techo"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "¿Qué plazo tiene?",
+          "options": [
+            "Hoy, si hay disponibilidad",
+            "Esta semana, si hay disponibilidad",
+            "Fecha flexible"
+          ]
+        },
+        {
+          "kind": "full_name",
+          "label": "Nombre completo",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Teléfono",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Sector o zona",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/es/privacy-policy",
+      "thankYou": "Borrador sin envío. Una futura solicitud no confirmaría una cita ni disponibilidad."
+    },
+    "en": {
+      "status": "DRAFT",
+      "intro": "Roofing and waterproofing. Draft form; it does not collect data yet. Review the service scope before making a request.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "Which service do you need?",
+          "options": [
+            "Leak inspection",
+            "Roof repair",
+            "Waterproofing",
+            "Roof maintenance"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "What is your timing?",
+          "options": [
+            "Today, subject to availability",
+            "This week, subject to availability",
+            "Flexible timing"
+          ]
+        },
+        {
+          "kind": "full_name",
+          "label": "Full name",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Phone",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Area or neighborhood",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/en/privacy-policy",
+      "thankYou": "Draft without submission. A future request would not confirm an appointment or availability."
+    },
+    "fr": {
+      "status": "DRAFT",
+      "intro": "Toiture et étanchéité. Brouillon de formulaire ; aucune donnée n’est encore collectée. Examinez le périmètre avant de demander un service.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "Quelle prestation recherchez-vous ?",
+          "options": [
+            "Recherche d’infiltration",
+            "Réparation de toiture",
+            "Étanchéité",
+            "Entretien de toiture"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "Quel est le délai souhaité ?",
+          "options": [
+            "Aujourd’hui, selon disponibilité",
+            "Cette semaine, selon disponibilité",
+            "Date flexible"
+          ]
+        },
+        {
+          "kind": "full_name",
+          "label": "Nom complet",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Téléphone",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Secteur ou quartier",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/fr/privacy-policy",
+      "thankYou": "Brouillon sans envoi. Une future demande ne confirmerait ni rendez-vous ni disponibilité."
+    }
+  },
+  "whatsapp": {
+    "es": {
+      "prefill": "Hola, quisiera consultar sobre techos e impermeabilización en mi sector de Santo Domingo. ¿Cómo funcionaría?",
+      "iceBreakers": [
+        "¿Qué información debo preparar?",
+        "¿Cómo se confirmaría la disponibilidad?",
+        "Quisiera hablar con una persona."
+      ]
+    },
+    "en": {
+      "prefill": "Hello, I would like to ask about roofing and waterproofing in my Santo Domingo area. How would it work?",
+      "iceBreakers": [
+        "What details should I prepare?",
+        "How would availability be confirmed?",
+        "I would like to speak with a person."
+      ]
+    },
+    "fr": {
+      "prefill": "Bonjour, je souhaite me renseigner au sujet du service « Toiture et étanchéité » dans mon secteur de Santo Domingo. Comment cela fonctionnerait-il ?",
+      "iceBreakers": [
+        "Quelles informations préparer ?",
+        "Comment la disponibilité serait-elle confirmée ?",
+        "Je souhaite parler à une personne."
+      ]
+    }
+  },
+  "creativeBriefs": [
+    {
+      "type": "image",
+      "audience": "customer",
+      "concept": "problem-scope",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Solicitar una inspección del techo",
+        "en": "Request a roof inspection",
+        "fr": "Demander une inspection de toiture"
+      },
+      "notes": {
+        "es": "Mostrar herramientas o el equipo del servicio en un entorno cotidiano, sin personas identificables. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Show tools or service equipment in an ordinary setting, without identifiable people. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Montrer des outils ou du matériel dans un cadre ordinaire, sans personne identifiable. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    },
+    {
+      "type": "vertical-video-9x16",
+      "audience": "customer",
+      "concept": "service-explainer",
+      "durationSec": 15,
+      "copyOverlay": {
+        "es": "Solicitar una inspección del techo",
+        "en": "Request a roof inspection",
+        "fr": "Demander une inspection de toiture"
+      },
+      "notes": {
+        "es": "Mostrar herramientas o el equipo del servicio en un entorno cotidiano, sin personas identificables. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Show tools or service equipment in an ordinary setting, without identifiable people. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Montrer des outils ou du matériel dans un cadre ordinaire, sans personne identifiable. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [
+          "Plano del equipo o espacio relacionado con el servicio.",
+          "Texto breve del servicio y su alcance; sin resultados simulados.",
+          "CTA de la página y aviso de piloto previsto."
+        ],
+        "en": [
+          "Show equipment or a space related to the service.",
+          "Brief service and scope text; no simulated results.",
+          "Page CTA and planned-pilot notice."
+        ],
+        "fr": [
+          "Montrer le matériel ou un espace lié au service.",
+          "Texte bref sur la prestation et son périmètre ; aucun résultat simulé.",
+          "CTA de la page et mention du pilote envisagé."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "audience": "provider",
+      "concept": "partnership",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Postularme como proveedor de techos",
+        "en": "Apply for roofing leads",
+        "fr": "Proposer mes services de toiture"
+      },
+      "notes": {
+        "es": "Invitación a negocios independientes para revisar el modelo; no es una oferta de empleo. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Invite independent businesses to review the model; this is not an employment offer. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Inviter des entreprises indépendantes à examiner le modèle ; ce n’est pas une offre d’emploi. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    },
+    {
+      "type": "image",
+      "audience": "customer",
+      "concept": "seasonal-planning",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Solicitar una inspección del techo",
+        "en": "Request a roof inspection",
+        "fr": "Demander une inspection de toiture"
+      },
+      "notes": {
+        "es": "Idea de mantenimiento para validar con la capacidad local. Sin promoción, precio ni fecha activa. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Maintenance idea to validate against local capacity. No active promotion, price or date. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Idée d’entretien à valider selon les capacités locales. Aucune promotion, aucun prix ni calendrier actif. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    }
+  ]
+}

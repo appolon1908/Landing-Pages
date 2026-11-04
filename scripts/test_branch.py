@@ -11,6 +11,24 @@ policy = json.loads((root / "branch-policy.json").read_text())
 
 
 class BranchPolicyTests(unittest.TestCase):
+    def test_images_use_only_their_declared_subsection(self):
+        images = "subsection/public--images"
+        child = "atomic/breero-image-assets-20261103"
+        self.assertTrue(module.allowed(images, child, policy))
+        self.assertTrue(module.allowed(policy["section"], images, policy))
+        for head, base in [
+            (child, policy["subsection"]),
+            (child, policy["section"]),
+            (child, "development"),
+            ("atomic/unrelated", images),
+            ("atomic/breero-image-assets-20261103-extra", images),
+            (images, policy["subsection"]),
+            (images, "development"),
+            (images, "production"),
+        ]:
+            with self.subTest(head=head, base=base):
+                self.assertFalse(module.allowed(base, head, policy))
+
     def test_only_adjacent_declared_boundaries(self):
         chain = ["atomic/example", policy["subsection"], policy["section"], "development", "testing", "staging", "production"]
         for index in range(len(chain) - 1):

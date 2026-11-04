@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "slug": "pool-service",
+  "status": "DRAFT",
+  "enabled": false,
+  "campaigns": [
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "es",
+      "name": "DO|santo-domingo|pool-service|customer|base|evergreen|website-v1-es",
+      "pageHeadline": "¿Su piscina necesita mantenimiento en Santo Domingo?",
+      "pageCta": "Solicitar servicio de piscina",
+      "primaryText": [
+        "Mantenimiento de piscinas. Vista previa; disponibilidad por confirmar.",
+        "Solicitar servicio de piscina. Explore el proceso propuesto en Santo Domingo.",
+        "Solicitar servicio de piscina. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Solicitar servicio de piscina",
+        "Mantenimiento de piscinas"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Solicitar cotización",
+      "landingPath": "/es/landing/pool-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|pool-service|customer|base|evergreen|website-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "instant_form",
+      "locale": "es",
+      "name": "DO|santo-domingo|pool-service|customer|base|evergreen|instant_form-v1-es",
+      "pageHeadline": "¿Su piscina necesita mantenimiento en Santo Domingo?",
+      "pageCta": "Solicitar servicio de piscina",
+      "primaryText": [
+        "Mantenimiento de piscinas. Vista previa; disponibilidad por confirmar.",
+        "Solicitar servicio de piscina. Explore el proceso propuesto en Santo Domingo.",
+        "Solicitar servicio de piscina. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Solicitar servicio de piscina",
+        "Mantenimiento de piscinas"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Solicitar cotización",
+      "landingPath": "/es/landing/pool-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|pool-service|customer|base|evergreen|instant_form-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "whatsapp",
+      "locale": "es",
+      "name": "DO|santo-domingo|pool-service|customer|base|evergreen|whatsapp-v1-es",
+      "pageHeadline": "¿Su piscina necesita mantenimiento en Santo Domingo?",
+      "pageCta": "Solicitar servicio de piscina",
+      "primaryText": [
+        "Mantenimiento de piscinas. Vista previa; disponibilidad por confirmar.",
+        "Solicitar servicio de piscina. Explore el proceso propuesto en Santo Domingo.",
+        "Solicitar servicio de piscina. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Solicitar servicio de piscina",
+        "Mantenimiento de piscinas"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "WHATSAPP_MESSAGE",
+      "ctaLabel": "Enviar mensaje por WhatsApp",
+      "landingPath": "/es/landing/pool-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|pool-service|customer|base|evergreen|whatsapp-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "en",
+      "name": "DO|santo-domingo|pool-service|customer|base|evergreen|website-v1-en",
+      "pageHeadline": "Does your pool need care in Santo Domingo?",
+      "pageCta": "Request pool service",
+      "primaryText": [
+        "Pool care. Preview; availability needs confirmation.",
+        "Request pool service. Explore the proposed process in Santo Domingo.",
+        "Request pool service. Review scope and terms before deciding."
+      ],
+      "headline": ["Request pool service", "Pool care"],
+      "description": ["Planned Santo Domingo pilot"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Get a quote",
+      "landingPath": "/en/landing/pool-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|pool-service|customer|base|evergreen|website-v1-en",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "fr",
+      "name": "DO|santo-domingo|pool-service|customer|base|evergreen|website-v1-fr",
+      "pageHeadline": "Votre piscine a besoin d’entretien à Santo Domingo ?",
+      "pageCta": "Demander un entretien de piscine",
+      "primaryText": [
+        "Entretien de piscines. Aperçu ; disponibilité à confirmer.",
+        "Demander un entretien de piscine. Découvrez le fonctionnement envisagé à Santo Domingo.",
+        "Demander un entretien de piscine. Examinez le périmètre et les conditions avant de décider."
+      ],
+      "headline": ["Demander un entretien de piscine", "Entretien de piscines"],
+      "description": ["Pilote prévu à Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Demander un devis",
+      "landingPath": "/fr/landing/pool-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|pool-service|customer|base|evergreen|website-v1-fr",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "es",
+      "name": "DO|santo-domingo|pool-service|provider|base|evergreen|website-v1-es",
+      "pageHeadline": "Presente su servicio de piscinas en las zonas que atiende.",
+      "pageCta": "Postular para servicios de piscina",
+      "primaryText": [
+        "Mantenimiento de piscinas. Vista previa; disponibilidad por confirmar.",
+        "Postular para servicios de piscina. Explore el proceso propuesto en Santo Domingo.",
+        "Postular para servicios de piscina. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Postular para servicios de piscina",
+        "Mantenimiento de piscinas"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Presentar solicitud",
+      "landingPath": "/es/business/pool-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|pool-service|provider|base|evergreen|website-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "en",
+      "name": "DO|santo-domingo|pool-service|provider|base|evergreen|website-v1-en",
+      "pageHeadline": "Offer pool care in the areas you serve.",
+      "pageCta": "Apply for pool-service leads",
+      "primaryText": [
+        "Pool care. Preview; availability needs confirmation.",
+        "Apply for pool-service leads. Explore the proposed process in Santo Domingo.",
+        "Apply for pool-service leads. Review scope and terms before deciding."
+      ],
+      "headline": ["Apply for pool-service leads", "Pool care"],
+      "description": ["Planned Santo Domingo pilot"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Apply now",
+      "landingPath": "/en/business/pool-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|pool-service|provider|base|evergreen|website-v1-en",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "fr",
+      "name": "DO|santo-domingo|pool-service|provider|base|evergreen|website-v1-fr",
+      "pageHeadline": "Proposez l’entretien de piscines dans vos zones.",
+      "pageCta": "Proposer l’entretien de piscines",
+      "primaryText": [
+        "Entretien de piscines. Aperçu ; disponibilité à confirmer.",
+        "Proposer l’entretien de piscines. Découvrez le fonctionnement envisagé à Santo Domingo.",
+        "Proposer l’entretien de piscines. Examinez le périmètre et les conditions avant de décider."
+      ],
+      "headline": ["Proposer l’entretien de piscines", "Entretien de piscines"],
+      "description": ["Pilote prévu à Santo Domingo"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Candidater",
+      "landingPath": "/fr/business/pool-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|pool-service|provider|base|evergreen|website-v1-fr",
+        "utm_content": "{{ad.name}}"
+      }
+    }
+  ],
+  "instantForm": {
+    "es": {
+      "status": "DRAFT",
+      "intro": "Mantenimiento de piscinas. Borrador de formulario; todavía no recibe datos. Revise el alcance del servicio antes de enviar una solicitud.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "¿Qué servicio necesita?",
+          "options": [
+            "Limpieza de piscina",
+            "Mantenimiento periódico",
+            "Bomba y filtro",
+            "Evaluación de funcionamiento"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "¿Qué plazo tiene?",
+          "options": [
+            "Hoy, sujeto a disponibilidad",
+            "Esta semana",
+            "Fecha flexible"
+          ]
+        },
+        {
+          "kind": "full_name",
+          "label": "Nombre completo",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Teléfono",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Sector o zona",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/es/privacy-policy",
+      "thankYou": "Borrador sin envío. Una futura solicitud no confirmaría una cita ni disponibilidad."
+    },
+    "en": {
+      "status": "DRAFT",
+      "intro": "Pool care. Draft form; it does not collect data yet. Review the service scope before making a request.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "Which service do you need?",
+          "options": [
+            "Pool cleaning",
+            "Recurring maintenance",
+            "Pump and filter service",
+            "Pool assessment"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "What is your timing?",
+          "options": [
+            "Today, subject to availability",
+            "This week",
+            "Flexible timing"
+          ]
+        },
+        {
+          "kind": "full_name",
+          "label": "Full name",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Phone",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Area or neighborhood",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/en/privacy-policy",
+      "thankYou": "Draft without submission. A future request would not confirm an appointment or availability."
+    },
+    "fr": {
+      "status": "DRAFT",
+      "intro": "Entretien de piscines. Brouillon de formulaire ; aucune donnée n’est encore collectée. Examinez le périmètre avant de demander un service.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "Quelle prestation recherchez-vous ?",
+          "options": [
+            "Nettoyage de piscine",
+            "Entretien régulier",
+            "Pompe et filtre",
+            "Évaluation du fonctionnement"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "Quel est le délai souhaité ?",
+          "options": [
+            "Aujourd’hui, selon les disponibilités",
+            "Cette semaine",
+            "Date flexible"
+          ]
+        },
+        {
+          "kind": "full_name",
+          "label": "Nom complet",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Téléphone",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Secteur ou quartier",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/fr/privacy-policy",
+      "thankYou": "Brouillon sans envoi. Une future demande ne confirmerait ni rendez-vous ni disponibilité."
+    }
+  },
+  "whatsapp": {
+    "es": {
+      "prefill": "Hola, quisiera consultar sobre mantenimiento de piscinas en mi sector de Santo Domingo. ¿Cómo funcionaría?",
+      "iceBreakers": [
+        "¿Qué información debo preparar?",
+        "¿Cómo se confirmaría la disponibilidad?",
+        "Quisiera hablar con una persona."
+      ]
+    },
+    "en": {
+      "prefill": "Hello, I would like to ask about pool care in my Santo Domingo area. How would it work?",
+      "iceBreakers": [
+        "What details should I prepare?",
+        "How would availability be confirmed?",
+        "I would like to speak with a person."
+      ]
+    },
+    "fr": {
+      "prefill": "Bonjour, je souhaite me renseigner au sujet du service « Entretien de piscines » dans mon secteur de Santo Domingo. Comment cela fonctionnerait-il ?",
+      "iceBreakers": [
+        "Quelles informations préparer ?",
+        "Comment la disponibilité serait-elle confirmée ?",
+        "Je souhaite parler à une personne."
+      ]
+    }
+  },
+  "creativeBriefs": [
+    {
+      "type": "image",
+      "audience": "customer",
+      "concept": "problem-scope",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Solicitar servicio de piscina",
+        "en": "Request pool service",
+        "fr": "Demander un entretien de piscine"
+      },
+      "notes": {
+        "es": "Mostrar herramientas o el equipo del servicio en un entorno cotidiano, sin personas identificables. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Show tools or service equipment in an ordinary setting, without identifiable people. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Montrer des outils ou du matériel dans un cadre ordinaire, sans personne identifiable. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    },
+    {
+      "type": "vertical-video-9x16",
+      "audience": "customer",
+      "concept": "service-explainer",
+      "durationSec": 15,
+      "copyOverlay": {
+        "es": "Solicitar servicio de piscina",
+        "en": "Request pool service",
+        "fr": "Demander un entretien de piscine"
+      },
+      "notes": {
+        "es": "Mostrar herramientas o el equipo del servicio en un entorno cotidiano, sin personas identificables. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Show tools or service equipment in an ordinary setting, without identifiable people. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Montrer des outils ou du matériel dans un cadre ordinaire, sans personne identifiable. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [
+          "Plano del equipo o espacio relacionado con el servicio.",
+          "Texto breve del servicio y su alcance; sin resultados simulados.",
+          "CTA de la página y aviso de piloto previsto."
+        ],
+        "en": [
+          "Show equipment or a space related to the service.",
+          "Brief service and scope text; no simulated results.",
+          "Page CTA and planned-pilot notice."
+        ],
+        "fr": [
+          "Montrer le matériel ou un espace lié au service.",
+          "Texte bref sur la prestation et son périmètre ; aucun résultat simulé.",
+          "CTA de la page et mention du pilote envisagé."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "audience": "provider",
+      "concept": "partnership",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Postular para servicios de piscina",
+        "en": "Apply for pool-service leads",
+        "fr": "Proposer l’entretien de piscines"
+      },
+      "notes": {
+        "es": "Invitación a negocios independientes para revisar el modelo; no es una oferta de empleo. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Invite independent businesses to review the model; this is not an employment offer. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Inviter des entreprises indépendantes à examiner le modèle ; ce n’est pas une offre d’emploi. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    },
+    {
+      "type": "image",
+      "audience": "customer",
+      "concept": "seasonal-planning",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Solicitar servicio de piscina",
+        "en": "Request pool service",
+        "fr": "Demander un entretien de piscine"
+      },
+      "notes": {
+        "es": "Idea de mantenimiento para validar con la capacidad local. Sin promoción, precio ni fecha activa. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Maintenance idea to validate against local capacity. No active promotion, price or date. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Idée d’entretien à valider selon les capacités locales. Aucune promotion, aucun prix ni calendrier actif. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    }
+  ]
+}

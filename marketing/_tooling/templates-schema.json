@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Inactive WhatsApp notification drafts",
+  "type": "object",
+  "required": ["status", "enabled", "templates"],
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "const": "DRAFT"
+    },
+    "enabled": {
+      "const": false
+    },
+    "templates": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "name",
+          "category",
+          "language",
+          "status",
+          "approved",
+          "requiredPermission",
+          "trigger",
+          "body",
+          "samples",
+          "optOut",
+          "buttons"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "request_received",
+              "provider_missing_details",
+              "provider_application_received",
+              "application_approved_next_steps",
+              "seasonal_offer",
+              "reengagement"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "category": {
+            "type": "string",
+            "enum": ["UTILITY", "MARKETING"]
+          },
+          "language": {
+            "type": "string",
+            "enum": ["es", "en", "fr"]
+          },
+          "status": {
+            "const": "DRAFT"
+          },
+          "approved": {
+            "const": false
+          },
+          "requiredPermission": {
+            "type": "string",
+            "enum": ["promotions_whatsapp", "transactional_whatsapp"]
+          },
+          "trigger": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 900
+          },
+          "samples": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160
+            }
+          },
+          "optOut": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "buttons": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["type", "text"],
+              "additionalProperties": false,
+              "properties": {
+                "type": {
+                  "const": "QUICK_REPLY"
+                },
+                "text": {
+                  "const": "STOP"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

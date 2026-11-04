@@ -1,0 +1,360 @@
+{
+  "status": "DRAFT",
+  "enabled": false,
+  "templates": [
+    {
+      "kind": "request_received",
+      "name": "breero_request_received_es",
+      "category": "UTILITY",
+      "language": "es",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.request_accepted",
+      "body": "Hola {{1}}, recibimos su solicitud sobre {{2}}. La estamos revisando; esto no confirma una cita, un precio ni disponibilidad. Una persona podrá indicar los siguientes pasos.",
+      "samples": ["Persona Ejemplo (ficticia)", "aire acondicionado"],
+      "optOut": "Para dejar de recibir estos mensajes, responda STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "provider_missing_details",
+      "name": "breero_provider_missing_details_es",
+      "category": "UTILITY",
+      "language": "es",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.provider_details_requested",
+      "body": "Hola {{1}}, para revisar su solicitud de proveedor sobre {{2}}, necesitamos aclarar {{3}}. Responda si desea continuar. No envíe documentos sensibles por este chat.",
+      "samples": [
+        "Persona Ejemplo (ficticia)",
+        "aire acondicionado",
+        "zona de servicio"
+      ],
+      "optOut": "Para dejar de recibir estos mensajes, responda STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "provider_application_received",
+      "name": "breero_provider_application_received_es",
+      "category": "UTILITY",
+      "language": "es",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.application_accepted",
+      "body": "Hola {{1}}, recibimos su postulación para ofrecer {{2}}. Está pendiente de revisión. Este mensaje no activa una cuenta ni autoriza cargos.",
+      "samples": ["Persona Ejemplo (ficticia)", "aire acondicionado"],
+      "optOut": "Para dejar de recibir estos mensajes, responda STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "application_approved_next_steps",
+      "name": "breero_application_approved_next_steps_es",
+      "category": "UTILITY",
+      "language": "es",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.application_review_approved",
+      "body": "Hola {{1}}, su postulación para ofrecer {{2}} recibió una evaluación favorable del equipo. Antes de activar su cuenta, una persona debe explicarle las condiciones y obtener su aceptación. No hay activación ni cargo automático.",
+      "samples": ["Persona Ejemplo (ficticia)", "aire acondicionado"],
+      "optOut": "Para dejar de recibir estos mensajes, responda STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "seasonal_offer",
+      "name": "breero_seasonal_offer_es",
+      "category": "MARKETING",
+      "language": "es",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "promotions_whatsapp",
+      "trigger": "crm.marketing_audience_approved",
+      "body": "Hola {{1}}, usted autorizó recibir novedades de Breero. Estamos preparando información sobre {{2}}. ¿Desea conversar con una persona? Este mensaje no anuncia descuentos ni disponibilidad.",
+      "samples": ["Persona Ejemplo (ficticia)", "aire acondicionado"],
+      "optOut": "Para dejar de recibir estos mensajes, responda STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "reengagement",
+      "name": "breero_reengagement_es",
+      "category": "MARKETING",
+      "language": "es",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "promotions_whatsapp",
+      "trigger": "crm.reengagement_audience_approved",
+      "body": "Hola {{1}}, usted autorizó recibir novedades de Breero. ¿Desea retomar su consulta sobre {{2}}? Si ya no le interesa, puede indicarlo. No se reserva ninguna visita al responder.",
+      "samples": ["Persona Ejemplo (ficticia)", "aire acondicionado"],
+      "optOut": "Para dejar de recibir estos mensajes, responda STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "request_received",
+      "name": "breero_request_received_en",
+      "category": "UTILITY",
+      "language": "en",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.request_accepted",
+      "body": "Hello {{1}}, we received your request about {{2}}. It is being reviewed; this does not confirm an appointment, price or availability. A person can explain the next steps.",
+      "samples": ["Example Person (fictional)", "air conditioning"],
+      "optOut": "To stop receiving these messages, reply STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "provider_missing_details",
+      "name": "breero_provider_missing_details_en",
+      "category": "UTILITY",
+      "language": "en",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.provider_details_requested",
+      "body": "Hello {{1}}, to review your provider application for {{2}}, we need to clarify {{3}}. Reply if you wish to continue. Do not send sensitive documents in this chat.",
+      "samples": [
+        "Example Person (fictional)",
+        "air conditioning",
+        "service area"
+      ],
+      "optOut": "To stop receiving these messages, reply STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "provider_application_received",
+      "name": "breero_provider_application_received_en",
+      "category": "UTILITY",
+      "language": "en",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.application_accepted",
+      "body": "Hello {{1}}, we received your application to provide {{2}}. Review is pending. This message does not activate an account or authorize charges.",
+      "samples": ["Example Person (fictional)", "air conditioning"],
+      "optOut": "To stop receiving these messages, reply STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "application_approved_next_steps",
+      "name": "breero_application_approved_next_steps_en",
+      "category": "UTILITY",
+      "language": "en",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.application_review_approved",
+      "body": "Hello {{1}}, your application to provide {{2}} received a favorable review from the team. Before account activation, a person must explain the terms and obtain your agreement. There is no automatic activation or charge.",
+      "samples": ["Example Person (fictional)", "air conditioning"],
+      "optOut": "To stop receiving these messages, reply STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "seasonal_offer",
+      "name": "breero_seasonal_offer_en",
+      "category": "MARKETING",
+      "language": "en",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "promotions_whatsapp",
+      "trigger": "crm.marketing_audience_approved",
+      "body": "Hello {{1}}, you opted in to Breero updates. We are preparing information about {{2}}. Would you like to speak with a person? This message does not announce discounts or availability.",
+      "samples": ["Example Person (fictional)", "air conditioning"],
+      "optOut": "To stop receiving these messages, reply STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "reengagement",
+      "name": "breero_reengagement_en",
+      "category": "MARKETING",
+      "language": "en",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "promotions_whatsapp",
+      "trigger": "crm.reengagement_audience_approved",
+      "body": "Hello {{1}}, you opted in to Breero updates. Would you like to continue your inquiry about {{2}}? Let us know if you are no longer interested. Replying does not reserve a visit.",
+      "samples": ["Example Person (fictional)", "air conditioning"],
+      "optOut": "To stop receiving these messages, reply STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "request_received",
+      "name": "breero_request_received_fr",
+      "category": "UTILITY",
+      "language": "fr",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.request_accepted",
+      "body": "Bonjour {{1}}, nous avons reçu votre demande concernant {{2}}. Elle est en cours d’examen ; aucun rendez-vous, tarif ou créneau n’est confirmé. Une personne pourra expliquer la suite.",
+      "samples": ["Personne Exemple (fictive)", "climatisation"],
+      "optOut": "Pour ne plus recevoir ces messages, répondez STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "provider_missing_details",
+      "name": "breero_provider_missing_details_fr",
+      "category": "UTILITY",
+      "language": "fr",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.provider_details_requested",
+      "body": "Bonjour {{1}}, pour examiner votre candidature concernant {{2}}, nous devons préciser {{3}}. Répondez si vous souhaitez poursuivre. N’envoyez pas de documents sensibles dans cette discussion.",
+      "samples": [
+        "Personne Exemple (fictive)",
+        "climatisation",
+        "zone de service"
+      ],
+      "optOut": "Pour ne plus recevoir ces messages, répondez STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "provider_application_received",
+      "name": "breero_provider_application_received_fr",
+      "category": "UTILITY",
+      "language": "fr",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.application_accepted",
+      "body": "Bonjour {{1}}, nous avons reçu votre candidature pour proposer {{2}}. Elle attend un examen. Ce message n’active aucun compte et n’autorise aucun prélèvement.",
+      "samples": ["Personne Exemple (fictive)", "climatisation"],
+      "optOut": "Pour ne plus recevoir ces messages, répondez STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "application_approved_next_steps",
+      "name": "breero_application_approved_next_steps_fr",
+      "category": "UTILITY",
+      "language": "fr",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "transactional_whatsapp",
+      "trigger": "crm.application_review_approved",
+      "body": "Bonjour {{1}}, votre candidature pour {{2}} a reçu un avis favorable de notre équipe. Avant l’activation du compte, une personne doit expliquer les conditions et recueillir votre accord. Aucune activation ni facturation automatique.",
+      "samples": ["Personne Exemple (fictive)", "climatisation"],
+      "optOut": "Pour ne plus recevoir ces messages, répondez STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "seasonal_offer",
+      "name": "breero_seasonal_offer_fr",
+      "category": "MARKETING",
+      "language": "fr",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "promotions_whatsapp",
+      "trigger": "crm.marketing_audience_approved",
+      "body": "Bonjour {{1}}, vous avez accepté les actualités de Breero. Nous préparons des informations sur {{2}}. Souhaitez-vous parler à une personne ? Ce message n’annonce ni réduction ni disponibilité.",
+      "samples": ["Personne Exemple (fictive)", "climatisation"],
+      "optOut": "Pour ne plus recevoir ces messages, répondez STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    },
+    {
+      "kind": "reengagement",
+      "name": "breero_reengagement_fr",
+      "category": "MARKETING",
+      "language": "fr",
+      "status": "DRAFT",
+      "approved": false,
+      "requiredPermission": "promotions_whatsapp",
+      "trigger": "crm.reengagement_audience_approved",
+      "body": "Bonjour {{1}}, vous avez accepté les actualités de Breero. Souhaitez-vous reprendre votre demande concernant {{2}} ? Vous pouvez indiquer ne plus être intéressé. Répondre ne réserve aucune visite.",
+      "samples": ["Personne Exemple (fictive)", "climatisation"],
+      "optOut": "Pour ne plus recevoir ces messages, répondez STOP.",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "STOP"
+        }
+      ]
+    }
+  ]
+}

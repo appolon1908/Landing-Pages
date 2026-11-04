@@ -1,0 +1,14 @@
+{
+  "name": "@lp/page-kit",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/serve.mjs",
+    "./vite": "./src/vite.mjs",
+    "./*": "./src/*"
+  },
+  "dependencies": {
+    "@lp/core": "*"
+  }
+}

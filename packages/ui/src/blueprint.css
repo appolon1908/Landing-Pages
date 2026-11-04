@@ -1,0 +1,393 @@
+.audience-hero {
+  align-items: stretch;
+}
+h1,
+h2,
+h3,
+.site-header nav a {
+  color: var(--ink);
+}
+.brand-logo {
+  display: block;
+  width: 176px;
+  height: auto;
+}
+.site-header .brand {
+  flex: none;
+}
+.language[aria-current="page"] {
+  border-color: var(--ink);
+  background: var(--soft-gray);
+}
+.service-hero {
+  display: grid;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--ink);
+  border-radius: 1rem;
+}
+.service-hero-image {
+  grid-area: 1 / 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  align-self: start;
+}
+.service-hero .hero-copy {
+  grid-area: 1 / 1;
+  z-index: 1;
+  width: 43%;
+  margin-left: 5%;
+  padding-top: 18%;
+  padding-bottom: 3rem;
+}
+/* The supplied artwork contains a wordmark above this copy area. A navy
+   panel keeps long localized copy legible where the photograph grows lighter. */
+.hero-message {
+  padding: 1.25rem;
+  background: var(--ink);
+  border-radius: 0.75rem;
+}
+.service-hero-no-image .hero-copy {
+  width: 100%;
+  margin: 0;
+  padding: 2rem;
+}
+.service-hero h1 {
+  color: var(--paper);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.25rem;
+}
+.service-hero .eyebrow,
+.service-hero .lede {
+  color: var(--paper);
+}
+.service-hero .eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+}
+.service-hero .lede {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+.service-hero .button {
+  justify-content: center;
+  padding: 0.85rem 1rem;
+}
+.service-hero .secondary {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--paper);
+}
+.service-hero a:focus-visible {
+  outline-color: var(--paper);
+}
+.hero-context {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding-block: 2rem;
+}
+.hero-context .service-preview {
+  padding: 1.5rem;
+}
+.hero-context .service-preview h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.hero-context .plain-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+}
+.hero-context .plain-list li {
+  border: 0;
+  padding: 0;
+}
+.home-hero .service-preview {
+  border-top: 4px solid var(--blue);
+}
+@media (max-width: 1023px) {
+  .service-hero {
+    display: flex;
+    flex-direction: column;
+  }
+  .service-hero .hero-copy {
+    width: 100%;
+    margin: 0;
+    padding: 1.5rem;
+  }
+  .hero-message {
+    padding: 0;
+  }
+  .service-hero h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+  }
+  .hero-context {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 650px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+  .site-header nav {
+    justify-content: flex-start;
+  }
+  .brand-logo {
+    width: 150px;
+  }
+  .service-hero {
+    width: 100%;
+    border-radius: 0;
+  }
+  .service-hero .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.service-preview {
+  padding: 2rem;
+  border-radius: 1.3rem;
+  background: var(--soft-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid var(--line);
+}
+.service-preview h2 {
+  font-size: 1.8rem;
+}
+.large-symbol {
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--link);
+  margin-bottom: 2rem;
+}
+.plain-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.plain-list li {
+  border-top: 1px solid var(--line);
+  padding: 0.65rem 0;
+}
+.content-section {
+  padding-block: 3rem;
+  border-top: 1px solid var(--line);
+}
+.content-section > p {
+  max-width: 78ch;
+}
+.content-section li {
+  margin-bottom: 0.75rem;
+}
+.two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+}
+.journey-list {
+  list-style: decimal-leading-zero;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  padding-left: 1.8rem;
+}
+.journey-list li {
+  padding-inline-start: 0.6rem;
+}
+.journey-list li::marker {
+  color: var(--link);
+  font-weight: 700;
+}
+.tinted-section {
+  padding-inline: 2rem;
+  background: var(--soft-gray);
+  border-radius: 1rem;
+}
+.tinted-section .eyebrow {
+  color: var(--ink);
+}
+.tinted-section ul {
+  padding-left: 1.3rem;
+}
+.evidence-note h2 {
+  font-size: 1.6rem;
+}
+.evidence-note p {
+  color: var(--muted);
+}
+.faq-section {
+  max-width: 850px;
+}
+.faq-section details {
+  border-bottom: 1px solid var(--line);
+  padding-block: 1rem;
+}
+.faq-section summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 44px;
+  padding-block: 0.5rem;
+}
+.faq-section summary:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 4px;
+}
+.faq-section details p {
+  margin: 0.7rem 0 0.5rem;
+  max-width: 72ch;
+}
+.quiet-link {
+  display: block;
+  width: fit-content;
+  margin-top: 1rem;
+  padding-block: 0.5rem;
+  text-underline-offset: 0.2em;
+}
+.lead-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+.lead-facts dt {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.lead-facts dd {
+  margin: 0.4rem 0 1rem;
+  font-weight: 600;
+}
+.mobile-action {
+  display: none;
+}
+.site-header nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.site-header {
+  padding-block: 1rem;
+}
+.button {
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  text-align: left;
+}
+.home-header {
+  flex-wrap: wrap;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.finder-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 700px;
+}
+.audience-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-block: 1.5rem;
+}
+.audience-tabs button {
+  border: 1px solid var(--muted);
+  padding: 0.7rem 1rem;
+  border-radius: 2rem;
+  background: white;
+  color: var(--ink);
+}
+.audience-tabs button[aria-pressed="true"] {
+  background: var(--link);
+  color: white;
+}
+.service-catalog {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+.service-catalog li {
+  margin: 0;
+}
+.service-catalog a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  min-height: 88px;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  text-decoration: none;
+  background: white;
+}
+.service-catalog a:hover {
+  border-color: var(--link);
+  background: var(--soft-gray);
+}
+.button:disabled {
+  cursor: not-allowed;
+  color: var(--muted);
+  background: var(--soft-gray);
+}
+@media (max-width: 650px) {
+  .finder-controls,
+  .service-catalog {
+    grid-template-columns: 1fr;
+  }
+  .two-columns,
+  .journey-list,
+  .lead-facts {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .content-section {
+    padding-block: 2rem;
+  }
+  .tinted-section {
+    padding-inline: 1.2rem;
+  }
+  .service-preview {
+    padding: 1.3rem;
+  }
+  .mobile-action {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    padding: 0.65rem 1rem max(0.65rem, env(safe-area-inset-bottom));
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+    z-index: 2;
+  }
+  .mobile-action .button {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.88rem;
+  }
+  /* The CTA occupies normal document space; hide it while a form has focus. */
+  main:has(form:focus-within) .mobile-action {
+    visibility: hidden;
+  }
+  .site-header {
+    align-items: flex-start;
+  }
+  .site-header nav {
+    gap: 0.25rem 0.7rem;
+  }
+  .site-header nav a {
+    font-size: 0.78rem;
+  }
+}

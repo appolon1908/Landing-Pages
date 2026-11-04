@@ -1,0 +1,74 @@
+{
+  "id": "do-santo-domingo",
+  "country": "DO",
+  "currency": "DOP",
+  "phonePattern": "^\\+?1?[ -]?(809|829|849)[ -]?\\d{3}[ -]?\\d{4}$",
+  "serviceHours": null,
+  "coverageConfirmed": false,
+  "zones": [
+    {
+      "value": "distrito-nacional",
+      "label": {
+        "es": "Distrito Nacional",
+        "en": "Distrito Nacional",
+        "fr": "Distrito Nacional"
+      }
+    },
+    {
+      "value": "piantini",
+      "label": {
+        "es": "Piantini, Distrito Nacional",
+        "en": "Piantini, Distrito Nacional",
+        "fr": "Piantini, Distrito Nacional"
+      }
+    },
+    {
+      "value": "naco",
+      "label": {
+        "es": "Naco, Distrito Nacional",
+        "en": "Naco, Distrito Nacional",
+        "fr": "Naco, Distrito Nacional"
+      }
+    },
+    {
+      "value": "gazcue",
+      "label": {
+        "es": "Gazcue, Distrito Nacional",
+        "en": "Gazcue, Distrito Nacional",
+        "fr": "Gazcue, Distrito Nacional"
+      }
+    },
+    {
+      "value": "bella-vista",
+      "label": {
+        "es": "Bella Vista, Distrito Nacional",
+        "en": "Bella Vista, Distrito Nacional",
+        "fr": "Bella Vista, Distrito Nacional"
+      }
+    },
+    {
+      "value": "santo-domingo-este",
+      "label": {
+        "es": "Santo Domingo Este",
+        "en": "Santo Domingo Este",
+        "fr": "Santo Domingo Este"
+      }
+    },
+    {
+      "value": "santo-domingo-norte",
+      "label": {
+        "es": "Santo Domingo Norte",
+        "en": "Santo Domingo Norte",
+        "fr": "Santo Domingo Norte"
+      }
+    },
+    {
+      "value": "santo-domingo-oeste",
+      "label": {
+        "es": "Santo Domingo Oeste",
+        "en": "Santo Domingo Oeste",
+        "fr": "Santo Domingo Oeste"
+      }
+    }
+  ]
+}

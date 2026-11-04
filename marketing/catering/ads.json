@@ -1,0 +1,465 @@
+{
+  "schemaVersion": 1,
+  "slug": "catering",
+  "status": "DRAFT",
+  "enabled": false,
+  "campaigns": [
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "es",
+      "name": "DO|santo-domingo|catering|customer|base|evergreen|website-v1-es",
+      "pageHeadline": "¿Organiza un evento en Santo Domingo?",
+      "pageCta": "Cotizar catering para mi evento",
+      "primaryText": [
+        "Catering y alimentos para eventos. Vista previa; disponibilidad por confirmar.",
+        "Cotizar catering para mi evento. Explore el proceso propuesto en Santo Domingo.",
+        "Cotizar catering para mi evento. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Cotizar catering para mi evento",
+        "Catering y alimentos para eventos"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Solicitar cotización",
+      "landingPath": "/es/landing/catering",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|catering|customer|base|evergreen|website-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "instant_form",
+      "locale": "es",
+      "name": "DO|santo-domingo|catering|customer|base|evergreen|instant_form-v1-es",
+      "pageHeadline": "¿Organiza un evento en Santo Domingo?",
+      "pageCta": "Cotizar catering para mi evento",
+      "primaryText": [
+        "Catering y alimentos para eventos. Vista previa; disponibilidad por confirmar.",
+        "Cotizar catering para mi evento. Explore el proceso propuesto en Santo Domingo.",
+        "Cotizar catering para mi evento. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Cotizar catering para mi evento",
+        "Catering y alimentos para eventos"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Solicitar cotización",
+      "landingPath": "/es/landing/catering",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|catering|customer|base|evergreen|instant_form-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "whatsapp",
+      "locale": "es",
+      "name": "DO|santo-domingo|catering|customer|base|evergreen|whatsapp-v1-es",
+      "pageHeadline": "¿Organiza un evento en Santo Domingo?",
+      "pageCta": "Cotizar catering para mi evento",
+      "primaryText": [
+        "Catering y alimentos para eventos. Vista previa; disponibilidad por confirmar.",
+        "Cotizar catering para mi evento. Explore el proceso propuesto en Santo Domingo.",
+        "Cotizar catering para mi evento. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Cotizar catering para mi evento",
+        "Catering y alimentos para eventos"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "WHATSAPP_MESSAGE",
+      "ctaLabel": "Enviar mensaje por WhatsApp",
+      "landingPath": "/es/landing/catering",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|catering|customer|base|evergreen|whatsapp-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "en",
+      "name": "DO|santo-domingo|catering|customer|base|evergreen|website-v1-en",
+      "pageHeadline": "Planning an event in Santo Domingo?",
+      "pageCta": "Get a catering quote",
+      "primaryText": [
+        "Catering. Preview; availability needs confirmation.",
+        "Get a catering quote. Explore the proposed process in Santo Domingo.",
+        "Get a catering quote. Review scope and terms before deciding."
+      ],
+      "headline": ["Get a catering quote", "Catering"],
+      "description": ["Planned Santo Domingo pilot"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Get a quote",
+      "landingPath": "/en/landing/catering",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|catering|customer|base|evergreen|website-v1-en",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "fr",
+      "name": "DO|santo-domingo|catering|customer|base|evergreen|website-v1-fr",
+      "pageHeadline": "Un événement à organiser à Santo Domingo ?",
+      "pageCta": "Demander un devis traiteur",
+      "primaryText": [
+        "Traiteur. Aperçu ; disponibilité à confirmer.",
+        "Demander un devis traiteur. Découvrez le fonctionnement envisagé à Santo Domingo.",
+        "Demander un devis traiteur. Examinez le périmètre et les conditions avant de décider."
+      ],
+      "headline": ["Demander un devis traiteur", "Traiteur"],
+      "description": ["Pilote prévu à Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Demander un devis",
+      "landingPath": "/fr/landing/catering",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|catering|customer|base|evergreen|website-v1-fr",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "es",
+      "name": "DO|santo-domingo|catering|provider|base|evergreen|website-v1-es",
+      "pageHeadline": "Catering y alimentos para eventos: solicitudes en sus zonas",
+      "pageCta": "Recibir solicitudes de catering",
+      "primaryText": [
+        "Catering y alimentos para eventos. Vista previa; disponibilidad por confirmar.",
+        "Recibir solicitudes de catering. Explore el proceso propuesto en Santo Domingo.",
+        "Recibir solicitudes de catering. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": [
+        "Recibir solicitudes de catering",
+        "Catering y alimentos para eventos"
+      ],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Presentar solicitud",
+      "landingPath": "/es/business/catering",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|catering|provider|base|evergreen|website-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "en",
+      "name": "DO|santo-domingo|catering|provider|base|evergreen|website-v1-en",
+      "pageHeadline": "Catering: requests in your service area",
+      "pageCta": "Apply for catering leads",
+      "primaryText": [
+        "Catering. Preview; availability needs confirmation.",
+        "Apply for catering leads. Explore the proposed process in Santo Domingo.",
+        "Apply for catering leads. Review scope and terms before deciding."
+      ],
+      "headline": ["Apply for catering leads", "Catering"],
+      "description": ["Planned Santo Domingo pilot"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Apply now",
+      "landingPath": "/en/business/catering",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|catering|provider|base|evergreen|website-v1-en",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "fr",
+      "name": "DO|santo-domingo|catering|provider|base|evergreen|website-v1-fr",
+      "pageHeadline": "Traiteur : des demandes dans votre zone",
+      "pageCta": "Recevoir des demandes traiteur",
+      "primaryText": [
+        "Traiteur. Aperçu ; disponibilité à confirmer.",
+        "Recevoir des demandes traiteur. Découvrez le fonctionnement envisagé à Santo Domingo.",
+        "Recevoir des demandes traiteur. Examinez le périmètre et les conditions avant de décider."
+      ],
+      "headline": ["Recevoir des demandes traiteur", "Traiteur"],
+      "description": ["Pilote prévu à Santo Domingo"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Candidater",
+      "landingPath": "/fr/business/catering",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|catering|provider|base|evergreen|website-v1-fr",
+        "utm_content": "{{ad.name}}"
+      }
+    }
+  ],
+  "instantForm": {
+    "es": {
+      "status": "DRAFT",
+      "intro": "Catering y alimentos para eventos. Borrador de formulario; todavía no recibe datos. Revise el alcance del servicio antes de enviar una solicitud.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "¿Qué servicio necesita?",
+          "options": [
+            "Celebración privada",
+            "Evento empresarial",
+            "Entrega de alimentos preparados"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "¿Qué plazo tiene?",
+          "options": [
+            "Hoy, sujeto a disponibilidad",
+            "Esta semana",
+            "Fecha flexible"
+          ]
+        },
+        {
+          "kind": "full_name",
+          "label": "Nombre completo",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Teléfono",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Sector o zona",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/es/privacy-policy",
+      "thankYou": "Borrador sin envío. Una futura solicitud no confirmaría una cita ni disponibilidad."
+    },
+    "en": {
+      "status": "DRAFT",
+      "intro": "Catering. Draft form; it does not collect data yet. Review the service scope before making a request.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "Which service do you need?",
+          "options": [
+            "Private celebration",
+            "Business event",
+            "Prepared meal delivery"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "What is your timing?",
+          "options": ["Today, subject to availability", "This week", "Flexible"]
+        },
+        {
+          "kind": "full_name",
+          "label": "Full name",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Phone",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Area or neighborhood",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/en/privacy-policy",
+      "thankYou": "Draft without submission. A future request would not confirm an appointment or availability."
+    },
+    "fr": {
+      "status": "DRAFT",
+      "intro": "Traiteur. Brouillon de formulaire ; aucune donnée n’est encore collectée. Examinez le périmètre avant de demander un service.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "Quelle prestation recherchez-vous ?",
+          "options": [
+            "Réception privée",
+            "Événement professionnel",
+            "Livraison de repas préparés"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "Quel est le délai souhaité ?",
+          "options": [
+            "Aujourd’hui, selon disponibilité",
+            "Cette semaine",
+            "Date flexible"
+          ]
+        },
+        {
+          "kind": "full_name",
+          "label": "Nom complet",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Téléphone",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Secteur ou quartier",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/fr/privacy-policy",
+      "thankYou": "Brouillon sans envoi. Une future demande ne confirmerait ni rendez-vous ni disponibilité."
+    }
+  },
+  "whatsapp": {
+    "es": {
+      "prefill": "Hola, quisiera consultar sobre catering y alimentos para eventos en mi sector de Santo Domingo. ¿Cómo funcionaría?",
+      "iceBreakers": [
+        "¿Qué información debo preparar?",
+        "¿Cómo se confirmaría la disponibilidad?",
+        "Quisiera hablar con una persona."
+      ]
+    },
+    "en": {
+      "prefill": "Hello, I would like to ask about catering in my Santo Domingo area. How would it work?",
+      "iceBreakers": [
+        "What details should I prepare?",
+        "How would availability be confirmed?",
+        "I would like to speak with a person."
+      ]
+    },
+    "fr": {
+      "prefill": "Bonjour, je souhaite me renseigner au sujet du service « Traiteur » dans mon secteur de Santo Domingo. Comment cela fonctionnerait-il ?",
+      "iceBreakers": [
+        "Quelles informations préparer ?",
+        "Comment la disponibilité serait-elle confirmée ?",
+        "Je souhaite parler à une personne."
+      ]
+    }
+  },
+  "creativeBriefs": [
+    {
+      "type": "image",
+      "audience": "customer",
+      "concept": "problem-scope",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Cotizar catering para mi evento",
+        "en": "Get a catering quote",
+        "fr": "Demander un devis traiteur"
+      },
+      "notes": {
+        "es": "Mostrar herramientas o el equipo del servicio en un entorno cotidiano, sin personas identificables. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Show tools or service equipment in an ordinary setting, without identifiable people. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Montrer des outils ou du matériel dans un cadre ordinaire, sans personne identifiable. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    },
+    {
+      "type": "vertical-video-9x16",
+      "audience": "customer",
+      "concept": "service-explainer",
+      "durationSec": 15,
+      "copyOverlay": {
+        "es": "Cotizar catering para mi evento",
+        "en": "Get a catering quote",
+        "fr": "Demander un devis traiteur"
+      },
+      "notes": {
+        "es": "Mostrar herramientas o el equipo del servicio en un entorno cotidiano, sin personas identificables. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Show tools or service equipment in an ordinary setting, without identifiable people. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Montrer des outils ou du matériel dans un cadre ordinaire, sans personne identifiable. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [
+          "Plano del equipo o espacio relacionado con el servicio.",
+          "Texto breve del servicio y su alcance; sin resultados simulados.",
+          "CTA de la página y aviso de piloto previsto."
+        ],
+        "en": [
+          "Show equipment or a space related to the service.",
+          "Brief service and scope text; no simulated results.",
+          "Page CTA and planned-pilot notice."
+        ],
+        "fr": [
+          "Montrer le matériel ou un espace lié au service.",
+          "Texte bref sur la prestation et son périmètre ; aucun résultat simulé.",
+          "CTA de la page et mention du pilote envisagé."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "audience": "provider",
+      "concept": "partnership",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Recibir solicitudes de catering",
+        "en": "Apply for catering leads",
+        "fr": "Recevoir des demandes traiteur"
+      },
+      "notes": {
+        "es": "Invitación a negocios independientes para revisar el modelo; no es una oferta de empleo. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Invite independent businesses to review the model; this is not an employment offer. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Inviter des entreprises indépendantes à examiner le modèle ; ce n’est pas une offre d’emploi. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    },
+    {
+      "type": "image",
+      "audience": "customer",
+      "concept": "seasonal-planning",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Cotizar catering para mi evento",
+        "en": "Get a catering quote",
+        "fr": "Demander un devis traiteur"
+      },
+      "notes": {
+        "es": "Idea de mantenimiento para validar con la capacidad local. Sin promoción, precio ni fecha activa. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Maintenance idea to validate against local capacity. No active promotion, price or date. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Idée d’entretien à valider selon les capacités locales. Aucune promotion, aucun prix ni calendrier actif. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    }
+  ]
+}

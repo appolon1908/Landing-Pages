@@ -3,8 +3,29 @@ on: [push, pull_request]
 permissions:
   contents: read
 jobs:
-  container-smoke:
+  container-build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - target: backend
+          - target: page
+            page: home
+          - target: page
+            page: hvac
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/container_smoke.py
+        env:
+          IMAGE_TARGET: ${{ matrix.target }}
+          PAGE: ${{ matrix.page }}
+  container-smoke:
+    name: container-smoke
+    if: ${{ always() }}
+    needs: container-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require all container smoke tests
+        env:
+          CONTAINERS: ${{ needs.container-build.result }}
+        run: test "$CONTAINERS" = success

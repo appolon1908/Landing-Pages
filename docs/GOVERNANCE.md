@@ -1,6 +1,8 @@
 # Branch and review governance
 
-Work enters through atomic → subsection/public--foundation → section/public → development → testing → staging → production. The declared branch path is tested by scripts/test_branch.py and enforced for pull requests by scripts/check_branch.py. No merge or promotion was performed.
+Work normally enters through atomic → subsection/public--foundation → section/public → development → testing → staging → production. The user-requested image branch has one explicitly declared route: atomic/breero-image-assets-20261103 → subsection/public--images → section/public. It rejoins the same promotion chain. Other atomic branches cannot target the image subsection, and the image branch cannot skip a level. The declared routes are tested by scripts/test_branch.py and enforced for pull requests by scripts/check_branch.py.
+
+The image branch also supplies the exact required aggregate check names. `landing-checks` succeeds only after core validation, page discovery, every page build and browser/accessibility checks succeed; `container-smoke` succeeds only after all three container smoke jobs succeed. Failed, cancelled or skipped dependencies fail the aggregate. Remote review, signature and branch protection rules remain unchanged.
 
 GitHub ruleset 25729446 was created and independently read back as active on 2026-10-23. It covers subsection/section and development/testing/staging/production/main/master branches, has no bypass actors, rejects deletion and force pushes, requires one independent approving review, code-owner review when ownership is present in the base branch, dismissal of stale reviews, approval after the latest push and resolution of review threads. Required checks: landing-checks, branch-governance, container-smoke. Checks must be current with the target branch.
 

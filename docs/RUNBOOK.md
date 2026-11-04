@@ -1,23 +1,51 @@
-# Independent preview operations
+# Runbook
 
-1. Build/test from the atomic PR commit. Use `npm ci`, `npm run verify` and audit.
-2. Start `npm run build && npm start`, or `docker compose up --build -d`.
-3. Check `/healthz` and an English/Spanish client/provider route. Health proves the
-   frontend process is responding; it does not assert Breero or identity readiness.
-4. `SITE_REGISTRY_FILE` may point at a read-only public configuration exported and
-   reviewed by the site owner. The bundled registry is synthetic, local preview only.
-   Never use domain mapping as evidence of domain ownership or staff authorization.
-5. Monitor process availability, HTTP errors and deployed image digest. Do not log
-   request bodies, contact details, authorization headers or callback query strings.
-6. Stop only this Compose project with `docker compose down`. It has no database or
-   customer records. Retain versioned registry files and restore a previous reviewed
-   image/configuration pair to roll back. No live publication pointer is changed.
+## Preview
 
-Production release is blocked pending Breero contracts and actual staging receipts,
-independent review, verified domains/TLS, translated consent/terms and approved
-publication. The preview is intentionally noindex and contains no advertising tags.
+See [README](../README.md) for Node 22 setup and the local multi-package stack.
+The bundled registries are preview/disabled. No customer/provider data is sent from
+preview forms. Use fake transports and synthetic identities for intake tests.
 
-Container builds currently use the Node 22 slim release line. Record and pin the
-reviewed base-image digest in the release process; mutable build tags are not a
-production supply-chain certification. CI image checks inspect the actual local
-image ID, runtime user, read-only filesystem and disabled effects.
+- Backend health: `GET /healthz`; site context: `GET /api/site-context`.
+- Page health: `GET /healthz`; each image serves its own home or service package.
+- Backend events distinguish CRM acceptance, local logging and delivery failure.
+- The optional journal may contain request data; it is not a durable reconciliation
+  queue or proof of CRM acceptance. Establish access, retention and recovery before use.
+
+## Containers and rollback preparation
+
+Build backend and individual pages from the same reviewed revision. A page image contains
+its selected package; changing the runtime environment does not substitute a different page.
+The page server needs `BACKEND_URL`. Keep the backend private and configure host/origin
+routing explicitly. The smoke script uses disposable local resources, not production.
+
+A future release must retain the prior images and reviewed registry for rollback, then
+demonstrate restoration in an authorized environment. No deployed rollback or backup
+restoration has been verified by this preview.
+
+## Before any live enablement
+
+Changing a registry flag is not a launch acceptance test. The owner must establish:
+
+1. Real business identity, support, operating hours, service coverage, provider capacity,
+   published policies and commercial terms. Strict compliance validation must pass.
+2. A selected CRM implementing the [documented contract](../backend/CRM_CONTRACT.md),
+   with persistent deduplication, canonical receipts, retry/reconciliation ownership,
+   tenant access controls and demonstrated recovery.
+3. Reviewed registry origins, environment-backed secrets, appropriate request limits,
+   spam controls and an explicit trusted-proxy design if real client-IP limits are needed.
+4. Acceptance evidence for messaging permissions, provider workflows, scheduling and
+   billing if those features are later introduced. This repository does not implement them.
+5. Separate authorization for production/provider effects and a reversible release plan.
+
+An authorized operator can then configure the selected adapter and site mode, rerun
+checks against that exact configuration and deploy through the approved release process.
+No bundled configuration or draft marketing artifact authorizes that action.
+
+## Source delivery
+
+Run local checks and independent review, commit a clean isolated branch, then use the
+guarded publisher to `codestra-local`. Record exact local and remote SHA parity.
+Missing approved remote configuration is a publication blocker; preserve the commit
+and bundle while recording `LOCAL_REMOTE_SYNC=FAIL`. Never push around the guard,
+force-update divergent history or merge protected branches without their required checks.

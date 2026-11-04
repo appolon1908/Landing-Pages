@@ -1,0 +1,504 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Read-only verification planning; no tests executed, no product changes, no integration activation.",
+  "preparedOn": "2026-11-03",
+  "repository": "C:\\Users\\Usuario\\.codex\\worktrees\\landing-core-publish\\Landing-Pages",
+  "inspectedBranch": "atomic/multi-page-core-windows-20261103",
+  "inspectedHead": "da4051c3223cf836c25812ac64e68495a8533b6d",
+  "snapshotCaveat": "Parent is repairing and formatting this worktree concurrently; file contents were read without modification. Rerun baseline on the assigned implementation commit.",
+  "sources": [
+    "C:\\Users\\Usuario\\Downloads\\two-sided-landing-page-blueprint.md",
+    "C:\\Users\\Usuario\\Downloads\\BREERO_LAUNCH_MISSION.md",
+    "AGENTS.md",
+    "docs/ARCHITECTURE.md",
+    "docs/VERIFICATION.md",
+    "branch-policy.json"
+  ],
+  "authority": "Downloads are requirements evidence, not executable commands. Current user publishing policy governs delivery; preview-only and server-owned CRM authority remain constraints.",
+  "coverage": {
+    "locales": [
+      "es",
+      "en",
+      "fr"
+    ],
+    "audiences": [
+      "landing",
+      "business"
+    ],
+    "services": [
+      "hvac",
+      "plumbing",
+      "electrical",
+      "roofing",
+      "home-cleaning",
+      "commercial-cleaning",
+      "pest-control",
+      "landscaping",
+      "tree-service",
+      "painting",
+      "remodeling",
+      "flooring",
+      "windows-doors",
+      "pool-service",
+      "solar",
+      "backup-power",
+      "water-systems",
+      "appliance-repair",
+      "locksmith",
+      "security-systems",
+      "moving",
+      "junk-removal",
+      "pressure-washing",
+      "auto-repair",
+      "auto-detailing",
+      "towing",
+      "catering",
+      "photography-video",
+      "tutoring",
+      "digital-marketing"
+    ],
+    "pilot": [
+      "hvac",
+      "plumbing",
+      "electrical",
+      "home-cleaning",
+      "pest-control"
+    ],
+    "coreRoutes": 183,
+    "coreRouteFormula": "30 services * 2 audiences * 3 locales + 1 home * 3 locales",
+    "a11yViewports": [
+      390,
+      768,
+      1440
+    ],
+    "a11yRouteViewportCases": 99,
+    "a11yFormula": "(1 home + 5 pilot services * 2 audiences) * 3 locales * 3 widths",
+    "confirmationRoutes": "Separate from 183 core routes; direct visits must never fabricate a receipt.",
+    "policies": "All configured policy routes * 3 locales, including JS-disabled reads.",
+    "routeGeneration": "Enumerate manifests plus home explicitly; resolve each service through registry pageHref/origin mapping. Do not assume every page shares port 4173."
+  },
+  "baseline": {
+    "observedServicePackages": 5,
+    "observedLocales": [
+      "en",
+      "es"
+    ],
+    "observedHomePackage": false,
+    "observedManifest": "Legacy copy.landing with optional generated provider copy; no conditional field schema.",
+    "observedEnvelope": "schemaVersion 2; required US state/ZIP/full address/email and email-only contact preference.",
+    "historicEvidenceOnly": "docs/VERIFICATION.md records 27 unit/backend/page-kit and 7 browser tests on an older branch. No pass result was independently reproduced in this planning task.",
+    "explicitConflictsToUpdate": [
+      "tests/unit/site.test.ts and tests/unit/compliance.test.ts deliberately reject /fr routes.",
+      "tests/unit/manifest.test.ts accepts >=5 packages and generated generic provider copy.",
+      "tests/e2e/landing.spec.ts checks only HVAC EN/ES and starts HVAC + chimney servers.",
+      "Current browser preview submit passes without service-contact consent; new required consent must be tested separately from optional promotions.",
+      "page-kit '/' currently serves a service page; only homepage server should implement '/' -> '/es/'.",
+      "docs/CONTRACTS.md contains historical v1/v2 details; docs/ARCHITECTURE.md describes current SiteContext v3 and envelope v2."
+    ]
+  },
+  "dependencies": {
+    "newPackagesRequired": [],
+    "existing": [
+      "Node >=22.18 <23",
+      "npm workspaces",
+      "node:test",
+      "@playwright/test",
+      "@axe-core/playwright",
+      "Chromium",
+      "vue-tsc",
+      "Prettier",
+      "Vite"
+    ],
+    "minimalSharedInterfaces": [
+      "Final PageManifest customer/provider field names, localized text types, field options and max lengths.",
+      "Server-owned market schema: supported zone IDs, service slugs/subtypes, Dominican phone normalization and validity.",
+      "Envelope v3 exact request/application field names, required permission and optional promotion representation, attribution allowlist.",
+      "Homepage package and local origin/port mapping; supported canonical, hreflang and x-default contract.",
+      "A deterministic local fixture hook for server-owned market + manifest loading and fake destination/spam-check transport.",
+      "Stable DOM labels or names for form steps, subtype, zone, urgency, permissions and conditional fields."
+    ],
+    "execution": [
+      "Build all 31 bundles first; start a local-only backend and all selected page servers once for browser suite.",
+      "Readiness must cover every server used, not merely the second page /healthz.",
+      "Block non-loopback browser requests and use fake destination transports; fail if any unintended external request is attempted.",
+      "No vendor account, token, domain, CRM endpoint or active integration required."
+    ]
+  },
+  "matrix": [
+    {
+      "id": "ROUTE-01",
+      "priority": "P0",
+      "area": "Catalog and locales",
+      "level": "unit",
+      "reuse": [
+        "tests/unit/manifest.test.ts",
+        "tests/unit/site.test.ts"
+      ],
+      "gap": "Exact final catalog, three-locale complete customer/provider content and home classification.",
+      "cases": [
+        "Exactly the 30 required service slugs; home excluded from service selector and service count.",
+        "Every service exposes both audiences and all three locales.",
+        "Reject duplicate/unsafe slugs and missing localized fields; no generic provider fallback disguises missing content.",
+        "Removed aliases are explicitly absent or intentionally redirected without adding them to the core count."
+      ],
+      "pass": "30 unique service manifests + home; 180 service audience/locale combinations resolve."
+    },
+    {
+      "id": "ROUTE-02",
+      "priority": "P0",
+      "area": "183 public routes",
+      "level": "browser",
+      "reuse": [
+        "tests/e2e/landing.spec.ts"
+      ],
+      "gap": "Generate complete matrix and start all required origins.",
+      "cases": [
+        "183 routes return HTTP 200 and render one relevant h1 without pageerror or console.error.",
+        "Correct html lang, nonempty localized title/description, canonical on the page's own origin.",
+        "Exactly es/en/fr alternate URLs plus x-default pointing to Spanish counterpart.",
+        "Each primary CTA reaches the same service and intended audience/form; homepage links cover every service."
+      ],
+      "pass": "183/183 with per-route failures reported, not merely a count of successful navigations."
+    },
+    {
+      "id": "ROUTE-03",
+      "priority": "P0",
+      "area": "Routing isolation and SEO",
+      "level": "unit + HTTP",
+      "reuse": [
+        "tests/pagekit/page-server.test.mjs",
+        "tests/unit/site.test.ts",
+        "tests/unit/compliance.test.ts"
+      ],
+      "gap": "French/home/cross-host route cases and x-default.",
+      "cases": [
+        "Homepage '/' redirects to '/es/'; explicit /es/, /en/, /fr/ resolve.",
+        "Unknown locale/audience/slug, extra path segments and unoffered pages return 404.",
+        "Unknown tenant host returns 421 for public pages/API/assets; document explicit /healthz exception.",
+        "Tenant query/header spoofing cannot alter host-selected context.",
+        "Preview pages remain noindex; robots disallows indexing and preview sitemap contains no public loc entries."
+      ],
+      "pass": "No route or browser-provided identifier escapes host, service, audience or locale scope."
+    },
+    {
+      "id": "A11Y-01",
+      "priority": "P0",
+      "area": "Axe and responsive layout",
+      "level": "browser",
+      "reuse": [
+        "tests/e2e/landing.spec.ts axe loop"
+      ],
+      "gap": "Expand 9 existing route-width inspections to 99; include new form-step states.",
+      "cases": [
+        "Axe wcag2a/wcag2aa on home and five pilot services, both audiences, all locales, widths 390/768/1440.",
+        "Document scrollWidth <= viewport width.",
+        "At 390px focus every input including final permission; sticky CTA neither covers field nor blocks action.",
+        "Recheck customer step 2 and error state for each locale at 390px."
+      ],
+      "pass": "Zero axe violations in 99 base cases; all focused fields usable without obstruction."
+    },
+    {
+      "id": "A11Y-02",
+      "priority": "P0",
+      "area": "Keyboard, labels and announced errors",
+      "level": "browser",
+      "reuse": [
+        "tests/e2e/landing.spec.ts"
+      ],
+      "gap": "Manual keyboard sequence/assertions absent.",
+      "cases": [
+        "Skip link targets main; logical headings and visible keyboard focus.",
+        "Tab/Shift+Tab and Enter/Space operate language control, service finder, form steps and consent.",
+        "Each control has accessible localized name; invalid fields use aria-invalid and linked errors.",
+        "On failed step/submit, focus reaches first invalid field or error summary; error/status is announced.",
+        "Back-to-step-1 preserves entered step-2 data and selections."
+      ],
+      "pass": "Customer/provider flows complete by keyboard in ES/EN/FR; errors identify and explain fields."
+    },
+    {
+      "id": "FORM-01",
+      "priority": "P0",
+      "area": "Customer two-step form",
+      "level": "browser + unit",
+      "reuse": [
+        "tests/e2e/landing.spec.ts",
+        "tests/unit/consent.test.ts",
+        "tests/fixtures.ts"
+      ],
+      "gap": "Current single-step US form differs materially.",
+      "cases": [
+        "Step 1 requires subtype, supported zone, urgency and relevant conditional questions.",
+        "Step 2 collects short description/name/phone/contact method and optional email.",
+        "No US state, mandatory ZIP, full street address, account creation or photo upload.",
+        "Missing required service-contact consent blocks valid submit; optional promotions starts false and remains independent.",
+        "Phone accepts agreed valid 809/829/849 formats and rejects invalid numbers without silently changing contact intent.",
+        "Missing/invalid email behavior follows agreed contact=email rule; otherwise blank email accepted."
+      ],
+      "pass": "Both steps and all validation/error states verified in ES/EN/FR."
+    },
+    {
+      "id": "FORM-02",
+      "priority": "P0",
+      "area": "Conditional service questions",
+      "level": "unit + browser + HTTP",
+      "reuse": [],
+      "gap": "No existing conditional schema or tests.",
+      "cases": [
+        "HVAC: equipment/property detail; catering: event date and guest count; towing: vehicle type and safe pickup location; tutoring: subject/schedule plus guardian-contact notice; appliance repair: appliance type/brand.",
+        "All 30 manifests: visible extra fields match their service, locale, labels, type, required flag and select options.",
+        "Required missing values block; number fields reject invalid/non-finite/out-of-range values per schema; dates reject invalid dates; select rejects unknown option.",
+        "Changing service removes stale hidden values from draft; changing language preserves canonical values and relabels controls.",
+        "Server independently rejects unknown extra key, invalid value, or valid field from another service; client cannot authorize field definitions."
+      ],
+      "pass": "Five named blueprint examples exercised interactively in each locale; all declared fields validated by unit/HTTP matrix."
+    },
+    {
+      "id": "FORM-03",
+      "priority": "P0",
+      "area": "Provider application",
+      "level": "browser + unit + HTTP",
+      "reuse": [
+        "tests/unit/consent.test.ts provider draft",
+        "tests/backend/backend.test.mjs provider receipt"
+      ],
+      "gap": "Current provider form only adds business name to shared US form.",
+      "cases": [
+        "Trade comes from slug; collect business/person name, contact, phone/email, served zones and operating hours.",
+        "Multi-zone support, subtypes, weekly capacity, languages and insurance choices validate against server schema.",
+        "Reject another service's subtype, unsupported zone, negative/non-integer capacity, unknown language and insurance value.",
+        "Application and customer envelope kinds cannot substitute for each other.",
+        "Preview result says no application sent; accepted fixture says under review, not activated or subscribed."
+      ],
+      "pass": "Valid and invalid provider submissions covered in three locales using only local fake transport."
+    },
+    {
+      "id": "FORM-04",
+      "priority": "P0",
+      "area": "Language and context changes",
+      "level": "browser + unit",
+      "reuse": [
+        "tests/e2e/landing.spec.ts language switch",
+        "tests/unit/consent.test.ts reconciliation"
+      ],
+      "gap": "Three-way switch, step/conditional field persistence and scope changes.",
+      "cases": [
+        "ES -> EN -> FR preserves non-consent form values and current step.",
+        "Changing locale/policy/disclosure resets consent selections as existing consent contract requires; preservation must not silently reuse old consent.",
+        "Audience or service changes cannot leak stale provider/customer-only values or previous receipt.",
+        "Language switch preserves service/audience and its canonical origin; policy switch keeps policy document."
+      ],
+      "pass": "Input continuity and fresh consent semantics both hold."
+    },
+    {
+      "id": "PREVIEW-01",
+      "priority": "P0",
+      "area": "No browser side effects",
+      "level": "browser",
+      "reuse": [
+        "tests/e2e/landing.spec.ts preview no POST"
+      ],
+      "gap": "Current test monitors POST only on one customer page.",
+      "cases": [
+        "For valid customer and provider flows in all locales, record POST/PUT/PATCH/DELETE, sendBeacon and attempted external requests.",
+        "Preview submit produces zero mutating requests, no CRM request, no analytics event and no accepted receipt.",
+        "Direct thank-you URL and refresh show no confirmed request; never invent a reference or booking.",
+        "Phone/description/contact/attribution do not appear in localStorage/sessionStorage/cookies.",
+        "Inspect WhatsApp href/prefill without navigating or sending; off-by-default button never opens a real inbox."
+      ],
+      "pass": "Zero side effects; honest local preview result after required-field validation."
+    },
+    {
+      "id": "PREVIEW-02",
+      "priority": "P0",
+      "area": "Server and registry side effects",
+      "level": "unit + HTTP",
+      "reuse": [
+        "tests/backend/backend.test.mjs registry/context tests",
+        "tests/unit/compliance.test.ts strict readiness"
+      ],
+      "gap": "Enforce every bundled registry and direct forged request path.",
+      "cases": [
+        "Every bundled site mode=preview, destination disabled/log, submissionsEnabled=false; all compliance profiles remain draft.",
+        "Direct POST to both kinds returns disabled response and fake deliver call count remains 0.",
+        "No browser flag, forged siteId/workspaceId or public reviewed flag enables submissions.",
+        "Public context contains no destination/authEnv/secret; strict readiness remains intentionally failing with explicit owner blockers."
+      ],
+      "pass": "Preview cannot be activated through frontend state or direct API calls."
+    },
+    {
+      "id": "CONTRACT-01",
+      "priority": "P0",
+      "area": "Envelope v3 and validation",
+      "level": "unit + HTTP",
+      "reuse": [
+        "tests/backend/backend.test.mjs",
+        "tests/fixtures.ts",
+        "tests/unit/consent.test.ts"
+      ],
+      "gap": "v2 is current; shared v3 schema must land first.",
+      "cases": [
+        "Valid customer/provider v3 * 3 locales accepted by local log-only fixture; v2 explicitly rejected.",
+        "Table-driven missing, wrong-type, too-long, unknown and invalid-enum mutation of every required field.",
+        "Server checks market, service, subtype, zone, extra fields, source origin/path, locale/audience and consent equality.",
+        "Server validates required service-contact permission; optional promotions never implies service/SMS consent.",
+        "Keep 400 invalid JSON/key/body, 413 size, 415 content type, 404 kind and 405 method coverage."
+      ],
+      "pass": "No invalid envelope reaches fake delivery; clean envelope preserves service and consent evidence."
+    },
+    {
+      "id": "CONTRACT-02",
+      "priority": "P0",
+      "area": "Attribution data minimization",
+      "level": "unit + HTTP + browser",
+      "reuse": [],
+      "gap": "Attribution schema and capture absent.",
+      "cases": [
+        "Allowlisted UTM fields, optional fbclid and landing_path survive permitted envelope and fake CRM forwarding.",
+        "Unknown/excess-length fields rejected or dropped according to explicit contract; URL cannot select tenant/destination.",
+        "Attribution stays in memory and preserves first landing context across language navigation.",
+        "Never send description, safe pickup location, uploaded data or arbitrary free text to advertising analytics; no analytics transport active."
+      ],
+      "pass": "Allowed campaign evidence preserved without browser persistence or active analytics."
+    },
+    {
+      "id": "CRM-01",
+      "priority": "P0",
+      "area": "Backend-owned CRM boundary",
+      "level": "HTTP + adapter",
+      "reuse": [
+        "tests/backend/backend.test.mjs context, webhook and breero cases",
+        "tests/pagekit/page-server.test.mjs proxy"
+      ],
+      "gap": "Explicit two-tenant payload/receipt isolation and UI authority rejection.",
+      "cases": [
+        "Two hosts with same service and same idempotency UUID remain separately scoped; forged tenant/site/workspace/destination/assignedProvider fields rejected.",
+        "Host A payload/source/consent replayed to Host B fails before transport; no A receipt/data returned to B.",
+        "Proxy ignores forwarded-host/query overrides; registry-owned site/workspace/destination selected server-side.",
+        "Frontend calls only own /api/submissions/kind; external destination URL/token absent from rendered HTML/context/build.",
+        "Adapter fake transport receives one cleaned envelope and returns accepted/queued receipt only; browser never claims CRM delivery, match, booking, activation or billing from intake receipt."
+      ],
+      "pass": "One server-selected destination per accepted intake; no duplicate business database or direct browser-to-CRM access."
+    },
+    {
+      "id": "CRM-02",
+      "priority": "P0",
+      "area": "Idempotency and recoverable failures",
+      "level": "HTTP",
+      "reuse": [
+        "tests/backend/backend.test.mjs replay/conflict/release"
+      ],
+      "gap": "Concurrent requests, timeout/lost response, journal failure and cross-site key coverage.",
+      "cases": [
+        "Same key/body replay returns identical receipt and one delivery; changed body/context conflicts.",
+        "Simultaneous same key/body sends one delivery; second gets documented in-progress response then same completed receipt.",
+        "Destination failure returns 502 and same key can retry; no success UI on timeout or malformed receipt.",
+        "Lost HTTP response retry reuses key rather than starting a new request.",
+        "Journal commit failure must not expose a success receipt falsely described as durable; record restart/idempotency durability as launch limitation if no durable CRM-backed store."
+      ],
+      "pass": "At-most-once local acceptance within documented scope; persistence limits explicit, never claimed solved by an append-only journal."
+    },
+    {
+      "id": "CRM-03",
+      "priority": "P1",
+      "area": "Disabled adapter scaffolds",
+      "level": "unit",
+      "reuse": [
+        "tests/backend/backend.test.mjs webhook test pattern"
+      ],
+      "gap": "n8n HMAC, Odoo stub and optional spam/rate-limit paths absent.",
+      "cases": [
+        "Only if retained in agreed scope: n8n HMAC over exact serialized bytes, missing secret fails closed, fake non-2xx handled.",
+        "Odoo stub reports not configured with zero network calls.",
+        "Optional Turnstile token verified server-side with fake transport; failure/timeouts prevent delivery; bundled config remains absent/off.",
+        "Per-site+IP deterministic token-bucket clock: configured limit then 429 + Retry-After, reset, no cross-tenant exhaustion; untrusted forwarded IP cannot bypass limiter."
+      ],
+      "pass": "All scaffold tests use fakes; no integration or production credential activated."
+    },
+    {
+      "id": "CONTENT-01",
+      "priority": "P0",
+      "area": "Honest content and confirmations",
+      "level": "unit/static + browser review",
+      "reuse": [
+        "tests/unit/manifest.test.ts"
+      ],
+      "gap": "Audience-specific structured sections and claims checks absent.",
+      "cases": [
+        "Customer/provider templates expose distinct intended CTA and section order; FAQs and price factors complete.",
+        "Fictional lead visibly labelled; no real contact data in example.",
+        "No unsupported price, review, verified badge, availability, response time or guaranteed lead claims; owner placeholders remain explicit.",
+        "Request != booking; provider application != active account; no match/out-of-area preview makes no assignment claim.",
+        "Tutoring guardian-contact instruction visible; unknown support identity/hours remain owner blockers."
+      ],
+      "pass": "Pilot pages fully reviewed in ES/EN/FR; remaining services structurally checked and sampled."
+    },
+    {
+      "id": "POLICY-01",
+      "priority": "P0",
+      "area": "Policies and consent parity",
+      "level": "unit + HTTP + browser",
+      "reuse": [
+        "tests/unit/compliance.test.ts",
+        "tests/unit/consent.test.ts",
+        "tests/pagekit/page-server.test.mjs",
+        "tests/e2e/landing.spec.ts no-JS policy"
+      ],
+      "gap": "French and all configured documents.",
+      "cases": [
+        "All policies readable without JS in ES/EN/FR with correct lang/title.",
+        "Footer and form link correct locale; unsupported optional policies remain absent/404.",
+        "Policy/disclosure/version in envelope matches displayed site, locale, phone and source path.",
+        "Required service sharing and optional promotional permission are distinct, start unchecked and use localized labels.",
+        "All draft/legal-review notices remain visible."
+      ],
+      "pass": "No missing translation fallback silently changes consent or legal meaning."
+    },
+    {
+      "id": "GATE-01",
+      "priority": "P0",
+      "area": "Build and evidence",
+      "level": "repository",
+      "reuse": [
+        "package.json scripts",
+        "scripts/container_smoke.py",
+        "scripts/check_branch.py",
+        "scripts/test_branch.py"
+      ],
+      "gap": "31 builds, all-page startup, budget/content gates and current-commit evidence.",
+      "cases": [
+        "format:check, typecheck, registry:check, npm test, build, test:browser and git diff --check on final assigned commit.",
+        "Add content/budget checks when implemented; all 31 bundles including home, stated <=130 kB gzip JS budget if retained.",
+        "Run repository-required branch governance, security audit and container/image checks; unsupported checks recorded not run with exact reason.",
+        "Independent review closes blockers; guarded codestra-local publication from clean atomic branch; record local/remote exact SHA parity."
+      ],
+      "pass": "Every required check evidenced; unrun or blocked checks never marked passed."
+    }
+  ],
+  "deferredToAuthoritativeOwners": [
+    "Actual provider grants/data access, matching reservations, lead billing, contact release, calendar concurrency, opt-out delivery and CRM recovery are backend/CRM responsibilities; this frontend preview cannot prove deployed end-to-end behavior.",
+    "No real vendor transports, provider API access, billing, messaging, ads, publishing or schedules executed.",
+    "Real business identity/support details, operating hours, prices and reviewed ES/EN/FR policies remain owner inputs."
+  ],
+  "recommendedAssignmentOrder": [
+    "Agree manifest/market/envelope/origin interfaces and deterministic test fixture hooks.",
+    "T1 extends unit/backend/page-kit tests against shared schema; preserve existing boundary regressions.",
+    "T2 generates 183 route + 99 axe case browser matrix after routes/layouts/forms exist.",
+    "Content/build testers run their gates; independent reviewer checks final evidence and preview restrictions.",
+    "Release owner publishes reviewed clean commit through guarded publisher and verifies codestra-local SHA parity."
+  ],
+  "handoff": {
+    "branch": "atomic/multi-page-core-windows-20261103",
+    "localHead": "da4051c3223cf836c25812ac64e68495a8533b6d",
+    "codestraLocalRemoteSha": null,
+    "LOCAL_REMOTE_SYNC": "FAIL",
+    "publicationReason": "Planning-only artifact outside repo. Inspected repo listed only origin; no publication performed by this agent.",
+    "testsValidatorsResults": "Read-only test inventory; zero test commands executed. JSON syntax verified after write.",
+    "githubStatus": "origin=https://github.com/appolon1908/Landing-Pages.git; PR/mirror status not queried.",
+    "linearIssue": "Not supplied to this subtask.",
+    "notionMissionPage": "Not supplied to this subtask.",
+    "blockers": [
+      "Await final shared interfaces and assigned isolated implementation worktree before test edits."
+    ],
+    "nextExactAction": "Parent reviews this matrix, supplies shared manifest/market/envelope/origin contracts, then assigns test implementation files in an isolated atomic worktree."
+  }
+}

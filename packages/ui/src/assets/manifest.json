@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "services": [
+    {
+      "id": 1,
+      "slug": "hvac",
+      "file": "services/01-hvac-air-conditioning.webp",
+      "source": "02-Web-Optimized-Images/01-hvac-air-conditioning.webp",
+      "bytes": 169982,
+      "dimensions": "1672x941",
+      "sha256": "e7fb57b538d115c5f63bd3ee8a27983154a79d5e9a5752d58abf7a34bfefe6cd"
+    },
+    {
+      "id": 2,
+      "slug": "plumbing",
+      "file": "services/02-plumbing.webp",
+      "source": "02-Web-Optimized-Images/02-plumbing.webp",
+      "bytes": 160306,
+      "dimensions": "1672x941",
+      "sha256": "d16ab9d104994d740c55b65296d7e703970961b44fc45e062c4c8b22ab458027"
+    },
+    {
+      "id": 3,
+      "slug": "electrical",
+      "file": "services/03-electrical.webp",
+      "source": "02-Web-Optimized-Images/03-electrical.webp",
+      "bytes": 150310,
+      "dimensions": "1672x941",
+      "sha256": "94a98ca79dcd8ae294079e42c1c05605e335f1417e33389b66ddfb792cf7472d"
+    },
+    {
+      "id": 4,
+      "slug": "roofing",
+      "file": "services/04-roofing-waterproofing.webp",
+      "source": "02-Web-Optimized-Images/04-roofing-waterproofing.webp",
+      "bytes": 216854,
+      "dimensions": "1672x941",
+      "sha256": "000ef5ed7ac57ad759e77aaf91dad6c1a7699ef441ba08e07b763fc5f40f589a"
+    },
+    {
+      "id": 5,
+      "slug": "home-cleaning",
+      "file": "services/05-home-cleaning.webp",
+      "source": "02-Web-Optimized-Images/05-home-cleaning.webp",
+      "bytes": 125350,
+      "dimensions": "1672x941",
+      "sha256": "70c1a3c9a516cee307f505bce47aebb0f1b6f29dd16c4879efd987a3029d0857"
+    },
+    {
+      "id": 6,
+      "slug": "commercial-cleaning",
+      "file": "services/06-commercial-cleaning.webp",
+      "source": "02-Web-Optimized-Images/06-commercial-cleaning.webp",
+      "bytes": 169102,
+      "dimensions": "1672x941",
+      "sha256": "b5be5e01f86bd3e2a43922008bfcc52279c9e0b475defd4de690fd94225975b9"
+    },
+    {
+      "id": 7,
+      "slug": "pest-control",
+      "file": "services/07-pest-control.webp",
+      "source": "02-Web-Optimized-Images/07-pest-control.webp",
+      "bytes": 235924,
+      "dimensions": "1672x941",
+      "sha256": "0322e7665b33633be5b8c8440a4c78ed7392c47d47ebea62fad4dfb5496e30a9"
+    },
+    {
+      "id": 8,
+      "slug": "landscaping",
+      "file": "services/08-landscaping-lawn-care.webp",
+      "source": "02-Web-Optimized-Images/08-landscaping-lawn-care.webp",
+      "bytes": 277290,
+      "dimensions": "1672x941",
+      "sha256": "08f0e3e0749c5bc34a6b80fda33dc57b0269f4b703df6d4d77f1ba764880d52b"
+    },
+    {
+      "id": 9,
+      "slug": "tree-service",
+      "file": "services/09-tree-services.webp",
+      "source": "02-Web-Optimized-Images/09-tree-services.webp",
+      "bytes": 302510,
+      "dimensions": "1672x941",
+      "sha256": "02bc5ecc2392a81fdd6fac2181346455e27cb9a32264d0a07fd4564ec0bd1cd4"
+    },
+    {
+      "id": 10,
+      "slug": "painting",
+      "file": "services/10-painting.webp",
+      "source": "02-Web-Optimized-Images/10-painting.webp",
+      "bytes": 127692,
+      "dimensions": "1672x941",
+      "sha256": "e0a1d4f0160bed85d58fa86f27b561f877ce11cd9203ad17ad58a0cec70c0987"
+    },
+    {
+      "id": 11,
+      "slug": "remodeling",
+      "file": "services/11-remodeling.webp",
+      "source": "02-Web-Optimized-Images/11-remodeling.webp",
+      "bytes": 164378,
+      "dimensions": "1672x941",
+      "sha256": "d37847d39ac034cbb0cca01ce7b2ccbdc4060e3543bdd5602325995b3ddcc21a"
+    },
+    {
+      "id": 12,
+      "slug": "flooring",
+      "file": "services/12-flooring-tile.webp",
+      "source": "02-Web-Optimized-Images/12-flooring-tile.webp",
+      "bytes": 185210,
+      "dimensions": "1672x941",
+      "sha256": "969e252fe1f6f466f2ed430e0e24abbf06d90e5d2cd8b12ea7be5ea52d37b16c"
+    },
+    {
+      "id": 13,
+      "slug": "windows-doors",
+      "file": "services/13-windows-doors.webp",
+      "source": "02-Web-Optimized-Images/13-windows-doors.webp",
+      "bytes": 203054,
+      "dimensions": "1672x941",
+      "sha256": "b72f47d7023f7faf9631eaf7ccafc6710db580aefe816b1ab1b5203e351f6703"
+    },
+    {
+      "id": 14,
+      "slug": "pool-service",
+      "file": "services/14-pool-care.webp",
+      "source": "02-Web-Optimized-Images/14-pool-care.webp",
+      "bytes": 264204,
+      "dimensions": "1672x941",
+      "sha256": "3506272ccdf992226771985cb9933e93f67b3a410bb85271132cd1eb82963c49"
+    },
+    {
+      "id": 15,
+      "slug": "solar",
+      "file": "services/15-solar-installation.webp",
+      "source": "02-Web-Optimized-Images/15-solar-installation.webp",
+      "bytes": 204002,
+      "dimensions": "1672x941",
+      "sha256": "1ee1eb3eef8b6c20505d0274d638c25f2f3996541ebfbca50e05550a74196957"
+    },
+    {
+      "id": 16,
+      "slug": "backup-power",
+      "file": "services/16-generators-inverters-batteries.webp",
+      "source": "02-Web-Optimized-Images/16-generators-inverters-batteries.webp",
+      "bytes": 194396,
+      "dimensions": "1672x941",
+      "sha256": "531fea56963bb8aff041fc699e7f799296aaf211dae638b5516e99f2410dab4b"
+    },
+    {
+      "id": 17,
+      "slug": "water-systems",
+      "file": "services/17-water-tanks-pumps-filtration.webp",
+      "source": "02-Web-Optimized-Images/17-water-tanks-pumps-filtration.webp",
+      "bytes": 225148,
+      "dimensions": "1672x941",
+      "sha256": "1c4df3ea7bbc59c3f952ef751cea4e30a37e5c89e680aecb3d0a391a9f880c48"
+    },
+    {
+      "id": 18,
+      "slug": "appliance-repair",
+      "file": "services/18-appliance-repair.webp",
+      "source": "02-Web-Optimized-Images/18-appliance-repair.webp",
+      "bytes": 171274,
+      "dimensions": "1672x941",
+      "sha256": "fab900ab2e2cc804b9545b57107425975e72eb4c3fbe252bcebf2f0185d8f58e"
+    },
+    {
+      "id": 19,
+      "slug": "locksmith",
+      "file": "services/19-locksmiths.webp",
+      "source": "02-Web-Optimized-Images/19-locksmiths.webp",
+      "bytes": 185556,
+      "dimensions": "1672x941",
+      "sha256": "34db71896db5c86ebcd6a1f1c93d71be846e6fd846054bcdd548918dfed672d1"
+    },
+    {
+      "id": 20,
+      "slug": "security-systems",
+      "file": "services/20-security-cameras-alarms.webp",
+      "source": "02-Web-Optimized-Images/20-security-cameras-alarms.webp",
+      "bytes": 180072,
+      "dimensions": "1672x941",
+      "sha256": "09fbb527f4942eb5d8668f0f3d9789279437dc6010107114d708fe612e29c242"
+    },
+    {
+      "id": 21,
+      "slug": "moving",
+      "file": "services/21-moving.webp",
+      "source": "02-Web-Optimized-Images/21-moving.webp",
+      "bytes": 241210,
+      "dimensions": "1672x941",
+      "sha256": "d883786863f9cab3ef27b4db33318a42432fab0c352b4208ff78ab566b0cbbfc"
+    },
+    {
+      "id": 22,
+      "slug": "junk-removal",
+      "file": "services/22-junk-removal.webp",
+      "source": "02-Web-Optimized-Images/22-junk-removal.webp",
+      "bytes": 201744,
+      "dimensions": "1672x941",
+      "sha256": "c295df4f9dd4f686d4413953ad7263530eb11c7d060bfd01cabf14ffa6f4d9e6"
+    },
+    {
+      "id": 23,
+      "slug": "pressure-washing",
+      "file": "services/23-pressure-washing.webp",
+      "source": "02-Web-Optimized-Images/23-pressure-washing.webp",
+      "bytes": 238326,
+      "dimensions": "1672x941",
+      "sha256": "c4799cc568ea4c4463f70a273ad68ec0ccf14eccafd91770e3b196c3e526c2e3"
+    },
+    {
+      "id": 24,
+      "slug": "auto-repair",
+      "file": "services/24-auto-repair-mobile-mechanics.webp",
+      "source": "02-Web-Optimized-Images/24-auto-repair-mobile-mechanics.webp",
+      "bytes": 173050,
+      "dimensions": "1672x941",
+      "sha256": "173151992f9131776c4146f93653e1e1b511f34b186f8a31752717461d87aab0"
+    },
+    {
+      "id": 25,
+      "slug": "auto-detailing",
+      "file": "services/25-auto-detailing.webp",
+      "source": "02-Web-Optimized-Images/25-auto-detailing.webp",
+      "bytes": 134074,
+      "dimensions": "1672x941",
+      "sha256": "1e42a01cbd312e4aa2e60e43cb49bef9115ad429a71d3d311f082dbcba41b37c"
+    },
+    {
+      "id": 26,
+      "slug": "towing",
+      "file": "services/26-towing-roadside-assistance.webp",
+      "source": "02-Web-Optimized-Images/26-towing-roadside-assistance.webp",
+      "bytes": 257536,
+      "dimensions": "1672x941",
+      "sha256": "351b8c32eab9bc8ac1969ac49f185f9ec1f15c865d8c4aa68e610b79dd784a52"
+    },
+    {
+      "id": 27,
+      "slug": "catering",
+      "file": "services/27-catering.webp",
+      "source": "02-Web-Optimized-Images/27-catering.webp",
+      "bytes": 187340,
+      "dimensions": "1672x941",
+      "sha256": "56e61b1dc8711b9a991cdc62fdf37b792ea01cfd13647f22aa246034e5dcca88"
+    },
+    {
+      "id": 28,
+      "slug": "photography-video",
+      "file": "services/28-photography-video.webp",
+      "source": "02-Web-Optimized-Images/28-photography-video.webp",
+      "bytes": 134222,
+      "dimensions": "1672x941",
+      "sha256": "cb7f8d02ac5ee5e9d3a49485914c71112afcf5c707cc2c27a429a58479a6df44"
+    },
+    {
+      "id": 29,
+      "slug": "tutoring",
+      "file": "services/29-tutoring-training.webp",
+      "source": "02-Web-Optimized-Images/29-tutoring-training.webp",
+      "bytes": 134912,
+      "dimensions": "1672x941",
+      "sha256": "b93bd0b2b3e0386c237a68646bacd60eb098fa12111829ea48261259d8f68154"
+    },
+    {
+      "id": 30,
+      "slug": "digital-marketing",
+      "file": "services/30-websites-digital-marketing.webp",
+      "source": "02-Web-Optimized-Images/30-websites-digital-marketing.webp",
+      "bytes": 159668,
+      "dimensions": "1672x941",
+      "sha256": "8e75480345b7ac395c4255a078e28b4312774232588c1532e41b0714c1c3756c"
+    }
+  ],
+  "brand": [
+    {
+      "key": "logo",
+      "file": "brand/BREERO-logo-transparent.png",
+      "source": "03-Logo-and-Favicon/BREERO-logo-transparent.png",
+      "bytes": 617902,
+      "dimensions": "2172x724",
+      "sha256": "c403471b72573447fc35fa0836d53a584cd41ebf71b7008a2c111cee81dfc294"
+    },
+    {
+      "key": "favicon",
+      "file": "brand/favicon.ico",
+      "source": "03-Logo-and-Favicon/favicon.ico",
+      "bytes": 4467,
+      "dimensions": "16x16; 32x32; 48x48",
+      "sha256": "60b0403fab4a246514ed36a6c2eb179c83204dad7f98e228f7e58c52ef75fdb1"
+    },
+    {
+      "key": "favicon16",
+      "file": "brand/favicon-16x16.png",
+      "source": "03-Logo-and-Favicon/favicon-16x16.png",
+      "bytes": 627,
+      "dimensions": "16x16",
+      "sha256": "aca1b0ecb5520fab6d99d4d6e7598d7d4f20e2f2a111ea4b3dac5b9cfcd73a7a"
+    },
+    {
+      "key": "favicon32",
+      "file": "brand/favicon-32x32.png",
+      "source": "03-Logo-and-Favicon/favicon-32x32.png",
+      "bytes": 1393,
+      "dimensions": "32x32",
+      "sha256": "a450737b48b7583c268f56b12ab454e6706c2b187b3c8b7cc8f8b31e87786ac9"
+    }
+  ],
+  "derived": [
+    {
+      "key": "headerLogo",
+      "file": "brand/BREERO-logo-header.png",
+      "derivedFrom": "brand/BREERO-logo-transparent.png",
+      "sourceSha256": "c403471b72573447fc35fa0836d53a584cd41ebf71b7008a2c111cee81dfc294",
+      "bytes": 56526,
+      "dimensions": "528x176",
+      "sha256": "44eb4183c7cf43e5f2606f49c5845e9a114bd1f79007176153bc63b0dc493b44"
+    }
+  ]
+}

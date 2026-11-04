@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "slug": "tree-service",
+  "status": "DRAFT",
+  "enabled": false,
+  "campaigns": [
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "es",
+      "name": "DO|santo-domingo|tree-service|customer|base|evergreen|website-v1-es",
+      "pageHeadline": "¿Necesita evaluar un árbol en Santo Domingo?",
+      "pageCta": "Solicitar cotización para árboles",
+      "primaryText": [
+        "Cuidado de árboles. Vista previa; disponibilidad por confirmar.",
+        "Solicitar cotización para árboles. Explore el proceso propuesto en Santo Domingo.",
+        "Solicitar cotización para árboles. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": ["Solicitar cotización para árboles", "Cuidado de árboles"],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Solicitar cotización",
+      "landingPath": "/es/landing/tree-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|tree-service|customer|base|evergreen|website-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "instant_form",
+      "locale": "es",
+      "name": "DO|santo-domingo|tree-service|customer|base|evergreen|instant_form-v1-es",
+      "pageHeadline": "¿Necesita evaluar un árbol en Santo Domingo?",
+      "pageCta": "Solicitar cotización para árboles",
+      "primaryText": [
+        "Cuidado de árboles. Vista previa; disponibilidad por confirmar.",
+        "Solicitar cotización para árboles. Explore el proceso propuesto en Santo Domingo.",
+        "Solicitar cotización para árboles. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": ["Solicitar cotización para árboles", "Cuidado de árboles"],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Solicitar cotización",
+      "landingPath": "/es/landing/tree-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|tree-service|customer|base|evergreen|instant_form-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "whatsapp",
+      "locale": "es",
+      "name": "DO|santo-domingo|tree-service|customer|base|evergreen|whatsapp-v1-es",
+      "pageHeadline": "¿Necesita evaluar un árbol en Santo Domingo?",
+      "pageCta": "Solicitar cotización para árboles",
+      "primaryText": [
+        "Cuidado de árboles. Vista previa; disponibilidad por confirmar.",
+        "Solicitar cotización para árboles. Explore el proceso propuesto en Santo Domingo.",
+        "Solicitar cotización para árboles. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": ["Solicitar cotización para árboles", "Cuidado de árboles"],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "WHATSAPP_MESSAGE",
+      "ctaLabel": "Enviar mensaje por WhatsApp",
+      "landingPath": "/es/landing/tree-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|tree-service|customer|base|evergreen|whatsapp-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "en",
+      "name": "DO|santo-domingo|tree-service|customer|base|evergreen|website-v1-en",
+      "pageHeadline": "Need a tree assessed in Santo Domingo?",
+      "pageCta": "Request a tree-service quote",
+      "primaryText": [
+        "Tree services. Preview; availability needs confirmation.",
+        "Request a tree-service quote. Explore the proposed process in Santo Domingo.",
+        "Request a tree-service quote. Review scope and terms before deciding."
+      ],
+      "headline": ["Request a tree-service quote", "Tree services"],
+      "description": ["Planned Santo Domingo pilot"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Get a quote",
+      "landingPath": "/en/landing/tree-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|tree-service|customer|base|evergreen|website-v1-en",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "customer",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "fr",
+      "name": "DO|santo-domingo|tree-service|customer|base|evergreen|website-v1-fr",
+      "pageHeadline": "Besoin de faire évaluer un arbre à Santo Domingo ?",
+      "pageCta": "Demander un devis pour mes arbres",
+      "primaryText": [
+        "Entretien des arbres. Aperçu ; disponibilité à confirmer.",
+        "Demander un devis pour mes arbres. Découvrez le fonctionnement envisagé à Santo Domingo.",
+        "Demander un devis pour mes arbres. Examinez le périmètre et les conditions avant de décider."
+      ],
+      "headline": ["Demander un devis pour mes arbres", "Entretien des arbres"],
+      "description": ["Pilote prévu à Santo Domingo"],
+      "cta": "GET_QUOTE",
+      "ctaLabel": "Demander un devis",
+      "landingPath": "/fr/landing/tree-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|tree-service|customer|base|evergreen|website-v1-fr",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "es",
+      "name": "DO|santo-domingo|tree-service|provider|base|evergreen|website-v1-es",
+      "pageHeadline": "Encuentre solicitudes de cuidado de árboles",
+      "pageCta": "Postularme para cuidado de árboles",
+      "primaryText": [
+        "Cuidado de árboles. Vista previa; disponibilidad por confirmar.",
+        "Postularme para cuidado de árboles. Explore el proceso propuesto en Santo Domingo.",
+        "Postularme para cuidado de árboles. Revise el alcance y las condiciones antes de decidir."
+      ],
+      "headline": ["Postularme para cuidado de árboles", "Cuidado de árboles"],
+      "description": ["Piloto · Santo Domingo"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Presentar solicitud",
+      "landingPath": "/es/business/tree-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|tree-service|provider|base|evergreen|website-v1-es",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "en",
+      "name": "DO|santo-domingo|tree-service|provider|base|evergreen|website-v1-en",
+      "pageHeadline": "Find tree-care requests suited to your capabilities",
+      "pageCta": "Apply for tree-service leads",
+      "primaryText": [
+        "Tree services. Preview; availability needs confirmation.",
+        "Apply for tree-service leads. Explore the proposed process in Santo Domingo.",
+        "Apply for tree-service leads. Review scope and terms before deciding."
+      ],
+      "headline": ["Apply for tree-service leads", "Tree services"],
+      "description": ["Planned Santo Domingo pilot"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Apply now",
+      "landingPath": "/en/business/tree-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|tree-service|provider|base|evergreen|website-v1-en",
+        "utm_content": "{{ad.name}}"
+      }
+    },
+    {
+      "audience": "provider",
+      "objective": "LEADS",
+      "destination": "website",
+      "locale": "fr",
+      "name": "DO|santo-domingo|tree-service|provider|base|evergreen|website-v1-fr",
+      "pageHeadline": "Recevez des demandes d’entretien des arbres",
+      "pageCta": "Proposer mes services pour les arbres",
+      "primaryText": [
+        "Entretien des arbres. Aperçu ; disponibilité à confirmer.",
+        "Proposer mes services pour les arbres. Découvrez le fonctionnement envisagé à Santo Domingo.",
+        "Proposer mes services pour les arbres. Examinez le périmètre et les conditions avant de décider."
+      ],
+      "headline": [
+        "Proposer mes services pour les arbres",
+        "Entretien des arbres"
+      ],
+      "description": ["Pilote prévu à Santo Domingo"],
+      "cta": "APPLY_NOW",
+      "ctaLabel": "Candidater",
+      "landingPath": "/fr/business/tree-service",
+      "utm": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "DO|santo-domingo|tree-service|provider|base|evergreen|website-v1-fr",
+        "utm_content": "{{ad.name}}"
+      }
+    }
+  ],
+  "instantForm": {
+    "es": {
+      "status": "DRAFT",
+      "intro": "Cuidado de árboles. Borrador de formulario; todavía no recibe datos. Revise el alcance del servicio antes de enviar una solicitud.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "¿Qué servicio necesita?",
+          "options": [
+            "Evaluación de árbol",
+            "Poda",
+            "Mantenimiento de árboles",
+            "Evaluación para retiro"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "¿Qué plazo tiene?",
+          "options": [
+            "Hoy, si hay disponibilidad",
+            "Esta semana, si hay disponibilidad",
+            "Fecha flexible"
+          ]
+        },
+        {
+          "kind": "full_name",
+          "label": "Nombre completo",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Teléfono",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Sector o zona",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/es/privacy-policy",
+      "thankYou": "Borrador sin envío. Una futura solicitud no confirmaría una cita ni disponibilidad."
+    },
+    "en": {
+      "status": "DRAFT",
+      "intro": "Tree services. Draft form; it does not collect data yet. Review the service scope before making a request.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "Which service do you need?",
+          "options": [
+            "Tree assessment",
+            "Pruning",
+            "Tree maintenance",
+            "Removal assessment"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "What is your timing?",
+          "options": [
+            "Today, subject to availability",
+            "This week, subject to availability",
+            "Flexible timing"
+          ]
+        },
+        {
+          "kind": "full_name",
+          "label": "Full name",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Phone",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Area or neighborhood",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/en/privacy-policy",
+      "thankYou": "Draft without submission. A future request would not confirm an appointment or availability."
+    },
+    "fr": {
+      "status": "DRAFT",
+      "intro": "Entretien des arbres. Brouillon de formulaire ; aucune donnée n’est encore collectée. Examinez le périmètre avant de demander un service.",
+      "questions": [
+        {
+          "kind": "multiple_choice",
+          "label": "Quelle prestation recherchez-vous ?",
+          "options": [
+            "Évaluation d’un arbre",
+            "Taille",
+            "Entretien des arbres",
+            "Étude d’abattage"
+          ]
+        },
+        {
+          "kind": "multiple_choice",
+          "label": "Quel est le délai souhaité ?",
+          "options": [
+            "Aujourd’hui, selon disponibilité",
+            "Cette semaine, selon disponibilité",
+            "Date flexible"
+          ]
+        },
+        {
+          "kind": "full_name",
+          "label": "Nom complet",
+          "options": []
+        },
+        {
+          "kind": "phone",
+          "label": "Téléphone",
+          "options": []
+        },
+        {
+          "kind": "short_text",
+          "label": "Secteur ou quartier",
+          "options": []
+        }
+      ],
+      "privacyPolicyPath": "/fr/privacy-policy",
+      "thankYou": "Brouillon sans envoi. Une future demande ne confirmerait ni rendez-vous ni disponibilité."
+    }
+  },
+  "whatsapp": {
+    "es": {
+      "prefill": "Hola, quisiera consultar sobre cuidado de árboles en mi sector de Santo Domingo. ¿Cómo funcionaría?",
+      "iceBreakers": [
+        "¿Qué información debo preparar?",
+        "¿Cómo se confirmaría la disponibilidad?",
+        "Quisiera hablar con una persona."
+      ]
+    },
+    "en": {
+      "prefill": "Hello, I would like to ask about tree services in my Santo Domingo area. How would it work?",
+      "iceBreakers": [
+        "What details should I prepare?",
+        "How would availability be confirmed?",
+        "I would like to speak with a person."
+      ]
+    },
+    "fr": {
+      "prefill": "Bonjour, je souhaite me renseigner au sujet du service « Entretien des arbres » dans mon secteur de Santo Domingo. Comment cela fonctionnerait-il ?",
+      "iceBreakers": [
+        "Quelles informations préparer ?",
+        "Comment la disponibilité serait-elle confirmée ?",
+        "Je souhaite parler à une personne."
+      ]
+    }
+  },
+  "creativeBriefs": [
+    {
+      "type": "image",
+      "audience": "customer",
+      "concept": "problem-scope",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Solicitar cotización para árboles",
+        "en": "Request a tree-service quote",
+        "fr": "Demander un devis pour mes arbres"
+      },
+      "notes": {
+        "es": "Mostrar herramientas o el equipo del servicio en un entorno cotidiano, sin personas identificables. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Show tools or service equipment in an ordinary setting, without identifiable people. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Montrer des outils ou du matériel dans un cadre ordinaire, sans personne identifiable. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    },
+    {
+      "type": "vertical-video-9x16",
+      "audience": "customer",
+      "concept": "service-explainer",
+      "durationSec": 15,
+      "copyOverlay": {
+        "es": "Solicitar cotización para árboles",
+        "en": "Request a tree-service quote",
+        "fr": "Demander un devis pour mes arbres"
+      },
+      "notes": {
+        "es": "Mostrar herramientas o el equipo del servicio en un entorno cotidiano, sin personas identificables. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Show tools or service equipment in an ordinary setting, without identifiable people. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Montrer des outils ou du matériel dans un cadre ordinaire, sans personne identifiable. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [
+          "Plano del equipo o espacio relacionado con el servicio.",
+          "Texto breve del servicio y su alcance; sin resultados simulados.",
+          "CTA de la página y aviso de piloto previsto."
+        ],
+        "en": [
+          "Show equipment or a space related to the service.",
+          "Brief service and scope text; no simulated results.",
+          "Page CTA and planned-pilot notice."
+        ],
+        "fr": [
+          "Montrer le matériel ou un espace lié au service.",
+          "Texte bref sur la prestation et son périmètre ; aucun résultat simulé.",
+          "CTA de la page et mention du pilote envisagé."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "audience": "provider",
+      "concept": "partnership",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Postularme para cuidado de árboles",
+        "en": "Apply for tree-service leads",
+        "fr": "Proposer mes services pour les arbres"
+      },
+      "notes": {
+        "es": "Invitación a negocios independientes para revisar el modelo; no es una oferta de empleo. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Invite independent businesses to review the model; this is not an employment offer. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Inviter des entreprises indépendantes à examiner le modèle ; ce n’est pas une offre d’emploi. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    },
+    {
+      "type": "image",
+      "audience": "customer",
+      "concept": "seasonal-planning",
+      "durationSec": 0,
+      "copyOverlay": {
+        "es": "Solicitar cotización para árboles",
+        "en": "Request a tree-service quote",
+        "fr": "Demander un devis pour mes arbres"
+      },
+      "notes": {
+        "es": "Idea de mantenimiento para validar con la capacidad local. Sin promoción, precio ni fecha activa. Borrador. No usar rostros, logos, testimonios o trabajos ajenos sin permiso. No simular antes/después ni resultados.",
+        "en": "Maintenance idea to validate against local capacity. No active promotion, price or date. Draft. Do not use faces, logos, testimonials or others’ projects without permission. Do not simulate before/after or outcomes.",
+        "fr": "Idée d’entretien à valider selon les capacités locales. Aucune promotion, aucun prix ni calendrier actif. Brouillon. Aucun visage, logo, témoignage ou projet tiers sans autorisation. Aucun avant/après ni résultat simulé."
+      },
+      "shots": {
+        "es": [],
+        "en": [],
+        "fr": []
+      }
+    }
+  ]
+}

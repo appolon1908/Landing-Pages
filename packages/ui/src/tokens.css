@@ -1,0 +1,14 @@
+:root {
+  --paper: #fff;
+  --ink: #0b1739;
+  --body: #334155;
+  --muted: #64748b;
+  --blue: #009fe8;
+  --orange: #ff7900;
+  --orange-hover: #e96a00;
+  --soft-gray: #f7fafc;
+  --link: #0077b6;
+  --line: #e2e8f0;
+  --accent: var(--link);
+  --green: var(--link);
+}
