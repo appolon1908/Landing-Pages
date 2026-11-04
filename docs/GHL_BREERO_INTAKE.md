@@ -26,11 +26,14 @@ Set these only after verifying browser CORS behavior, privacy policies, service-
 
 ```env
 VITE_BREERO_DIRECT_GHL_ENABLED=false
+LP_BREERO_DIRECT_GHL_ENABLED=false
 VITE_GHL_HOMEOWNER_WEBHOOK_URL=
 VITE_GHL_PRO_WEBHOOK_URL=
 VITE_BREERO_SITE_ID=breero-preview
 LP_BREERO_META_PIXEL_ENABLED=false
 ```
+
+After independent release approval, enable **both** intake flags; the server flag provides the verified, live-BREERO-only head marker and CSP rule, while the browser flag enables the form. In preview or on unrelated brands, the server must never publish the marker or open the GHL CSP destination.
 
 When approved, replace the two URL values with their genuine `https://services.leadconnectorhq.com/hooks/...` destinations and rebuild. **VITE_ variables are public in compiled JavaScript. Do not place private API tokens or hidden secrets there.** Public webhook URLs may be abused; only enable once the account owner accepts that risk and appropriate spam/rate protection exists. If direct browser requests fail CORS preflight, use GHL-native hosted forms or a protected relay on Hetzner (never expose an API token in the browser).
 
