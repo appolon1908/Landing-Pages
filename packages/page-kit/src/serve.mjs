@@ -184,8 +184,7 @@ export function createPageServer({
         site.mode === "live" &&
         site.brand.name.trim().toLowerCase() === "breero";
       const breeroPixel = liveBreero && metaPixelEnabled;
-      const breeroGhl =
-        liveBreero && ghlIntakeEnabled;
+      const breeroGhl = liveBreero && ghlIntakeEnabled;
       if (breeroPixel || breeroGhl) {
         const scriptSrc = breeroPixel
           ? "'self' https://connect.facebook.net"
@@ -294,7 +293,12 @@ export function createPageServer({
         .replace(/<title>.*?<\/title>/s, "")
         .replace(
           "</head>",
-          () => meta + pixelMeta + ghlMeta + renderSiteBootstrap(host, site) + "</head>",
+          () =>
+            meta +
+            pixelMeta +
+            ghlMeta +
+            renderSiteBootstrap(host, site) +
+            "</head>",
         )
         .replace(/<html lang="[^"]+">/, `<html lang="${selected.locale}">`);
       if (policy)
