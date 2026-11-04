@@ -44,6 +44,7 @@ export function createPageServer({
   cacheMs = 30000,
   // Explicit operator switch; preview tenants and other brands stay tag-free.
   metaPixelEnabled = process.env.LP_BREERO_META_PIXEL_ENABLED === "true",
+  ghlIntakeEnabled = process.env.LP_BREERO_DIRECT_GHL_ENABLED === "true",
 }) {
   const isHome = manifest.kind === "home";
   const backend = new URL(backendUrl);
@@ -184,7 +185,7 @@ export function createPageServer({
         site.brand.name.trim().toLowerCase() === "breero";
       const breeroPixel = liveBreero && metaPixelEnabled;
       const breeroGhl =
-        liveBreero && process.env.LP_BREERO_DIRECT_GHL_ENABLED === "true";
+        liveBreero && ghlIntakeEnabled;
       if (breeroPixel || breeroGhl) {
         const scriptSrc = breeroPixel
           ? "'self' https://connect.facebook.net"
